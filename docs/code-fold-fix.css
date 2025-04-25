@@ -1,0 +1,42 @@
+/* Direct overrides for Quarto's code-fold styles */
+
+/* Hide all fold buttons */
+.code-fold-btn {
+  display: none !important;
+}
+
+/* Ensure all code blocks are fully visible */
+.cell-output-stdout pre {
+  max-height: none !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Override Quarto's default code hiding */
+.code-fold-hide-show {
+  display: none !important;
+}
+
+/* Force full display of all code blocks */
+.code-fold-hide-show + div pre,
+.cell-output,
+.cell-output-stdout,
+.cell-output-stderr {
+  display: block !important;
+  height: auto !important;
+  max-height: none !important;
+  visibility: visible !important;
+}
+
+/* Hide any remaining buttons */
+button.code-fold-btn {
+  display: none !important;
+}
+
+/* Make sure all collapsed code is visible */
+div.sourceCode.code-fold-hidden-default {
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+  max-height: none !important;
+} 

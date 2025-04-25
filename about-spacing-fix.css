@@ -1,0 +1,289 @@
+/* Fix spacing on About Me page */
+
+/* Style the About Me title to match Recent Posts */
+.about-title-container {
+  display: block !important;
+  width: 100% !important;
+  position: fixed !important;
+  top: 80px !important;
+  left: 300px !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  padding: 0 20px !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: none !important;
+}
+
+.about-title {
+  font-size: 1.8rem !important;
+  color: #2C3E50 !important;
+  font-weight: 700 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-block !important;
+  position: relative !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.about-title-line {
+  content: '' !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  height: 3px !important;
+  background: linear-gradient(to right, #9FB8D0, #BFD3E6, #E8D8D5) !important;
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.15rem !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Hide the profile image at the top that's causing the blank space */
+.quarto-about-jolla img.about-image {
+  display: none !important;
+}
+
+/* Force zero spacing at the top */
+body:has(.about-container) {
+  --bs-body-bg: white;
+  padding-top: 0 !important;
+}
+
+/* Top-level container needs no space */
+#quarto-content {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  grid-template-rows: auto !important;
+  row-gap: 0 !important;
+}
+
+/* Create space at the top of the main content area - reduced since title is outside container */
+main.content.column-page-right {
+  padding-top: 6rem !important; 
+}
+
+/* Add padding to the about container to accommodate fixed title */
+.about-container {
+  margin-top: 0.5rem !important;
+  padding: 2rem !important;
+  padding-top: 2rem !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  line-height: 1.7 !important;
+  background-color: transparent !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  position: relative !important;
+}
+
+/* Section styling for ALL h2 elements */
+.about-container h2 {
+  margin-top: 3.5rem !important;
+  margin-bottom: 1.2rem !important;
+  color: #333 !important;
+  font-weight: 600 !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* First h2 element should have same spacing as others */
+.about-container section:first-child h2 {
+  margin-top: 3.5rem !important; /* Same as other h2 elements */
+}
+
+/* Explicitly fix the background to ensure contrast */
+body {
+  background-color: #f8f9fa !important;
+}
+
+/* Image gallery improvements - make it fit in one row */
+.image-gallery {
+  display: flex !important;
+  gap: 2rem !important;
+  margin: 2rem 0 2rem 0 !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+
+/* Reset and simplify card styling */
+.image-card {
+  flex: 1 !important;
+  min-width: 200px !important;
+  max-width: 32% !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  height: 280px !important;  
+  position: relative !important;
+  display: block !important;
+  background: white !important;
+}
+
+.image-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Make sure images are visible */
+.image-card img {
+  display: block !important;
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover !important;
+  border-top-left-radius: 16px !important;
+  border-top-right-radius: 16px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Reset any potentially problematic styles on paragraphs */
+.image-card p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Style the text at the bottom */
+.image-card > p:last-child {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  padding: 0.8rem 0 !important;
+  background-color: white !important;
+  font-weight: 600 !important;
+  font-size: 1.2rem !important;
+  color: #333 !important;
+  text-align: center !important;
+}
+
+/* Section styling */
+.about-container p {
+  margin-bottom: 1.2rem !important;
+}
+
+.about-container ul {
+  margin-left: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.about-container li {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Container adjustments */
+.page-columns {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.quarto-title-block {
+  display: none !important;
+}
+
+.quarto-about-jolla {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Remove the About Me title that's causing extra space */
+.quarto-about-jolla h1.title.display-7 {
+  display: none !important;
+}
+
+/* Target the container directly */
+#quarto-content {
+  grid-template-rows: auto !important;
+  row-gap: 0 !important;
+}
+
+/* Adjust the body background */
+body:has(.quarto-about-jolla) {
+  --bs-body-bg: white;
+}
+
+/* Target all possible content containers */
+main.content {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+h1.title {
+  margin-top: 0 !important;
+}
+
+.column-page-right {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Adjust layout for the page */
+body:has(.quarto-about-jolla) .quarto-container {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Target all column layouts - ensure content is visible */
+.quarto-about-jolla.column-page-right {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Container adjustments for visibility */
+.quarto-container.page-columns.page-full {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Document content adjustments */
+#quarto-document-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* More aggressive targeting for all content blocks */
+body:has(.about-container) .content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+@media (max-width: 992px) {
+  .image-gallery {
+    gap: 1.5rem !important;
+  }
+  
+  .image-card {
+    min-width: 180px !important;
+    height: 260px !important;
+  }
+  
+  .image-card img {
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-gallery {
+    flex-wrap: wrap !important; /* Allow wrapping on mobile */
+    gap: 1rem !important;
+    justify-content: center !important;
+  }
+  
+  .image-card {
+    min-width: 160px !important;
+    max-width: 45% !important; /* Allow 2 per row on smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .image-card {
+    min-width: 100% !important;
+    max-width: 100% !important; /* Full width on very small screens */
+  }
+} 

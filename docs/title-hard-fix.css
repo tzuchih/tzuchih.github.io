@@ -1,0 +1,203 @@
+/* Hard-fix for card and title glitches that occur on page refresh */
+
+/* Critical rendering mode - forces stable card dimensions */
+.quarto-grid-item, 
+.card.h-100,
+[class*="quarto-grid-item"],
+[class*="card h-100"] {
+  height: 480px !important;
+  min-height: 480px !important;
+  max-height: 480px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  will-change: auto !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Title hard fix - prevent text reflow and calculation errors */
+.quarto-grid-item .listing-title, 
+.card.h-100 .card-title.listing-title,
+.quarto-grid-item .listing-title a, 
+.card.h-100 .card-title.listing-title a,
+[class*="listing-title"],
+[class*="card-title"] {
+  font-size: 1.1rem !important;
+  line-height: 1.5 !important;
+  font-weight: 600 !important;
+  color: #2C3E50 !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.2rem !important;
+  
+  /* Key properties to stabilize title display */
+  display: block !important;
+  max-height: 5rem !important;
+  min-height: 5rem !important; /* Fixed minimum height for titles */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Hardcoded display fallback for titles */
+.quarto-grid-item .listing-title, 
+.card.h-100 .card-title.listing-title {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  white-space: normal !important;
+}
+
+/* Image containers */
+.quarto-grid-item p.card-img-top, 
+.card.h-100 p.card-img-top,
+.card.h-100 > a.card-img-link,
+[class*="card-img-top"] {
+  height: 30% !important;
+  min-height: 30% !important;
+  max-height: 30% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  line-height: 0 !important;
+}
+
+/* Images themselves */
+.quarto-grid-item .listing-image, 
+.card.h-100 .thumbnail-image,
+.card-img-top,
+[class*="listing-image"],
+[class*="thumbnail-image"] {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Card body */
+.quarto-grid-item .card-body, 
+.card.h-100 .post-contents,
+.card.h-100 .card-body,
+[class*="card-body"],
+[class*="post-contents"] {
+  height: 70% !important;
+  min-height: 70% !important;
+  max-height: 70% !important;
+  padding: 1rem 1.2rem 1.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Fix category display */
+.quarto-grid-item .listing-categories, 
+.card.h-100 .quarto-categories,
+[class*="listing-categories"],
+[class*="quarto-categories"] {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.4rem !important; /* Consistent gap between tags */
+  margin-top: 10rem !important; /* Increased from 7rem to 10rem to move tags lower */
+  position: absolute !important; 
+  top: 0 !important; /* Position from top of card body */
+  left: 1.2rem !important;
+  right: 1.2rem !important;
+  max-height: 4rem !important;
+  overflow-y: auto !important;
+  align-items: flex-start !important; /* Align tags at the top */
+  justify-content: flex-start !important; /* Align tags to the left */
+  width: calc(100% - 2.4rem) !important; /* Full width minus padding */
+  padding: 0 !important;
+}
+
+/* Individual category tag styling for consistency */
+.quarto-grid-item .listing-category, 
+.card.h-100 .quarto-category,
+[class*="listing-category"],
+[class*="quarto-category"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.2rem 0.5rem !important;
+  background-color: rgba(191, 211, 230, 0.25) !important;
+  color: #4A5568 !important;
+  border-radius: 4px !important;
+  font-size: 0.65rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+  margin: 0 !important; /* Remove default margins */
+  height: 1.4rem !important; /* Fixed height for all tags */
+  line-height: 1 !important; /* Consistent line height */
+  white-space: nowrap !important; /* Prevent tag text from wrapping */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important; /* Subtle shadow for depth */
+  transition: background-color 0.2s ease !important;
+}
+
+/* Hover effect for category tags */
+.quarto-grid-item .listing-category:hover, 
+.card.h-100 .quarto-category:hover {
+  background-color: rgba(191, 211, 230, 0.4) !important;
+}
+
+/* Fix date positioning */
+.quarto-grid-item .listing-date,
+.card.h-100 .listing-date,
+[class*="listing-date"] {
+  position: absolute !important;
+  bottom: 1.2rem !important;
+  left: 1.2rem !important;
+  right: 1.2rem !important;
+  width: calc(100% - 2.4rem) !important;
+  padding-top: 0.5rem !important;
+  font-size: 0.75rem !important;
+  color: #94A3B8 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+  background-color: white !important;
+  margin-top: auto !important;
+  z-index: 10 !important;
+}
+
+/* Add hover effects through CSS instead of JavaScript */
+.quarto-grid-item:hover,
+.card.h-100:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.quarto-grid-item:hover .listing-image,
+.card.h-100:hover .thumbnail-image,
+.card.h-100:hover .card-img-top {
+  transform: scale(1.05) !important;
+  transition: transform 0.3s ease !important;
+}
+
+/* Force stable rendering across viewport sizes */
+@media (max-width: 992px) {
+  .quarto-grid-item, 
+  .card.h-100 {
+    height: 500px !important;
+    min-height: 500px !important;
+    max-height: 500px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .quarto-grid-item, 
+  .card.h-100 {
+    height: 520px !important;
+    min-height: 520px !important;
+    max-height: 520px !important;
+  }
+} 

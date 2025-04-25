@@ -1,0 +1,20 @@
+```{=html}
+<div class="quarto-grid quarto-listing-grid">
+<% for (const item of items) { %>
+  <div class="quarto-grid-item card-hover">
+    <% if (item.image) { %>
+    <img src="<%- item.image %>" class="listing-image" alt="<%- item.title %>">
+    <% } %>
+    <div class="card-body">
+      <h5 class="listing-title"><%- item.title %></h5>
+      <% if (item.description) { %>
+      <div class="listing-description"><%- item.description %></div>
+      <% } %>
+      <% if (item.date) { %>
+      <div class="listing-date"><%- item.date %></div>
+      <% } %>
+    </div>
+  </div>
+<% } %>
+</div>
+``` 

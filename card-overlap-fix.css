@@ -1,0 +1,78 @@
+/* Card Overlap Fix - Ensures proper spacing and prevents content overlapping in post cards */
+
+/* Add additional space for card elements and prevent overlapping */
+.quarto-grid-item, .card.h-100 {
+  position: relative !important;
+  overflow: visible !important; /* Allow content to be visible */
+  height: 480px !important; /* Increased height */
+}
+
+/* Ensure the image container doesn't overflow */
+.quarto-grid-item p.card-img-top, 
+.card.h-100 p.card-img-top {
+  overflow: hidden !important;
+  height: 30% !important; /* Reduced image container height */
+}
+
+/* Make sure card body has enough space for content */
+.quarto-grid-item .card-body, 
+.card.h-100 .post-contents {
+  padding: 1rem 1.2rem 1.5rem !important; /* Increased padding */
+  height: 70% !important; /* Increased body height */
+}
+
+/* Fix for category spacing */
+.quarto-grid-item .listing-categories, 
+.card.h-100 .quarto-categories {
+  margin-bottom: 2.5rem !important; /* Extra space below categories */
+  max-height: 5rem !important; /* More space for categories */
+}
+
+/* Absolutely position the date to avoid overlapping */
+.quarto-grid-item .listing-date,
+.card.h-100 .listing-date {
+  position: absolute !important;
+  bottom: 1.2rem !important;
+  left: 1.2rem !important;
+  right: 1.2rem !important;
+  width: calc(100% - 2.4rem) !important;
+  padding-top: 0.5rem !important;
+  background-color: #ffffff !important; /* Match card background */
+  z-index: 1 !important; /* Ensure it appears above other content */
+}
+
+/* Make sure titles don't overlap with categories */
+.quarto-grid-item .listing-title, 
+.card.h-100 .card-title.listing-title {
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.2rem !important; /* Extra space below title */
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important; /* Show max 3 lines */
+  -webkit-box-orient: vertical !important;
+  max-height: 5rem !important; /* Increased height for 3 lines */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Ensure consistent card heights on different screen sizes */
+@media (max-width: 992px) {
+  .quarto-grid-item, .card.h-100 {
+    height: 500px !important; /* Slightly taller on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .quarto-grid-item, .card.h-100 {
+    height: 520px !important; /* Even taller on small screens */
+  }
+}
+
+/* Fix for Safari browsers */
+@supports (-webkit-hyphens:none) {
+  .quarto-grid-item .listing-date,
+  .card.h-100 .listing-date {
+    position: absolute !important;
+    bottom: 0 !important;
+    padding-bottom: 1.2rem !important;
+  }
+} 

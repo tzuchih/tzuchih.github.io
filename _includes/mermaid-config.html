@@ -1,0 +1,57 @@
+<!-- Mermaid configuration template for use in QMD files -->
+<div class="mermaid-init-config" style="display:none">
+%%{init: {
+  'theme': 'neutral',
+  'themeVariables': {
+    'primaryColor': '#999999',
+    'primaryTextColor': '#333333',
+    'primaryBorderColor': '#777777',
+    'lineColor': '#555555',
+    'secondaryColor': 'transparent',
+    'tertiaryColor': 'transparent',
+    'background': 'transparent',
+    'clusterBkg': 'transparent',
+    'clusterBorder': 'transparent'
+  },
+  'flowchart': {
+    'htmlLabels': true,
+    'curve': 'basis',
+    'rankSpacing': 60
+  }
+}}%%
+</div>
+
+<!-- Usage instructions (remove when copying): 
+To use this configuration in a QMD file, wrap your mermaid diagram in a div 
+with the class "diagram-container" and include this configuration at the start
+of your mermaid code block:
+
+<div class="diagram-container">
+```{mermaid}
+%%{init: {
+  'theme': 'neutral',
+  'themeVariables': {
+    'primaryColor': '#999999',
+    'primaryTextColor': '#333333',
+    'primaryBorderColor': '#777777',
+    'lineColor': '#555555',
+    'secondaryColor': 'transparent',
+    'tertiaryColor': 'transparent',
+    'background': 'transparent',
+    'clusterBkg': 'transparent',
+    'clusterBorder': 'transparent'
+  },
+  'flowchart': {
+    'htmlLabels': true,
+    'curve': 'basis',
+    'rankSpacing': 60
+  }
+}}%%
+%%| fig-cap: "Your caption here"
+%%| fig-width: 9
+%%| fig-height: 18
+flowchart TD
+    A["Start"] --> B["End"]
+```
+</div>
+--> 

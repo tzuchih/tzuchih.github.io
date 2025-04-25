@@ -1,0 +1,118 @@
+---
+title: ""
+page-title: "Lydia's Portfolio"
+document-title: "Lydia's Portfolio"
+title-block-style: default
+format:
+  html:
+    anchor-sections: false
+    css: [about-spacing-fix.css, projects-fix.css]
+---
+
+
+::: {.docs-list-title-container}
+# Hi I'm Lydia 👋🏼 {.docs-list-title .no-anchor}
+:::
+
+::: {.about-container}
+</div>
+
+::: {.image-gallery}
+::: {.image-card}
+![](images/profile/Aboutme_1.jpg)
+Work
+:::
+
+::: {.image-card}
+![](images/profile/Aboutme_2.jpg) 
+Travel
+:::
+
+::: {.image-card}
+![](images/profile/Aboutme_3.jpg)
+Food
+:::
+:::
+
+---
+
+## Snapshot
+- **3M Electronics Material | 5 + years**: <br/>I worked as Marketing Analyst and Technical Product Manager for semiconductor products—worked with Sales, R&D, and Manufacturing to launch adhesive and packaging solutions.
+- **M.S. Business Analytics | UC Irvine**: <br/>Focus in machine learning, statistics, and data storytelling. Held student-club leadership roles in **Product Club (VP Ops)** and **Women in Business (VP Comms)**.
+---
+
+## What I'm great at
+
+```{=html}
+<div style="display: flex; flex-wrap: nowrap; gap: 15px; margin: 1.5rem 0;">
+  <div style="flex: 1 1 0; min-width: 0; background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 1rem; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,.08);">
+    <h3 style="font-size: 1.1rem; margin-bottom: 1rem;"><span aria-hidden="true">🔍</span> Data Science</h3>
+    <span class="skill-chip">Python</span>
+    <span class="skill-chip">MySQL</span>
+    <span class="skill-chip">scikit-learn</span>
+    <span class="skill-chip">Forecasting</span>
+    <span class="skill-chip">Clustering</span>
+    <span class="skill-chip">NLP</span>
+    <span class="skill-chip">Deep Learning</span>
+  </div>
+
+  <div style="flex: 1 1 0; min-width: 0; background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 1rem; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,.08);">
+    <h3 style="font-size: 1.1rem; margin-bottom: 1rem;"><span aria-hidden="true">📊</span> Story-telling</h3>
+    <span class="skill-chip">Tableau</span>
+    <span class="skill-chip">Quarto</span>
+    <span class="skill-chip">Power BI</span>
+    <span class="skill-chip">Dashboards</span>
+    <span class="skill-chip">Slide-docs</span>
+    <span class="skill-chip">Data Viz</span>
+  </div>
+
+  <div style="flex: 1 1 0; min-width: 0; background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 1rem; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,.08);">
+    <h3 style="font-size: 1.1rem; margin-bottom: 1rem;"><span aria-hidden="true">🚀</span> Product / Project</h3>
+    <span class="skill-chip">Agile</span>
+    <span class="skill-chip">Jira</span>
+    <span class="skill-chip">Lean</span>
+    <span class="skill-chip">Six Sigma</span>
+    <span class="skill-chip">A/B testing</span>
+    <span class="skill-chip">New Product Launch</span>
+    <span class="skill-chip">Go-To-Market</span>
+    <span class="skill-chip">Stakeholder Alignment</span>
+  </div>
+</div>
+```
+
+---
+
+## Working style
+Clear communication, thoughtful prioritization, and a steady focus on delivery. I collaborate with teams and stakeholders to turn data-driven insights into real-world value—even when the path forward is ambiguous.
+---
+
+## Outside of Work
+🏀  Watching NBA games    
+🥾  National-park hikes & new trails    
+🍣  Hunting hidden-gem everywhere    
+📸  Freezing moments with friends & family  
+
+---
+
+<br/>
+
+> **Good data work = clarity × collaboration × impact.**  
+> That's the lens I bring to every project.
+
+[📬 Let's chat](mailto:lydia.tzuchi@gmail.com) about data, product ideas, or your favorite park.
+
+
+
+:::
+
+```{=html}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Make sure the title is visible and properly styled
+  const titleContainer = document.querySelector('.docs-list-title-container');
+  if (titleContainer) {
+    console.log("Found title container, ensuring visibility");
+    titleContainer.style.display = 'block';
+  }
+});
+</script>

@@ -1,0 +1,150 @@
+---
+page-layout: full
+page-title: "Lydia's Portfolio"
+document-title: "Lydia's Portfolio"
+format:
+  html:
+    css: [projects-fix.css, project-card-custom.css, title-hard-fix.css]
+listing:
+  contents: 
+    - "posts/*.qmd"
+    - "!posts/*.ipynb"
+    - "!posts/_*.qmd"
+  sort: "date desc"
+  type: grid
+  grid-columns: 3
+  image-height: 220px
+  page-size: 100
+  fields: [image, date, title, description, categories]
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  feed: true
+---
+
+::: {.docs-list-title-container}
+# My Data Science & Analytics Projects {.docs-list-title .no-anchor}
+:::
+
+::: {.projects-intro}
+Welcome to my projects page! Here, you'll find a collection of my work in data science, analytics, and visualization. Each project showcases different skills and techniques I've applied to solve real-world problems.
+:::
+
+::: {.projects-content}
+:::{#listing-projects}
+:::
+:::
+
+```{=html}
+<!-- Direct fix for title refresh glitches -->
+<script src="js/title-refresh-fix.js"></script>
+
+<style>
+/* Immediate CSS to hide horizontal rules */
+hr {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+</style>
+
+<script>
+// IIFE to execute immediately
+(function() {
+  // Immediately hide any HR elements that might be present
+  document.querySelectorAll('hr').forEach(function(el) {
+    el.style.display = 'none';
+    el.style.visibility = 'hidden';
+    el.style.height = '0';
+    el.style.width = '0';
+    el.style.margin = '0';
+    el.style.padding = '0';
+    el.style.opacity = '0';
+    el.style.border = 'none';
+    
+    // Try to actually remove from DOM
+    if (el.parentNode) {
+      el.parentNode.removeChild(el);
+    }
+  });
+})();
+</script>
+
+<script>
+// Hide page content until fully loaded to prevent flickering
+document.addEventListener('DOMContentLoaded', function() {
+  // Remove any horizontal rules
+  document.querySelectorAll('hr').forEach(hr => {
+    hr.style.display = 'none';
+    hr.style.visibility = 'hidden';
+    hr.style.height = '0';
+    hr.style.opacity = '0';
+    hr.style.margin = '0';
+    hr.style.padding = '0';
+    hr.remove(); // Actually remove from DOM
+  });
+  
+  // Apply styles to the project title container to match Recent Posts style
+  const projectsHeader = document.querySelector('.docs-list-title-container');
+  if (projectsHeader) {
+    projectsHeader.style.cssText = "text-align: left !important; margin-bottom: 0.5rem !important; margin-top: -1rem !important; transform: none !important; width: 100% !important;";
+  }
+  
+  const projectsIntro = document.querySelector('.projects-intro');
+  if (projectsIntro) {
+    projectsIntro.style.marginBottom = '3rem';
+    projectsIntro.style.fontSize = '1.1rem';
+    projectsIntro.style.lineHeight = '1.6';
+    projectsIntro.style.color = '#5D6D7E';
+    projectsIntro.style.maxWidth = '900px';
+    // Force rendering
+    projectsIntro.style.display = 'block';
+  }
+  
+  // Force refresh the listing
+  if (window['quarto-listings'] && window['quarto-listings']['listing-projects']) {
+    window['quarto-listings']['listing-projects'].update();
+  }
+});
+</script>
+
+<!-- Force refresh script for capturing all posts -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // This ensures all posts are captured even if they were added after the last build
+  setTimeout(function() {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+    
+    // Check for any missing posts and try to add them manually
+    const existingPosts = document.querySelectorAll('.listing-title');
+    const existingTitles = Array.from(existingPosts).map(post => post.innerText.trim());
+    
+    // Apply thœe title-hard-fix styling to any new posts
+    document.querySelectorAll('.quarto-grid-item, .card.h-100').forEach(function(card) {
+      card.style.height = '480px';
+      card.style.minHeight = '480px';
+      card.style.maxHeight = '480px';
+      card.style.overflow = 'hidden';
+      card.style.display = 'flex';
+      card.style.flexDirection = 'column';
+      
+      const title = card.querySelector('.listing-title, .card-title');
+      if (title) {
+        title.style.display = '-webkit-box';
+        title.style.webkitLineClamp = '3';
+        title.style.webkitBoxOrient = 'vertical';
+        title.style.maxHeight = '5rem';
+        title.style.minHeight = '5rem';
+        title.style.overflow = 'hidden';
+        title.style.textOverflow = 'ellipsis';
+      }
+    });
+  }, 1000);
+});
+</script>

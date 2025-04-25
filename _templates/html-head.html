@@ -1,0 +1,50 @@
+$-- HTML head ----------------------------------------------------------------------
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-$quarto-version$" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<title>👩🏻‍💻 Lydia's Portfolio</title>
+
+$-- favicon --------------------------------------------------
+$if(favicon)$
+<link rel="shortcut icon" href="$favicon$" />
+$endif$
+
+$-- metadata --------------------------------------------------
+$if(description)$
+<meta name="description" content="$description$" />
+$endif$
+
+$-- canonical --------------------------------------------------
+$if(canonical)$
+<link rel="canonical" href="$canonical$" />
+$endif$
+
+$-- dublin-core metadata ----------------------------------
+$if(title)$
+<meta name="DC.title" content="$title$" />
+$endif$
+$if(author-meta)$
+<meta name="DC.creator" content="$author-meta$" />
+$endif$
+$if(date-meta)$
+<meta name="DC.date" content="$date-meta$" />
+$endif$
+$if(keywords)$
+<meta name="DC.subject" content="$keywords$" />
+$endif$
+$if(description)$
+<meta name="DC.description" content="$description$" />
+$endif$
+
+$-- toc styles ------------------------------------------
+$if(toc)$
+<style>
+#$idprefix$TOC {
+  $if(toc-overflow)$
+  max-height: $toc-overflow$;
+  overflow: auto;
+  $endif$
+}
+</style>
+$endif$ 

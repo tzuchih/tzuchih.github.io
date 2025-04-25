@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Recommendation System Diagram</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.3.1/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      securityLevel: 'loose',
+      flowchart: {
+        curve: 'basis',
+        htmlLabels: true
+      },
+      themeVariables: {
+        primaryColor: 'transparent',
+        primaryTextColor: '#4A5568',
+        primaryBorderColor: '#9FB2C8',
+        lineColor: '#9FB2C8',
+        secondaryColor: 'transparent',
+        tertiaryColor: 'transparent'
+      }
+    });
+  </script>
+  <style>
+    .diagram-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0;
+    }
+    .mermaid {
+      width: 100%;
+      background-color: transparent;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div class="diagram-container">
+    <div class="mermaid">
+      flowchart TD
+        A1[/"User Upload<br/>Resume"/] -->|"Extract Resume Text"| B1["Preprocess Resume Text<br/>(<span style='color:#4169e1'>Remove<br/>Lowercase, Stopwords...</span>)"]
+        
+        A2{"User Set Preference<br/>(Location, Job<br/>Type, Level)"} --> B2["Filter Job Listings<br/>(Based on User Criteria)"]
+        
+        B1 & B2 --> C["<span style='color:#4169e1'>TF-IDF Vectorization</span><br/>(Job Description, Resume)"]
+        C --> D["Compute <span style='color:#4169e1'>Cosine Similarity</span>"]
+        D --> E["Find Top Matches"]
+        E --> F["Analyze Skill Gaps"]
+        F --> G[/"Display Results"/]
+        G --> H["Generate Cover Letter"]
+        
+        classDef parallelogram path,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;
+        classDef diamond rhombus,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;
+        classDef rectangle rect,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;
+        
+        class A1 parallelogram;
+        class A2 diamond;
+        class B1,B2,C,D,E,F,H rectangle;
+        class G parallelogram;
+    </div>
+  </div>
+</body>
+</html> 

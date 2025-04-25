@@ -1,0 +1,73 @@
+/* 
+ * Post Tag Fix - Ensures category tags in post detail pages 
+ * appear under the title without overlapping other content
+ */
+
+/* Fix position of category tags in post detail pages */
+.quarto-title .quarto-categories,
+.quarto-title-block .quarto-categories,
+header .quarto-categories,
+.column-body header .quarto-categories,
+#title-block-header .quarto-categories {
+  position: relative !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.4rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+  width: auto !important;
+  max-width: 100% !important;
+  min-height: 1.8rem !important;
+  height: auto !important;
+  padding: 0 !important;
+  z-index: 5 !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  overflow: visible !important;
+}
+
+/* Style individual categories in post detail pages */
+.quarto-title .quarto-category,
+.quarto-title-block .quarto-category,
+header .quarto-category,
+#title-block-header .quarto-category {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.25rem 0.6rem !important;
+  background-color: rgba(191, 211, 230, 0.25) !important;
+  color: #4A5568 !important;
+  border-radius: 4px !important;
+  font-size: 0.7rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+  margin: 0 !important;
+  height: auto !important;
+  min-height: 1.5rem !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Add more space between tags and description */
+.quarto-title .description,
+.quarto-title-block .description,
+#title-block-header .description {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  padding-top: 0.5rem !important;
+}
+
+/* Fix spacing between title and tags */
+.quarto-title h1.title,
+.quarto-title-block h1.title,
+#title-block-header h1.title {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Fix spacing for title metadata */
+.quarto-title-meta {
+  margin-top: 2rem !important;
+} 

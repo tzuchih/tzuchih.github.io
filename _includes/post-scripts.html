@@ -1,0 +1,130 @@
+<!-- Post-processing scripts -->
+<script src="../js/mermaid-fix.js"></script>
+<script src="../js/home-card-fix.js"></script>
+<script src="../js/listing-refresh.js"></script>
+<script src="../js/post-tag-fix.js"></script>
+<script src="../js/code-toggle.js"></script>
+<script src="../js/force-output-display.js"></script>
+<script src="../js/mute-dataframe-colors.js"></script>
+<script src="../js/debug-outputs.js"></script>
+<script src="../js/hide-show-more.js"></script>
+
+<!-- Direct style injection for neutral colors -->
+<style id="neutral-output-colors">
+  /* Extremely aggressive color neutralization */
+  .cell-output, 
+  .cell-output-stdout, 
+  .cell-output-stderr, 
+  .cell-output-display,
+  .cell-output *, 
+  .cell-output-stdout *, 
+  .cell-output-stderr *, 
+  .cell-output-display * {
+    color: #444444 !important;
+  }
+  
+  .dataframe, 
+  .dataframe *,
+  table.dataframe,
+  table.dataframe *,
+  .cell-output table,
+  .cell-output table *,
+  .jupyter-dataframe,
+  .jupyter-dataframe * {
+    color: #444444 !important;
+  }
+  
+  /* Target all possible pandas styling classes */
+  .text-info, .text-success, .text-warning, .text-danger,
+  [class*="color"], [class*="Color"],
+  [class*="text-"], [class*="fg-"], [class*="bg-"],
+  [style*="color"] {
+    color: #444444 !important;
+  }
+  
+  /* Target the exact pandas index styling */
+  .index_name, .col_heading, .level_0, .level_1, .level_2, .level_3,
+  .row_heading {
+    color: #444444 !important;
+  }
+</style>
+
+<!-- Direct neutralization script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    function neutralizeOutputColors() {
+      console.log('Applying direct color neutralization...');
+      
+      // Target all output elements
+      const outputs = document.querySelectorAll('.cell-output, .cell-output-stdout, .cell-output-stderr, .cell-output-display');
+      
+      outputs.forEach(output => {
+        // Set the container color
+        output.style.setProperty('color', '#444444', 'important');
+        
+        // Set all children elements
+        const allElements = output.querySelectorAll('*');
+        allElements.forEach(el => {
+          el.style.setProperty('color', '#444444', 'important');
+          
+          // Clear any inline styles that might override
+          if (el.hasAttribute('style') && el.getAttribute('style').includes('color')) {
+            const currentStyle = el.getAttribute('style');
+            const newStyle = currentStyle.replace(/color\s*:\s*[^;]+;?/gi, 'color: #444444 !important;');
+            el.setAttribute('style', newStyle);
+          }
+          
+          // Extra handling for table elements
+          if (el.tagName === 'TD' || el.tagName === 'TH') {
+            el.style.setProperty('color', '#444444', 'important');
+          }
+        });
+      });
+    }
+    
+    // Run immediately and after small delays
+    neutralizeOutputColors();
+    setTimeout(neutralizeOutputColors, 500);
+    setTimeout(neutralizeOutputColors, 1000);
+    setTimeout(neutralizeOutputColors, 2000);
+  });
+</script>
+
+<!-- Script to remove background from diagrams -->
+<script>
+// Remove backgrounds from diagrams
+document.addEventListener('DOMContentLoaded', function() {
+  const removeBackgrounds = function() {
+    // Look for both custom classes
+    const diagrams = document.querySelectorAll('.job-rec-diagram .mermaid svg, .diagram-container .mermaid svg');
+    
+    diagrams.forEach(svg => {
+      if (!svg) return;
+      
+      // Apply transparent background to SVG
+      svg.style.backgroundColor = 'transparent';
+      
+      // Find and clear all background elements
+      svg.querySelectorAll('rect, polygon').forEach(el => {
+        if (!el.closest('.node')) {
+          el.setAttribute('fill', 'transparent');
+          el.style.fill = 'transparent';
+        }
+      });
+      
+      // Make all foreignObjects transparent
+      svg.querySelectorAll('foreignObject').forEach(el => {
+        el.style.backgroundColor = 'transparent';
+        el.querySelectorAll('div').forEach(div => {
+          div.style.backgroundColor = 'transparent';
+        });
+      });
+    });
+  };
+  
+  // Run at different intervals to catch all rendering phases
+  setTimeout(removeBackgrounds, 500);
+  setTimeout(removeBackgrounds, 1500);
+  setTimeout(removeBackgrounds, 3000); // Extra delay for slower page loads
+});
+</script> 

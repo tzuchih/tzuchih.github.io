@@ -1,0 +1,2126 @@
+/* css styles */
+
+/* Basic Styling */
+body {
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  background-color: #F5F5F5;
+  color: #34495E;
+}
+
+/* Make the main content area wider */
+#quarto-content {
+  max-width: 100% !important;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.container-fluid {
+  max-width: 100% !important;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2C3E50;
+}
+
+a {
+  text-decoration: none;
+  color: #B25D4C;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #9A4E3F;
+}
+
+/* Hero Section Styling */
+.hero-banner {
+  padding: 1.5rem 0;
+  position: relative;
+  background: linear-gradient(135deg, #9FB8D0 0%, #BFD3E6 40%, #E8D8D5 85%, #E8D8D5 100%);
+  margin-bottom: 0rem;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(44, 62, 80, 0.07);
+  width: 100%;
+  margin-left: -8%;
+  margin-right: -8%;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 150%, rgba(178, 93, 76, 0.3) 0%, transparent 80%),
+    radial-gradient(circle at 80% -50%, rgba(44, 62, 80, 0.15) 0%, transparent 80%);
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h2.animate-text {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  color: #2C3E50;
+  animation: fadeInUp 0.8s ease forwards;
+  text-decoration: none !important;
+  cursor: default !important;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.highlight-word {
+  position: relative;
+  color: #B25D4C;
+  font-weight: 700;
+}
+
+.animate-up {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  font-size: 0.95rem;
+  max-width: 80%;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.8rem 0;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.stat-item {
+  background: white;
+  padding: 0.7rem 0.4rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(44, 62, 80, 0.05);
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 80px;
+  max-width: 24%;
+  text-align: center;
+  border: 1px solid rgba(178, 93, 76, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 160px;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(178, 93, 76, 0.3);
+  box-shadow: 0 10px 20px rgba(44, 62, 80, 0.08);
+}
+
+.stat-item strong {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #B25D4C;
+  margin-bottom: 0.2rem;
+  text-align: center;
+  margin-top: 0.4rem;
+  height: 24px;
+}
+
+.stat-item span, .stat-item br + br {
+  font-size: 0.65rem;
+  color: #7F8C8D;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary.cta-button {
+  background-color: #B25D4C;
+  color: white !important;
+}
+
+.btn-secondary.cta-button.secondary {
+  background-color: transparent;
+  border: 2px solid #B25D4C;
+  color: #B25D4C !important;
+}
+
+.cta-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(178, 93, 76, 0.2);
+  text-decoration: none;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments for hero section */
+@media (max-width: 992px) {
+  .hero-content {
+    padding: 0 3rem;
+  }
+  
+  .animate-up {
+    max-width: 90%;
+  }
+  
+  .hero-stats {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    padding: 2.5rem 0;
+    margin-bottom: 0rem;
+  }
+  
+  .hero-content {
+    padding: 0 2rem;
+  }
+  
+  .hero-content h2.animate-text {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .animate-up {
+    max-width: 100%;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-stats {
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .stat-item {
+    min-width: 100px;
+    padding: 1rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Search Bar Styling */
+.quarto-search {
+  margin-bottom: 1rem;
+}
+
+/* Listing Grid Styling */
+.quarto-listing-default {
+  margin-top: 2rem;
+}
+
+.listing-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #2C3E50;
+}
+
+.listing-date {
+  font-size: 0.8rem;
+  color: #7F8C8D;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.listing-description {
+  font-size: 0.9rem;
+  color: #7F8C8D;
+}
+
+/* Hide author info */
+.listing-author {
+  display: none;
+}
+
+/* Hide reading time */
+.listing-reading-time {
+  display: none;
+}
+
+/* Remove attribution section */
+.card-attribution {
+  display: none;
+}
+
+/* Post Styling - Updated spacing */
+.quarto-title-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 0.75rem;
+}
+
+.quarto-title-banner {
+  padding: 1.5rem 0; /* Reduced from 2rem */
+}
+
+.title {
+  font-size: 2.5rem;
+  line-height: 1.3;
+  margin-bottom: 0.75rem; /* Reduced from 1.5rem */
+  word-wrap: break-word;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Fix overlapping description text */
+.quarto-title-block .description p {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  line-height: 1.8;
+  margin-top: 0.5rem; /* Reduced from 1.5rem */
+  margin-bottom: 0.75rem; /* Reduced from 1.5rem */
+}
+
+/* Ensure categories don't overlap */
+.quarto-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Fix for post top section with overlapping elements */
+header.quarto-title-block {
+  margin-bottom: 2rem;
+}
+
+header.quarto-title-block .quarto-title-meta-heading {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #4A5568;
+}
+
+header.quarto-title-block .quarto-title-meta-contents {
+  font-size: 0.95rem;
+  color: #718096;
+}
+
+/* Documentation List Title Container */
+.docs-list-title-container {
+  width: 100%;
+  text-align: left;
+  position: relative;
+  margin-top: -1rem;
+  margin-bottom: 0.5rem;
+  transform: none !important;
+}
+
+/* Documentation List Title */
+.docs-list-title {
+  font-size: 1.8rem;
+  color: #2C3E50;
+  font-weight: 700;
+  padding: 0 !important;
+  border-left: none !important;
+  text-align: left;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+/* Section divider line */
+.docs-list-title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #9FB8D0, #BFD3E6, #E8D8D5);
+  margin-top: 0.4rem;
+  margin-bottom: 0.15rem;
+}
+
+/* Posts Grid Container with proper alignment */
+.posts-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Micro Interactions */
+.listing-categories {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  color: #B25D4C;
+}
+
+.quarto-grid-item:hover .listing-categories {
+  opacity: 1;
+}
+
+/* Improve spacing between post cards */
+.quarto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Force a single row for grid items */
+@media (min-width: 992px) {
+  .quarto-grid {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+/* Card styling */
+.quarto-grid-item {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(44, 62, 80, 0.06);
+  border: 1px solid rgba(178, 93, 76, 0.1);
+  transition: all 0.3s ease;
+  width: 110% !important;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.quarto-grid-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(44, 62, 80, 0.1);
+  border-color: rgba(178, 93, 76, 0.2);
+}
+
+.quarto-grid-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, #9FB8D0, #B25D4C);
+  transition: width 0.3s ease;
+}
+
+.quarto-grid-item:hover::after {
+  width: 100%;
+}
+
+/* Improve image size in cards */
+.listing-image, .thumbnail-image {
+  height: 35% !important; /* Reduced from 50% to 35% */
+  width: 100% !important;
+  object-fit: cover !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: block !important;
+  border-top-left-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+/* Card content container */
+.card-body {
+  padding: 0.7rem 1rem 0.8rem !important; /* Reduced top padding */
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.4rem !important;
+  flex: 1 !important;
+  background-color: #FFFFFF;
+  height: 65% !important; /* Increased from 50% to 65% */
+}
+
+/* Card content styling */
+.listing-title {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #2C3E50 !important;
+  margin-top: -0.3rem !important;
+  margin-bottom: 0.3rem !important;
+  line-height: 1.5 !important;
+  transition: color 0.3s ease !important;
+  display: block !important;
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.quarto-grid-item:hover .listing-title {
+  color: #B25D4C;
+}
+
+.listing-description {
+  color: #7F8C8D;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.listing-date {
+  color: #B25D4C;
+  font-size: 0.8rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(178, 93, 76, 0.1);
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .quarto-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.89rem;
+  }
+  
+  .docs-list-title-container,
+  .posts-section {
+    padding: 0 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .docs-list-title-container,
+  .posts-section {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 2rem;
+  }
+  
+  .docs-list-title {
+    padding: 0 !important;
+    font-size: 1.75rem;
+  }
+  
+  .quarto-grid {
+    grid-template-columns: 1fr;
+    gap: 1.89rem;
+    max-width: 100%;
+  }
+  
+  .quarto-grid-item {
+    max-width: 100%; /* Full width on mobile */
+  }
+  
+  .listing-image {
+    height: 180px;
+  }
+}
+
+/* Profile Picture Styles */
+.profile-pic-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: transform 0.3s ease;
+  border: 3px solid #B25D4C;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+/* Sidebar Logo Styling */
+.sidebar-logo {
+  width: 150px !important;
+  height: 150px !important;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  margin: 1rem auto !important;
+  display: block;
+  border: 3px solid #B25D4C;
+}
+
+.sidebar-logo:hover {
+  transform: scale(1.05);
+}
+
+.image-gallery {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.image-card {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  text-align: center;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(44, 62, 80, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.image-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.1);
+}
+
+.image-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+  transition: transform 0.3s ease;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+.image-card > p:last-child {
+  padding: 1rem;
+  margin: 0;
+  font-weight: 600;
+  color: #2C3E50;
+}
+
+@media (max-width: 768px) {
+  .image-gallery {
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .image-card {
+    min-width: 150px;
+    max-width: 250px;
+  }
+}
+
+/* Enhanced mermaid diagram support */
+.mermaid {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 2rem auto !important;
+  max-width: 100% !important;
+  background-color: white !important;
+  padding: 1.5rem !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Fix for mermaid diagram containers */
+.mermaid-container {
+  display: block !important;
+  margin: 2rem auto !important;
+  max-width: 900px !important;
+  background-color: white !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  overflow: auto !important;
+}
+
+/* Ensure SVGs in mermaid are visible */
+.mermaid svg {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 auto !important;
+}
+
+/* Make pre.mermaid-js visible until our script converts it */
+pre.mermaid-js {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 2rem auto !important;
+  max-width: 100% !important;
+  background-color: white !important;
+  padding: 1.5rem !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  white-space: pre-wrap !important;
+  font-family: monospace !important;
+  color: #333 !important;
+}
+
+.mermaid .flowchart-label {
+  fill: #2C3E50 !important;
+  color: #2C3E50 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-size: 14px !important;
+}
+
+.mermaid .edgePath .path {
+  stroke: #B25D4C !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon,
+.mermaid .node path {
+  fill: rgba(178, 93, 76, 0.1) !important;
+  stroke: #B25D4C !important;
+  stroke-width: 1px !important;
+}
+
+/* Hide code blocks and related elements - except mermaid diagrams and python */
+.sourceCode:not(.mermaid):not(.python),
+.cell:not(:has(.mermaid)):not(:has(.python)),
+div.sourceCode:not(.mermaid):not(:has(.sourceCode.python)),
+pre.sourceCode:not(.mermaid):not(.python),
+code:not(.mermaid):not(.sourceCode.python),
+.code-with-filename:not(.mermaid):not(:has(.python)),
+.code-annotation-container:not(.mermaid):not(:has(.python)),
+.code-tools:not(.mermaid):not(:has(.python)),
+.code-fold-btn:not(.mermaid):not(:has(.python)),
+.code-copy-button:not(.mermaid):not(:has(.python)) {
+  display: none !important;
+}
+
+/* Ensure mermaid diagrams are visible with !important flags */
+.mermaid.error {
+  display: none !important;
+}
+
+pre.mermaid-pre,
+div.mermaid-input {
+  display: none !important;
+}
+
+p:has(code):not(:has(.mermaid)):not(:has(.python)),
+div:has(> pre):not(:has(.mermaid)):not(:has(.python)),
+div:has(> .sourceCode):not(:has(.mermaid)):not(:has(.sourceCode.python)) {
+  display: none !important;
+}
+
+/* Explicitly show Python code blocks */
+.sourceCode.python,
+code.sourceCode.python, 
+pre.sourceCode.python,
+div.sourceCode:has(code.sourceCode.python) {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background-color: #f8f8f8 !important;
+  padding: 1rem !important;
+  border-radius: 0.5rem !important;
+  margin: 1rem 0 !important;
+  overflow: auto !important;
+}
+
+/* Projects Page Styling */
+.projects-header {
+  padding-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.projects-header h2 {
+  font-size: 2rem;
+  color: #2C3E50;
+  font-weight: 700;
+  border-bottom: 3px solid #BFD3E6;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.projects-intro {
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #5D6D7E;
+  max-width: 900px;
+}
+
+.projects-content {
+  padding: 0 2rem 3rem 2rem;
+}
+
+/* Category Pills for Project Page */
+.listing-category {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: rgba(159, 184, 208, 0.15);
+  color: #2C3E50;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.listing-category:hover {
+  background-color: rgba(159, 184, 208, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Filter UI styling */
+.quarto-listing-filters {
+  margin: 1rem 0 2rem;
+  padding: 1rem;
+  background-color: rgba(191, 211, 230, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(159, 184, 208, 0.2);
+}
+
+.quarto-listing-filter-title {
+  font-weight: 600;
+  color: #2C3E50;
+  margin-bottom: 0.5rem;
+}
+
+.quarto-listing-filter {
+  margin-bottom: 1rem;
+}
+
+.quarto-listing-filter-input {
+  border: 1px solid rgba(159, 184, 208, 0.4);
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  width: 100%;
+}
+
+/* Responsive adjustments for projects page */
+@media (max-width: 992px) {
+  .projects-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .projects-intro {
+    font-size: 1rem;
+  }
+  
+  .projects-content {
+    padding: 0 1.5rem 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .projects-content {
+    padding: 0 1rem 2rem 1rem;
+  }
+  
+  .listing-category {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Prevent flash of unstyled content on grid layouts */
+.list.grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1.035fr) !important;
+  gap: 1.5rem !important;
+  width: 100% !important;
+  max-width: none !important;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in forwards;
+  animation-delay: 0.1s;
+}
+
+.quarto-grid-item, .card.h-100 {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  box-shadow: 0 10px 25px rgba(44, 62, 80, 0.08) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+/* Animation for smoothly fading in content */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Ensure images in grid have consistent dimensions */
+.thumbnail-image.card-img, .listing-image {
+  height: 35% !important; /* Reduced from 50% to 35% */
+  width: 100% !important;
+  object-fit: cover !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: block !important;
+  border-top-left-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+/* Ensure card body styling is consistent */
+.post-contents, .card-body {
+  padding: 0.7rem 1rem 0.8rem !important; /* Reduced top padding */
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.4rem !important;
+  flex: 1 !important;
+  background-color: #FFFFFF;
+  height: 65% !important; /* Increased from 50% to 65% */
+}
+
+/* Card content styling - Professional redesign */
+.listing-title {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #2C3E50 !important;
+  margin-top: -0.3rem !important;
+  margin-bottom: 0.3rem !important;
+  line-height: 1.5 !important;
+  transition: color 0.3s ease !important;
+  display: block !important;
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.listing-description {
+  color: #64748B !important;
+  font-size: 0.75rem !important;
+  line-height: 1.4 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.25rem !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  max-height: 2.15rem !important;
+}
+
+.listing-date {
+  color: #94A3B8 !important;
+  font-size: 0.7rem !important;
+  font-weight: 400 !important;
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+  padding-top: 0.4rem !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Redesigned card styling */
+.quarto-grid-item, .card.h-100 {
+  aspect-ratio: auto !important;
+  height: 377px !important; /* 290px * 1.3 = 377px (30% taller) */
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  opacity: 0;
+  transform: translateY(15px);
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.quarto-grid-item:hover, .card.h-100:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Remove gradient line effect */
+.quarto-grid-item::after {
+  display: none !important;
+}
+
+/* Category styling */
+.listing-category {
+  display: inline-block !important;
+  padding: 0.15rem 0.4rem !important;
+  margin-right: 0.2rem !important;
+  margin-bottom: 0.2rem !important;
+  background-color: rgba(203, 213, 225, 0.3) !important;
+  color: #475569 !important;
+  border-radius: 4px !important;
+  font-size: 0.6rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Add index page specific transformations */
+body.quarto-light:has(.posts-section) .list.grid {
+  width: 100% !important;
+  margin: 0 auto !important;
+  transform: translateX(0) !important;
+  padding-left: 4rem !important;
+  padding-right: 4rem !important;
+  justify-content: center !important;
+}
+
+/* Hide pagination elements */
+.quarto-listing-pagination,
+.page-item,
+.page-link,
+.pagination,
+nav[aria-label="Page navigation"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.view-all-projects {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.view-all-projects a {
+  color: #2C3E50;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.view-all-projects a:hover {
+  color: #B25D4C;
+  text-decoration: none;
+}
+
+/* Remove any About Me link styles */
+a[href$="about.qmd"]:not(.cta-button):not(.nav-link):not(.sidebar-item-text) {
+  display: none !important;
+}
+
+/* About page modifications - Move content higher with minimal spacing */
+body:has(.about-container) .quarto-page-breadcrumbs {
+  display: none !important;
+}
+
+body:has(.about-container) #quarto-document-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body:has(.about-container) main.content {
+  margin-top: 0 !important;
+  padding-top: 0.5rem !important; /* Reduced to just 2 lines of spacing */
+}
+
+body:has(.about-container) .about-container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  background-color: transparent !important;
+}
+
+/* Hide navigation elements at page bottom */
+body:has(.about-container) .nav-page {
+  display: none !important;
+}
+
+body:has(.about-container) .page-navigation {
+  display: none !important;
+}
+
+/* Specifically target the bottom navigation on about page */
+body:has(.about-container) nav.page-navigation {
+  display: none !important;
+  height: 0 !important;
+  visibility: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide navigation links on the About page while keeping content links */
+body:has(.about-container) a.nav-link:not(.sidebar-item-text):not(.sidebar-link),
+body:has(.about-container) .pagination-link,
+body:has(.about-container) .about-links {
+  display: none !important;
+}
+
+/* Ensure sidebar links remain visible */
+body:has(.about-container) .sidebar-item-text,
+body:has(.about-container) .sidebar-link {
+  display: flex !important;
+}
+
+/* Target page header/title area */
+body:has(.quarto-about-jolla) header.quarto-title-block {
+  display: none !important;
+}
+
+body:has(.quarto-about-jolla) .page-columns {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body:has(.quarto-about-jolla) main.content {
+  margin-top: -100px !important;
+}
+
+.quarto-about-jolla {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.quarto-about-jolla.column-page-right {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Fix vertical spacing on about page */
+.content.column-page-right {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Fix the main column spacing */
+.column-page-right {
+  margin-top: 0 !important;
+}
+
+/* Target the specific page container that holds the About Me title */
+#quarto-content.page-columns {
+  grid-row-gap: 0 !important;
+}
+
+.quarto-title {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.quarto-about-jolla .about-entity {
+  width: 100% !important;
+  text-align: left !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.quarto-about-jolla .quarto-title-block {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.quarto-about-jolla .title {
+  text-align: left !important;
+  margin-top: 0 !important;
+}
+
+.about-container h2,
+.about-container p,
+.about-container ul,
+.about-container li {
+  text-align: left !important;
+}
+
+/* Link to All Projects - make spacing persistent */
+.posts-section a[href*="projects"],
+a[href*="projects"],
+.posts-section a[href*="projects"].loaded,
+body .posts-section a[href*="projects"] {
+  display: block !important;
+  margin: 1rem 0 !important;
+  padding: 0.5rem 0 !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+.listing-title + p,
+.listing-title.loaded + p,
+body .listing-title + p {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+.listing-title,
+.listing-title.loaded,
+body .listing-title {
+  margin-bottom: 1rem !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Override any animation or JS-based changes */
+body.quarto-light:has(.posts-section) .list.grid {
+  padding-top: 0 !important;
+  margin-top: 1rem !important;
+}
+
+/* Documentation List Title Container with persistent spacing */
+.docs-list-title-container {
+  margin-top: -1rem !important;
+  margin-bottom: 0.5rem !important;
+  text-align: left !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Styles added from root styles.css */
+/* Hide pagination elements */
+.quarto-listing-pagination,
+.page-item,
+.page-link,
+.pagination,
+nav[aria-label="Page navigation"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.view-all-projects-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 2rem;
+  margin-top: 2rem !important;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 5;
+}
+
+.all-projects-link {
+  color: #2C3E50;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.all-projects-link:hover {
+  color: #B25D4C;
+  text-decoration: none;
+}
+
+/* Remove any About Me link styles at the bottom of the page */
+a[href$="about.html"].pagination-link,
+a[href$="about.qmd"].pagination-link,
+a.nav-link[href$="about.html"]:not(.sidebar-item-text):not(.nav-item),
+a.nav-link[href$="about.qmd"]:not(.sidebar-item-text):not(.nav-item) {
+  display: none !important;
+}
+
+.posts-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 0 !important;
+}
+
+/* Fix for sidebar Projects link - complete reset to match other links exactly */
+li.sidebar-item:has(a[href*="projects"]) {
+  background: transparent !important; 
+  margin: 0.4rem 0 !important;
+  padding: 0 !important;
+}
+
+li.sidebar-item:has(a[href*="projects"]) .sidebar-item-container {
+  padding: 0.8rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  background: transparent !important;
+}
+
+li.sidebar-item:has(a[href*="projects"]) a.sidebar-item-text,
+.sidebar-item a[href*="projects.html"], 
+.sidebar-item a[href*="projects.qmd"] {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  color: #34495E !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+li.sidebar-item:has(a[href*="projects"]) .menu-text {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  color: #34495E !important;
+  background: transparent !important;
+}
+
+/* Override any hover states */
+li.sidebar-item:has(a[href*="projects"]):hover,
+.sidebar-item:hover a[href*="projects.html"],
+.sidebar-item a[href*="projects.html"]:hover {
+  background: transparent !important;
+  transform: none !important;
+}
+
+/* Clear any active state backgrounds */
+.sidebar-item:has(a[href*="projects"].active),
+.sidebar-item a[href*="projects"].active {
+  background: transparent !important;
+}
+
+/* Remove background highlights from all sidebar links */
+li.sidebar-item,
+li.sidebar-item:hover,
+li.sidebar-item.active {
+  background: transparent !important;
+  margin: 0.4rem 0 !important;
+  padding: 0 !important;
+}
+
+.sidebar-item-container,
+.sidebar-item:hover .sidebar-item-container,
+.sidebar-item.active .sidebar-item-container {
+  padding: 0.8rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Override active indicator */
+.sidebar-item.active::before {
+  display: none !important;
+}
+
+/* SIMPLIFIED SIDEBAR LINK STYLES - FIXES HOVER ANIMATION */
+
+/* Reset all sidebar items to a clean base state */
+.sidebar-item {
+  background: transparent !important;
+  margin: 0.4rem 0 !important;
+  padding: 0 !important;
+}
+
+/* Style all sidebar item containers consistently */
+.sidebar-item .sidebar-item-container {
+  padding: 0.8rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  background: transparent !important;
+  transition: background-color 0.3s ease !important;
+}
+
+/* Style all sidebar links consistently */
+.sidebar-item .sidebar-item-text {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  color: #34495E !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: color 0.3s ease !important;
+}
+
+/* Style all menu text consistently */
+.sidebar-item .menu-text {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  color: #34495E !important;
+  transition: color 0.3s ease !important;
+}
+
+/* HOVER EFFECTS - Apply to ALL sidebar links */
+.sidebar-item:hover .sidebar-item-container {
+  background-color: rgba(178, 93, 76, 0.08) !important;
+}
+
+.sidebar-item:hover .sidebar-item-text,
+.sidebar-item:hover .menu-text {
+  color: #B25D4C !important;
+}
+
+/* ACTIVE STATE - For the currently selected page */
+.sidebar-item.active .sidebar-item-text,
+.sidebar-item.active .menu-text {
+  color: #B25D4C !important;
+  font-weight: 600 !important;
+}
+
+/* Remove all other conflicting sidebar styles */
+
+/* Remove background highlights from all sidebar links */
+li.sidebar-item,
+li.sidebar-item:hover,
+li.sidebar-item.active {
+  background: transparent !important;
+  margin: 0.4rem 0 !important;
+  padding: 0 !important;
+}
+
+.sidebar-item-container,
+.sidebar-item:hover .sidebar-item-container,
+.sidebar-item.active .sidebar-item-container {
+  padding: 0.8rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Override active indicator */
+.sidebar-item.active::before {
+  display: none !important;
+}
+
+/* PROFESSIONAL SIDEBAR STYLING - NEW DESIGN */
+/* Remove all existing sidebar link styles first */
+li.sidebar-item,
+li.sidebar-item:hover,
+li.sidebar-item.active,
+.sidebar-item,
+.sidebar-item:hover,
+.sidebar-item.active,
+.sidebar-item-container,
+.sidebar-item:hover .sidebar-item-container,
+.sidebar-item.active .sidebar-item-container,
+.sidebar-item .sidebar-item-text,
+.sidebar-item:hover .sidebar-item-text,
+.sidebar-item.active .sidebar-item-text,
+.sidebar-item .menu-text,
+.sidebar-item:hover .menu-text,
+.sidebar-item.active .menu-text,
+li.sidebar-item:has(a[href*="projects"]),
+li.sidebar-item:has(a[href*="projects"]) .sidebar-item-container,
+li.sidebar-item:has(a[href*="projects"]) a.sidebar-item-text,
+li.sidebar-item:has(a[href*="projects"]) .menu-text {
+  transition: none !important;
+  animation: none !important;
+  background: none !important;
+  transform: none !important;
+}
+
+/* Now create a completely new styling for ALL sidebar links */
+#quarto-sidebar ul.list-unstyled li.sidebar-item {
+  margin: 0.85rem 0 !important;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  background-color: transparent !important;
+}
+
+#quarto-sidebar ul.list-unstyled li.sidebar-item .sidebar-item-container {
+  padding: 0.8rem 1.2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  border-radius: 6px !important;
+  border-left: 3px solid transparent !important;
+  transition: all 0.2s ease-in-out !important;
+  background-color: transparent !important;
+}
+
+#quarto-sidebar ul.list-unstyled li.sidebar-item .sidebar-item-text {
+  font-size: 1.35rem !important;
+  font-weight: 500 !important;
+  color: #4A5568 !important;
+  letter-spacing: 0.01em !important;
+  transition: all 0.2s ease-in-out !important;
+  text-decoration: none !important;
+}
+
+#quarto-sidebar ul.list-unstyled li.sidebar-item .menu-text {
+  font-size: 1.35rem !important;
+  font-weight: 500 !important;
+  color: #4A5568 !important;
+  letter-spacing: 0.01em !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* HOVER STATES - All sidebar links */
+#quarto-sidebar ul.list-unstyled li.sidebar-item:hover .sidebar-item-container {
+  background-color: rgba(191, 211, 230, 0.15) !important;
+  border-left: 3px solid rgba(178, 93, 76, 0.4) !important;
+  transform: translateX(3px) !important;
+}
+
+#quarto-sidebar ul.list-unstyled li.sidebar-item:hover .sidebar-item-text,
+#quarto-sidebar ul.list-unstyled li.sidebar-item:hover .menu-text {
+  color: #B25D4C !important;
+  transform: translateX(2px) !important;
+}
+
+/* ACTIVE STATES - All sidebar links */
+#quarto-sidebar ul.list-unstyled li.sidebar-item.active .sidebar-item-container {
+  background-color: rgba(191, 211, 230, 0.2) !important;
+  border-left: 3px solid #B25D4C !important;
+}
+
+#quarto-sidebar ul.list-unstyled li.sidebar-item.active .sidebar-item-text,
+#quarto-sidebar ul.list-unstyled li.sidebar-item.active .menu-text {
+  color: #B25D4C !important;
+  font-weight: 600 !important;
+}
+
+/* SPECIAL TREATMENT FOR PROJECTS LINK to ensure consistency */
+#quarto-sidebar ul.list-unstyled li.sidebar-item:has(a[href*="projects"]) {
+  margin: 0.85rem 0 !important;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  background-color: transparent !important;
+}
+
+#quarto-sidebar ul.list-unstyled li.sidebar-item:has(a[href*="projects"]) .sidebar-item-container {
+  padding: 0.8rem 1.2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  border-radius: 6px !important;
+  border-left: 3px solid transparent !important;
+  transition: all 0.2s ease-in-out !important;
+  background-color: transparent !important;
+}
+
+#quarto-sidebar ul.list-unstyled li.sidebar-item:has(a[href*="projects"]) .sidebar-item-text,
+#quarto-sidebar ul.list-unstyled li.sidebar-item:has(a[href*="projects"]) .menu-text {
+  font-size: 1.35rem !important;
+  font-weight: 500 !important;
+  color: #4A5568 !important;
+  letter-spacing: 0.01em !important;
+  transition: all 0.2s ease-in-out !important;
+  text-decoration: none !important;
+}
+
+/* Projects link hover state */
+#quarto-sidebar ul.list-unstyled li.sidebar-item:has(a[href*="projects"]):hover .sidebar-item-container {
+  background-color: rgba(191, 211, 230, 0.15) !important;
+  border-left: 3px solid rgba(178, 93, 76, 0.4) !important;
+  transform: translateX(3px) !important;
+}
+
+#quarto-sidebar ul.list-unstyled li.sidebar-item:has(a[href*="projects"]):hover .sidebar-item-text,
+#quarto-sidebar ul.list-unstyled li.sidebar-item:has(a[href*="projects"]):hover .menu-text {
+  color: #B25D4C !important;
+  transform: translateX(2px) !important;
+}
+
+/* Removing any other sidebar styles that might conflict */
+.sidebar-item::before,
+.sidebar-item::after,
+.sidebar-item.active::before,
+.sidebar-item.active::after,
+.sidebar-item-container::before,
+.sidebar-item-container::after {
+  display: none !important;
+}
+
+/* Special spacing for sidebar header and logo */
+.sidebar-header {
+  margin-bottom: 2rem !important;
+}
+
+.sidebar-logo {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Add subtle divider after social icons */
+.sidebar-tools-main {
+  margin-bottom: 0.5rem !important;
+  padding-bottom: 1.5rem !important;
+  border-bottom: 1px solid rgba(159, 184, 208, 0.15) !important;
+}
+
+/* Special styling for social icons */
+.sidebar-tools-main a {
+  color: #4A5568 !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.sidebar-tools-main a:hover {
+  color: #B25D4C !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Sidebar spacing adjustment - move links closer to profile picture */
+.sidebar-menu-container {
+  margin-top: -3rem !important;
+}
+
+.list-unstyled.mt-1 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.pt-lg-2.mt-2.text-left.sidebar-header {
+  margin-bottom: 0 !important;
+}
+
+/* Specific fix for post headers with long titles */
+.quarto-title-block {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.quarto-title-block .title {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Fix for category pills layout */
+.quarto-title-block .quarto-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Make sure each category has enough space */
+.quarto-category {
+  display: inline-block;
+  white-space: nowrap;
+  margin-bottom: 0.5rem;
+}
+
+/* Project page metadata alignment */
+.quarto-title-meta-heading {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: #4A5568;
+  font-size: 0.9rem;
+}
+
+.quarto-title-meta-contents {
+  margin-top: 0;
+  font-size: 0.95rem;
+  color: #718096;
+}
+
+/* Space between project metadata and content */
+main.content {
+  margin-top: 1.5rem;
+}
+
+/* Enhanced diagram styling based on running-llms-locally.qmd */
+.job-rec-diagram,
+.diagram-container {
+  max-width: 100%;
+  width: 800px;
+  margin: 2rem auto 3rem auto;
+  background-color: transparent !important;
+}
+
+/* Ensure all Mermaid elements have transparent backgrounds */
+.diagram-container .mermaid,
+.diagram-container .mermaid svg,
+.diagram-container .mermaid foreignObject,
+.diagram-container .mermaid div,
+.job-rec-diagram .mermaid,
+.job-rec-diagram .mermaid svg,
+.job-rec-diagram .mermaid foreignObject,
+.job-rec-diagram .mermaid div {
+  background-color: transparent !important;
+}
+
+/* Node styling */
+.diagram-container .mermaid .node rect,
+.job-rec-diagram .mermaid .node rect {
+  fill: #ffffff !important;
+  stroke: #999 !important;
+  stroke-width: 1.5px !important;
+  rx: 4px !important;
+  ry: 4px !important;
+}
+
+/* Edge styling */
+.diagram-container .mermaid .edgePath .path,
+.job-rec-diagram .mermaid .edgePath .path {
+  stroke: #555 !important;
+  stroke-width: 1.5px !important;
+}
+
+/* Make all labels transparent */
+.diagram-container .mermaid .edgeLabel,
+.job-rec-diagram .mermaid .edgeLabel {
+  background-color: transparent !important;
+}
+
+/* Hide any background elements */
+.diagram-container .mermaid rect.background,
+.diagram-container .mermaid .background,
+.job-rec-diagram .mermaid rect.background,
+.job-rec-diagram .mermaid .background {
+  fill: transparent !important;
+  opacity: 0 !important;
+}
+
+/* Caption styling */
+.diagram-container figcaption,
+.job-rec-diagram figcaption {
+  margin-top: 1rem;
+  text-align: center;
+  color: #4169e1;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Improved sidebar item clickability */
+#quarto-sidebar .sidebar-item-container {
+  position: relative;
+  cursor: pointer;
+}
+
+#quarto-sidebar .sidebar-item-container a.sidebar-item-text,
+#quarto-sidebar .sidebar-item-container .sidebar-item-text,
+#quarto-sidebar .sidebar-item-container a.menu-text,
+#quarto-sidebar .sidebar-item-container .menu-text {
+  position: relative;
+}
+
+/* Fix for sidebar hover state */
+#quarto-sidebar .sidebar-item:hover {
+  background-color: rgba(178, 93, 76, 0.08) !important;
+}
+
+/* Hide project descriptions */
+.listing-description, .card-text.listing-description {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Add extra space for the title since we removed description */
+.listing-title, .card-title.listing-title {
+  margin-bottom: 1rem !important;
+}
+
+/* Enhanced Code Block Styling - Site-wide */
+div.sourceCode {
+  position: relative !important;
+  margin: 1.5rem 0 !important;
+  border-radius: 0.25rem !important;
+  border-left: 4px solid #6B8CAC !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
+  overflow: hidden !important;
+  background-color: #f8f9fa !important;
+}
+
+/* Add toggle button to each code block */
+div.sourceCode::before {
+  content: "▼" !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  background-color: #f8f9fa !important;
+  color: #6B8CAC !important;
+  font-size: 0.85rem !important;
+  width: 30px !important;
+  height: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 10 !important;
+  border-bottom-left-radius: 0.25rem !important;
+  border-left: 1px solid #e9ecef !important;
+  border-bottom: 1px solid #e9ecef !important;
+  transition: all 0.2s ease !important;
+}
+
+div.sourceCode:hover::before {
+  color: #5A7A97 !important;
+}
+
+/* Add a title bar to code blocks */
+div.sourceCode::after {
+  content: "Code" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 30px !important; /* Space for toggle button */
+  height: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding-left: 1rem !important;
+  background-color: #f8f9fa !important;
+  color: #495057 !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid #e9ecef !important;
+}
+
+/* Adjust padding to accommodate title bar */
+pre.sourceCode {
+  margin-top: 30px !important;
+  padding: 1rem !important;
+  background-color: #f8f9fa !important;
+  max-height: 500px !important; /* Limit height for very long code blocks */
+  overflow-x: auto !important;
+}
+
+code.sourceCode {
+  font-family: 'Fira Code', 'Roboto Mono', monospace !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  white-space: pre !important;
+}
+
+/* JavaScript will add this class to collapsed code blocks */
+div.sourceCode.collapsed pre.sourceCode {
+  display: none !important;
+}
+
+/* Change arrow direction when collapsed */
+div.sourceCode.collapsed::before {
+  content: "▶" !important;
+}
+
+/* Ensure copy button doesn't overlap with toggle */
+.code-copy-button {
+  position: absolute !important;
+  top: 40px !important;
+  right: 0.5rem !important;
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.75rem !important;
+  color: #6c757d !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 0.25rem !important;
+  cursor: pointer !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s !important;
+}
+
+div.sourceCode:hover .code-copy-button {
+  opacity: 1 !important;
+}
+
+.code-copy-button:hover {
+  color: #6B8CAC !important;
+  border-color: #6B8CAC !important;
+}
+
+/* Style for inline code */
+code:not(.sourceCode) {
+  background-color: #f1f3f5 !important;
+  padding: 0.2rem 0.4rem !important;
+  border-radius: 3px !important;
+  font-family: 'Fira Code', 'Roboto Mono', monospace !important;
+  font-size: 0.9em !important;
+  color: #e83e8c !important;
+}
+
+/* Syntax highlighting colors */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6c757d !important;
+}
+
+.token.punctuation {
+  color: #24292e !important;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #005cc5 !important;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #032f62 !important;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.token.variable,
+.token.inserted {
+  color: #d73a49 !important;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #d73a49 !important;
+}
+
+.token.function,
+.token.class-name {
+  color: #6f42c1 !important;
+}
+
+.token.regex,
+.token.important {
+  color: #e36209 !important;
+}
+
+/* Aggressive removal of show more/less buttons */
+.code-fold-btn-container,
+.code-fold-btn,
+button[data-text="Show more"],
+button[data-text="Show less"],
+button.code-fold-btn,
+.code-fold-btn[data-text],
+.btn-code-fold,
+.btn.code-fold-btn,
+.sourceCode .code-fold-btn-container,
+div.sourceCode + .code-fold-btn-container,
+div + .code-fold-btn-container,
+pre + .code-fold-btn-container,
+.code-with-copy .code-fold-btn-container,
+.code-fold-btn-container + *,
+.cell .code-fold-btn-container,
+.code-with-filename .code-fold-btn-container,
+/* Additional Quarto button selectors */
+.code-tools .code-fold-btn,
+.code-fold,
+.code-fold-show-all,
+.btn-fold-more,
+.btn-fold-less,
+.cell-output-display + .code-fold-btn-container,
+pre.hidden + .code-fold-btn-container,
+/* Catch any other potential variations */
+[class*="code-fold"],
+[class*="fold-btn"],
+[id*="fold-btn"],
+/* Even more specific */
+[aria-label*="fold"],
+[aria-label*="show more"],
+[aria-label*="show less"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  position: absolute !important;
+  pointer-events: none !important;
+  z-index: -999 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+}
+
+/* Ensure code blocks are fully expanded by default */
+.code-fold-hidden-default {
+  display: block !important;
+  max-height: none !important;
+  height: auto !important;
+  visibility: visible !important;
+  overflow: visible !important;
+}
+
+/* Remove any height constraints */
+pre.sourceCode {
+  max-height: none !important;
+  height: auto !important;
+}
+
+/* Target the specific button from screenshot */
+.show-more, 
+div.sourceCode + button,
+#quarto-document-content button:not(.code-copy-button):not(.btn-primary):not(.btn-secondary),
+.quarto-figure button:not(.code-copy-button),
+[class*="show-more"],
+[class*="show_more"] {
+  display: none !important;
+}
+
+/* Fix Code Output Visibility - Overriding any hiding rules */
+.cell-output,
+.cell-output-stdout,
+.cell-output-stderr,
+.cell-output-display {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  margin: 0.5rem 0 1.5rem 0 !important;
+  padding: 0.5rem 1rem !important;
+  background-color: #f8f9fa !important;
+  border-left: 4px solid #6B8CAC !important;
+  border-radius: 0 0.25rem 0.25rem 0 !important;
+  color: #24292e !important;
+  font-family: 'Fira Code', 'Roboto Mono', monospace !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  z-index: 100 !important;
+  position: relative !important;
+}
+
+/* Fix for pre elements inside outputs */
+.cell-output pre {
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow: visible !important;
+}
+
+/* Make sure the output is positioned correctly after the code */
+.cell {
+  display: block !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Remove any rules that hide outputs */
+.sourceCode:not(.mermaid):not(.python),
+.cell:not(:has(.mermaid)):not(:has(.python)),
+div.sourceCode:not(.mermaid):not(:has(.sourceCode.python)),
+pre.sourceCode:not(.mermaid):not(.python),
+code:not(.mermaid):not(.sourceCode.python),
+.code-with-filename:not(.mermaid):not(:has(.python)),
+.code-annotation-container:not(.mermaid):not(:has(.python)),
+.code-tools:not(.mermaid):not(:has(.python)),
+.code-fold-btn:not(.mermaid):not(:has(.python)),
+.code-copy-button:not(.mermaid):not(:has(.python)) {
+  display: inherit !important;
+}
+
+/* Override any "display: none" rules that might affect outputs */
+[class*="code"],
+[id*="code"],
+div[class*="cell"],
+div[class*="output"],
+pre[class*="output"],
+.sourceCode + * {
+  display: inherit !important;
+  visibility: visible !important;
+}
+
+/* --- styles.css --- */
+.skill-card {
+  border: 1px solid var(--bs-gray-300);
+  border-radius: 1rem;   /* 2xl look */
+  padding: 1.25rem;      /* p-4 */
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  background-color: #ffffff;
+}
+
+.skill-chip {
+  display: inline-block;
+  margin: 0.15rem 0.35rem 0.15rem 0;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+  border-radius: 9999px;
+  background-color: var(--bs-gray-100);  /* light pill */
+  color: var(--bs-gray-800);
+  white-space: nowrap;                  /* keep single-word chip */
+}

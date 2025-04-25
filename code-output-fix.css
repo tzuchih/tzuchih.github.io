@@ -1,0 +1,147 @@
+/* Code output visibility fix with neutral colors */
+
+/* Make sure all output elements are visible */
+.cell-output,
+.cell-output-stdout,
+.cell-output-stderr,
+.cell-output-display {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 100 !important;
+  
+  /* Clean, minimal styling */
+  background-color: #f8f9fa !important;
+  border-left: 2px solid #6B8CAC !important;
+  border-radius: 0 !important;
+  padding: 0.5rem 1rem !important;
+  margin: 0.25rem 0 0.5rem 0 !important;
+  color: #444444 !important;
+  font-family: monospace !important;
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+  box-shadow: none !important;
+}
+
+/* Ensure all elements in output have neutral color */
+.cell-output *,
+.cell-output-stdout *,
+.cell-output-stderr *,
+.cell-output-display * {
+  color: #444444 !important;
+}
+
+/* Fix pre elements inside outputs */
+.cell-output pre,
+.cell-output-stdout pre,
+.cell-output-stderr pre,
+.cell-output-display pre {
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow: visible !important;
+  color: #444444 !important;
+}
+
+/* Target all table elements within outputs */
+.cell-output table,
+.cell-output-stdout table,
+.cell-output-display table,
+.cell-output .dataframe,
+.cell-output-stdout .dataframe,
+.cell-output .jupyter-dataframe,
+table.dataframe {
+  color: #444444 !important;
+}
+
+/* Apply to all cells in tables */
+.cell-output td, 
+.cell-output th,
+.cell-output-stdout td, 
+.cell-output-stdout th {
+  color: #444444 !important;
+}
+
+/* Specifically target DataFrame elements */
+.dataframe tr,
+.dataframe td,
+.dataframe th,
+.dataframe *,
+[class*="dataframe"] * {
+  color: #444444 !important;
+}
+
+/* Add spacing between code blocks and outputs */
+.sourceCode {
+  margin-bottom: 0 !important;
+}
+
+/* Error output styling - keep this a different color but more muted */
+.cell-output-stderr pre {
+  color: #9a3131 !important;
+}
+
+/* ====== HIDE MERMAID CODE BLOCKS BUT KEEP DIAGRAMS ====== */
+/* Completely hide any mermaid code blocks */
+pre.mermaid, 
+code.mermaid,
+.sourceCode.mermaid,
+pre.sourceCode.mermaid,
+div.sourceCode:has(code.mermaid),
+div.sourceCode:has(.language-mermaid),
+.code-with-filename:has(.mermaid),
+div:has(> pre.mermaid),
+div:has(> code.mermaid),
+div:has(> .mermaid.sourceCode) {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+/* Make rendered mermaid diagrams visible */
+.mermaid:not(.sourceCode),
+.mermaid svg,
+.job-rec-diagram .mermaid,
+.diagram-container .mermaid {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 2rem auto !important;
+  background-color: transparent !important;
+}
+
+/* Make sure diagram containers are visible */
+div:has(> .mermaid:not(.sourceCode)) {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 2rem auto !important;
+  background-color: transparent !important;
+}
+
+/* Hide all mermaid code block titles and controls */
+div.sourceCode:has(.mermaid)::before,
+div.sourceCode:has(.mermaid)::after,
+div.sourceCode:has(.language-mermaid)::before,
+div.sourceCode:has(.language-mermaid)::after {
+  display: none !important;
+} 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mermaid Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.3.1/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default'
+      });
+    });
+  </script>
+  <style>
+    .diagram-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      border: 1px solid #eee;
+      border-radius: 8px;
+    }
+    h1 {
+      text-align: center;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mermaid Diagram Test</h1>
+  
+  <div class="diagram-container">
+    <div class="mermaid">
+      flowchart TD
+        A["Upload Resume (PDF or DOCX)"] --> B["Extract Text"]
+        B --> C["Clean Text"]
+        C --> D["User Preferences"]
+        D --> E["Filter Job Listings"]
+        E --> F["TF-IDF Vectorization"]
+        F --> G["Compute Similarity"]
+        G --> H["Find Top 5 Jobs"]
+        H --> I["Analyze Skill Gaps"]
+        I --> J["Display Matching Jobs"]
+        J --> K["Select Job for Cover Letter"]
+        K --> L["Generate Cover Letter"]
+    </div>
+  </div>
+</body>
+</html> 

@@ -1,0 +1,69 @@
+---
+title: "Life at 3M: Turning Tape into Tech Impact"
+author: "Lydia Hsu"
+date: "2025-02-27"
+categories: [manufac, semicon, product-strategy, analytics]
+image: "../images/posts/3m.jpg"
+description: "👩🏻‍💼 : Intern -> Marketing Analyst -> Product Manager<br/>🧠 = Marketing + Analytics + Product<br/>Industry = Manufacturing + Semiconductor + Tech"
+---
+
+## From Intern to Product Manager{.no-anchor}
+
+> **5 ½ years · 3 roles · 1 constant goal:** keep the world’s smallest chips safe on their journey from fab to finished device.
+
+I joined 3M’s **Electronics Material Solutions Division** as an intern, crunched marketing data as an analyst, and ultimately owned the **carrier-tape portfolio** as Product Manager. Along the way I learned how a millimeter-wide strip of plastic can make—or break—an entire semiconductor supply chain.
+
+
+## Why Carrier Tape Matters{.no-anchor}
+
+Carrier tape sits at the intersection of **precision engineering** and **high-volume automation**:
+
+- **Protects** fragile dies, LEDs, passives from ESD & micro-cracks  
+- **Feeds** pick-and-place machines at **> 30 k components/hr**  
+- **Enables** wafer-level packaging, mini-LED TVs, and the chips in your phone
+
+Without it, yield drops and production costs spike. Small tape, big impact.
+
+
+## My Hats (Often Worn All at Once){.no-anchor}
+
+
+| Area                       | What I Did                                                    | Outcome                         |
+|----------------------------|--------------------------------------------------------------|---------------------------------|
+| **Product Ownership**      | Drove roadmap for 3000 & 3200 Series tapes; scoped new pocket designs with R&D | Launched 2 SKUs → **+$4.2 M ARR** |
+| **Market & Customer Analysis** | Built Power BI dashboard from SAP/CRM data to spot volume shifts | Identified mini-LED surge → **+18 % capacity** |
+| **Cross-functional Coordination** | Ran weekly war-rooms with Sales, Ops, Quality | RFQ-to-ship lead-time **–20 %** |
+| **Technical Support**      | Advised customers on peel-force & JEDEC specs | Secured top-3 smartphone OEM deal |
+| **Go-to-Market**           | Created demo rigs & content for SEMICON, Productronica | Booth leads **+40 % YoY** |
+
+
+## A Day in the (Tape-Filled) Life{.no-anchor}
+
+1. **08:30** — Slack stand-up with manufacturing to triage a pocket-depth deviation.  
+2. **10:00** — SQL pull on last quarter’s order mix → see LED segment up **12 %**.  
+3. **13:00** — Customer call from Taiwan; debug peel-back static > 50 V.  
+4. **15:00** — Figma mock of new datasheet; loop in MarCom for compliance.  
+5. **17:00** — Update Jira epics, prep slides for exec read-out.
+
+No two days looked alike—exactly why I loved it.{.no-anchor}
+
+
+
+## Key Takeaways{.no-anchor}
+
+- **Systems thinking wins.** A tape tweak can ripple through pick-&-place speed, yield, and cost.  
+- **Data is a lingua franca.** Dashboards quelled debates and sped decisions.  
+- **Partnerships > solo heroics.** Quality, Ops, Sales—all had to align for every shipment.
+
+
+
+<br/>
+
+Have questions about semiconductor packaging, product analytics, or how to keep thousands of tiny chips from flying everywhere? 
+
+[📬 Let’s chat](mailto:lydia.tzuchi@gmail.com){.btn .btn-primary}
+
+
+
+
+

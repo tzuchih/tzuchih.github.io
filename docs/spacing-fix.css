@@ -1,0 +1,178 @@
+/* Add more vertical spacing to the content grid */
+
+/* Adjust spacing before the Recent Posts title */
+.docs-list-title-container {
+  margin-top: 1.5rem !important;
+  padding-top: 1rem !important;
+}
+
+/* Reduce space between title and content */
+.content-wrapper {
+  margin-top: 0.5rem !important;
+  padding-top: 0.5rem !important;
+}
+
+/* Adjust the gap between the hero banner and content section */
+.hero-banner {
+  margin-bottom: 2rem !important;
+}
+
+/* Make the post heading have more space */
+.docs-list-title {
+  margin-top: 1.5rem !important;
+  padding-top: 1rem !important;
+}
+
+/* Improve vertical alignment of image captions/titles */
+.image-card p, 
+.card-body p,
+.image-gallery figcaption,
+.quarto-grid-item .listing-title,
+.image-gallery .figure-caption {
+  text-align: center !important;
+  padding-top: 1.2rem !important;
+  margin-top: 0.5rem !important;
+  font-weight: 500 !important;
+  font-size: 1.1rem !important;
+}
+
+/* Apply specific styles to the Work/Travel/Food gallery items */
+.image-gallery p,
+.gallery-item p,
+.image-card > p:last-child {
+  padding-top: 2rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+  text-align: center !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+}
+
+/* Make image containers on About Me page have rounded corners */
+.image-card,
+.gallery-item,
+.image-gallery .figure,
+.about-container .image-gallery > div {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Target the specific image cards on the About Me page */
+.about-container .image-gallery .image-card {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* Add with even higher specificity to override about-spacing-fix.css */
+body .about-container .image-gallery .image-card {
+  border-radius: 16px !important;
+}
+
+.about-container .image-gallery .image-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Make sure images maintain proper border radius */
+.about-container .image-gallery .image-card img {
+  border-top-left-radius: 16px !important;
+  border-top-right-radius: 16px !important;
+  width: 100% !important;
+  aspect-ratio: 4/3 !important;
+  object-fit: cover !important;
+}
+
+/* Add more spacing in responsive mode */
+@media (max-width: 768px) {
+  .docs-list-title-container {
+    margin-top: 1.5rem !important;
+    padding-top: 1rem !important;
+  }
+  
+  .hero-banner {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* Additional spacing fixes for post headers */
+
+/* Fix overlapping text in post descriptions */
+.description, p.description {
+  margin-top: 0.5rem !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.7 !important;
+  font-size: 1.1rem !important;
+  max-width: 900px !important;
+  white-space: normal !important;
+}
+
+/* Fix the post title area */
+.quarto-title {
+  margin-bottom: 1rem !important;
+}
+
+/* Ensure proper title spacing */
+h1.title {
+  margin-bottom: 0.75rem !important;
+  line-height: 1.3 !important;
+  font-size: 2.5rem !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+}
+
+/* Ensure category pills don't overflow */
+.quarto-categories .quarto-category {
+  display: inline-block !important;
+  margin-right: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  padding: 0.3rem 0.8rem !important;
+  border-radius: 20px !important;
+  font-size: 0.85rem !important;
+  white-space: nowrap !important;
+}
+
+/* Fix for the author and date metadata */
+.quarto-title-meta {
+  display: grid !important;
+  grid-template-columns: auto auto !important;
+  gap: 2rem !important;
+  align-items: start !important;
+  margin-top: 0.75rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Make author and date headings more compact */
+.quarto-title-meta-heading {
+  margin-bottom: 0.25rem !important;
+  font-size: 0.9rem !important;
+  color: #4A5568 !important;
+}
+
+/* Make author and date values more compact */
+.quarto-title-meta-contents {
+  margin-top: 0.25rem !important;
+  font-size: 0.95rem !important;
+}
+
+@media (max-width: 768px) {
+  .quarto-title-meta {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+    margin-top: 0.5rem !important;
+  }
+  
+  h1.title {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .description, p.description {
+    font-size: 1rem !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+} 

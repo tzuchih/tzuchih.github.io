@@ -1,0 +1,104 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - images/favicon.ico
+    - js/mermaid-fix.js
+    - js/title-fix.js
+    - js/title-refresh-fix.js
+    - js/listing-refresh.js
+    - js/post-tag-fix.js
+    - js/code-toggle.js
+    - js/force-output-display.js
+    - js/debug-outputs.js
+    - js/mute-dataframe-colors.js
+    - images/
+    - js/
+website:
+  title: "Lydia's Portfolio"
+  search: false
+  site-url: https://www.example.com
+  repo-url: https://github.com/tzuchih
+  page-navigation: true
+  sidebar:
+    style: "docked"
+    search: false
+    background: dark
+    pinned: true
+    align: left
+    logo: "images/profile/profile.jpg"
+    border: true
+    logo-style: "display: block !important; margin: 0 auto; visibility: visible !important; opacity: 1 !important;"
+    contents:
+      - title: "Lydia Hsu"
+        style: "text-align: center; margin-bottom: 1rem;"
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About Me
+      - href: projects.qmd
+        text: Projects
+    tools:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/lydiatzuchihsu/
+      - icon: github
+        href: https://github.com/tzuchih
+      - icon: envelope
+        href: mailto:lydia.tzuchi@gmail.com
+execute:
+  enabled: true
+  echo: true
+  warning: true
+  error: true
+  output: true
+  freeze: auto
+  python:
+    path: /opt/anaconda3/bin/python
+    packages:
+      - matplotlib
+      - numpy
+      - pandas
+format:
+  html:
+    theme: custom.css
+    css: 
+      - styles.css
+      - spacing-fix.css
+      - hide-cv.css
+      - title-hard-fix.css
+      - post-tag-fix.css
+      - code-fold-fix.css
+      - code-output-fix.css
+      - pandas-fix.css
+      - mermaid-fix.css
+    toc: true
+    toc-depth: 3
+    smooth-scroll: true
+    html-math-method: katex
+    toc-location: right
+    toc-title: On this page
+    page-layout: full
+    highlight-style: github
+    link-external-newwindow: true
+    citations-hover: true
+    footnotes-hover: true
+    title-block-banner: false
+    title-block-style: default
+    margin-top: "0"
+    margin-bottom: "0"
+    page-title: "Lydia's Portfolio"
+    title: ""
+    document-title: "Lydia's Portfolio"
+    include-in-header: 
+      - text: |
+          <script src="https://cdn.jsdelivr.net/npm/mermaid@10.3.1/dist/mermaid.min.js"></script>
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              mermaid.initialize({
+                startOnLoad: true,
+                theme: 'default'
+              });
+            });
+          </script>
+      - "_includes/custom-head.html"
+    include-after-body: "_includes/post-scripts.html"

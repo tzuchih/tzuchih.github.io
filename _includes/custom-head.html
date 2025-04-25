@@ -1,0 +1,263 @@
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏻‍💻</text></svg>">
+<title>Lydia's Portfolio</title>
+<script>
+  // Immediate execution to set title before page renders
+  document.title = "Lydia's Portfolio";
+</script>
+<script src="/js/custom.js" defer></script>
+<script src="/js/title-fix.js"></script>
+<script>
+// Remove CV page links
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    // Remove any links to CV page
+    document.querySelectorAll('a[href*="cv.qmd"], a[href*="cv.html"]').forEach(function(link) {
+      link.style.display = 'none';
+      link.style.visibility = 'hidden';
+      
+      // If it's in the sidebar, remove the entire list item
+      if (link.closest('.sidebar-item')) {
+        const item = link.closest('.sidebar-item');
+        if (item) {
+          item.style.display = 'none';
+          item.style.visibility = 'hidden';
+        }
+      }
+    });
+  });
+})();
+</script>
+
+<!-- Load mermaid directly in head for better diagram rendering -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  // Initialize mermaid with custom configuration
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    securityLevel: 'loose',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+    flowchart: {
+      htmlLabels: true,
+      curve: 'basis'
+    },
+    themeVariables: {
+      primaryColor: '#B25D4C',
+      primaryTextColor: '#2C3E50',
+      primaryBorderColor: '#B25D4C',
+      lineColor: '#B25D4C',
+      secondaryColor: 'rgba(178, 93, 76, 0.1)',
+      tertiaryColor: '#fff'
+    }
+  });
+</script>
+
+<!-- Meta tag to help with mermaid diagrams -->
+<meta name="mermaid-theme" content="default">
+
+<!-- Critical CSS loaded at the earliest possible moment -->
+<style>
+/* Ultra-high priority fixes to prevent FOUC and glitches */
+.quarto-grid-item, .card.h-100 {
+  height: 480px !important;
+  min-height: 480px !important;
+  max-height: 480px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+.quarto-grid-item .listing-title, 
+.card.h-100 .card-title.listing-title {
+  display: block !important;
+  max-height: 5rem !important;
+  overflow: hidden !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.quarto-grid-item p.card-img-top, 
+.card.h-100 p.card-img-top {
+  height: 30% !important;
+  overflow: hidden !important;
+}
+
+.quarto-grid-item .card-body, 
+.card.h-100 .post-contents {
+  height: 70% !important;
+  position: relative !important;
+}
+
+/* Critical category tag styling */
+.listing-categories, .quarto-categories {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.4rem !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  min-height: 1.8rem !important;
+  width: 100% !important;
+}
+
+.listing-category, .quarto-category {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 1.4rem !important;
+  padding: 0.2rem 0.5rem !important;
+  font-size: 0.65rem !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  border-radius: 4px !important;
+  background-color: rgba(191, 211, 230, 0.25) !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+}
+
+/* Extremely aggressive color neutralization with !important flag */
+.cell-output,
+.cell-output-stdout,
+.cell-output-stderr,
+.cell-output-display,
+.cell-output *,
+.cell-output-stdout *,
+.cell-output-stderr *,
+.cell-output-display * {
+  color: #444444 !important;
+}
+
+/* Pandas-specific styles with high specificity */
+.dataframe,
+.dataframe *,
+table.dataframe,
+table.dataframe *,
+.jupyter-dataframe,
+.jupyter-dataframe * {
+  color: #444444 !important;
+}
+
+/* Target magenta color specifically */
+.dataframe thead th,
+.dataframe tbody tr th,
+.level_0, .col_heading, .row_heading, .index_name {
+  color: #444444 !important;
+}
+
+/* Hide mermaid code blocks site-wide */
+pre.mermaid, 
+code.mermaid,
+.sourceCode.mermaid,
+pre.sourceCode.mermaid,
+div.sourceCode:has(code.mermaid),
+div.sourceCode:has(.language-mermaid),
+div:has(> pre.mermaid),
+div:has(> code.mermaid),
+div.sourceCode:has(.mermaid) {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Keep rendered diagrams visible */
+.mermaid:not(.sourceCode),
+.mermaid svg,
+div:has(> .mermaid:not(.sourceCode)),
+.job-rec-diagram .mermaid,
+.diagram-container .mermaid {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  background-color: transparent !important;
+  margin: 2rem auto !important;
+}
+
+/* Hide all mermaid code block headers */
+div.sourceCode:has(.mermaid)::before,
+div.sourceCode:has(.mermaid)::after,
+div.sourceCode:has(.language-mermaid)::before,
+div.sourceCode:has(.language-mermaid)::after {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  opacity: 0 !important;
+}
+</style>
+
+<!-- Preload key JavaScript -->
+<link rel="preload" href="js/title-refresh-fix.js" as="script">
+<link rel="preload" href="js/listing-refresh.js" as="script">
+
+<!-- Execute critical JavaScript as early as possible -->
+<script>
+// Store and preserve title contents
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.listing-title, .card-title').forEach(function(title) {
+    if (title.textContent.trim()) {
+      title.setAttribute('data-original-title', title.textContent.trim());
+    }
+  });
+});
+</script>
+
+<!-- Emergency color reset script -->
+<script>
+  // Apply the style changes when the DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check for outputs periodically and fix colors
+    function fixOutputColors() {
+      // Target all elements inside output cells
+      document.querySelectorAll('.cell-output *, .cell-output-stdout *, .cell-output-stderr *, .cell-output-display *').forEach(function(el) {
+        // Force color property with highest priority
+        el.style.setProperty('color', '#444444', 'important');
+      });
+    }
+    
+    // Run immediately
+    fixOutputColors();
+    
+    // Also run after the page has had time to render
+    setTimeout(fixOutputColors, 100);
+    setTimeout(fixOutputColors, 500);
+    setTimeout(fixOutputColors, 1000);
+  });
+</script>
+
+<!-- JavaScript for hiding mermaid code blocks -->
+<script>
+// Immediately hide all mermaid code blocks
+(function() {
+  function hideMermaidCodeBlocks() {
+    document.querySelectorAll('pre.mermaid, code.mermaid, .sourceCode.mermaid, div.sourceCode:has(.mermaid), .code-with-filename:has(.mermaid)').forEach(function(el) {
+      el.style.display = 'none';
+      el.style.visibility = 'hidden';
+      el.style.height = '0';
+      el.style.opacity = '0';
+      el.style.overflow = 'hidden';
+      el.style.margin = '0';
+      el.style.padding = '0';
+      el.style.position = 'absolute';
+      el.style.top = '-9999px';
+      el.style.left = '-9999px';
+    });
+  }
+  
+  // Run immediately
+  hideMermaidCodeBlocks();
+  
+  // Run after DOM is ready and after page render
+  document.addEventListener('DOMContentLoaded', function() {
+    hideMermaidCodeBlocks();
+    setTimeout(hideMermaidCodeBlocks, 100);
+    setTimeout(hideMermaidCodeBlocks, 500);
+  });
+})();
+</script> 

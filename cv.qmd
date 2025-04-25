@@ -1,0 +1,65 @@
+---
+title: "Curriculum Vitae"
+page-title: "Lydia's Portfolio"
+document-title: "Lydia's Portfolio"
+format: 
+  html:
+    toc: true
+---
+
+## Education
+
+### University of Data Science
+- **Ph.D. in Artificial Intelligence** | 2018 - 2022
+- Thesis: "Neural Network Approaches to Natural Language Understanding"
+
+### Tech Institute
+- **M.S. in Computer Science** | 2016 - 2018
+- Focus: Machine Learning and Data Mining
+
+### Undergraduate University
+- **B.S. in Mathematics** | 2012 - 2016
+- Minor: Computer Science
+
+## Professional Experience
+
+### Senior Data Scientist | Data Company Inc.
+*2022 - Present*
+
+- Lead machine learning projects for natural language processing applications
+- Develop and deploy production-ready models for text classification and sentiment analysis
+- Mentor junior data scientists and provide technical leadership
+
+### Data Scientist | Tech Startup
+*2018 - 2022*
+
+- Built recommendation systems using collaborative filtering techniques
+- Implemented A/B testing framework for feature evaluation
+- Reduced computational costs by 30% through algorithm optimization
+
+### Research Assistant | University Research Lab
+*2016 - 2018*
+
+- Conducted research on deep learning approaches for computer vision
+- Published 3 papers in top-tier machine learning conferences
+- Developed open-source libraries for image recognition tasks
+
+## Skills
+
+- **Languages**: Python, R, SQL, JavaScript
+- **Frameworks**: TensorFlow, PyTorch, scikit-learn, pandas
+- **Tools**: Git, Docker, Kubernetes, AWS, GCP
+- **Techniques**: Deep Learning, Natural Language Processing, Computer Vision, Time Series Analysis
+
+## Publications
+
+1. "Improving Transformer Models for Text Classification" - NeurIPS 2022
+2. "Efficient Feature Engineering for Vision Tasks" - CVPR 2021
+3. "Adaptive Learning Rates for Neural Networks" - ICML 2020
+4. "Unsupervised Learning for Time Series Data" - KDD 2019
+
+## Awards & Honors
+
+- Best Paper Award, NLP Conference 2022
+- University Fellowship, 2018-2022
+- Outstanding Teaching Assistant Award, 2017 

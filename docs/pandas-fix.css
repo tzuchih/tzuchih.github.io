@@ -1,0 +1,76 @@
+/* Aggressive pandas DataFrame color neutralization */
+
+/* Target the exact selectors that pandas uses */
+table.dataframe,
+.dataframe,
+.pandas,
+.pandas_dataframe,
+.jupyter-dataframe {
+  color: #444444 !important;
+}
+
+/* Target all table elements inside output blocks */
+.cell-output table,
+.cell-output-stdout table,
+.cell-output-display table {
+  color: #444444 !important;
+}
+
+/* Very specific selectors for pandas index numbers */
+.dataframe .row_heading,
+.dataframe .col_heading,
+.dataframe .index_name,
+.dataframe .row_index,
+.dataframe .col_index,
+.dataframe tr,
+.dataframe td,
+.dataframe th,
+.dataframe tbody,
+.dataframe thead,
+.dataframe tfoot {
+  color: #444444 !important;
+}
+
+/* Force pandas magenta-colored index */
+.dataframe tr th,
+.dataframe thead th,
+table.dataframe tr th,
+table.dataframe thead th {
+  color: #444444 !important;
+  font-weight: normal !important;
+}
+
+/* Specific CSS classes that pandas adds to columns and indices */
+[class^="level_"],
+.level_0, .level_1, .level_2, .level_3, .level_4, .level_5,
+.col_heading, .row_heading,
+.blank, .index_name,
+.true, .false,
+.data, .index, .columns {
+  color: #444444 !important;
+}
+
+/* Target table cells with specificity */
+.dataframe td, .dataframe th,
+table.dataframe td, table.dataframe th,
+.cell-output td, .cell-output th,
+.cell-output-stdout td, .cell-output-stdout th {
+  color: #444444 !important;
+}
+
+/* Target any inline styles with color */
+[style*="color: rgb(214, 39, 40)"],
+[style*="color: rgb(214,39,40)"],
+[style*="color: #e24a4d"],
+[style*="color: rgb(148, 103, 189)"],
+[style*="color: rgb(148,103,189)"],
+[style*="color: #c678dd"],
+[style*="color: magenta"],
+[style*="color: #ff00ff"],
+[style*="color:#ff00ff"],
+[style*="color: #e83e8c"],
+[style*="color:#e83e8c"],
+[style*="color: #d63384"],
+[style*="color:#d63384"] {
+  color: #444444 !important;
+} 

@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Lydia&#39;s Portfolio</title>
+<link>https://www.example.com/projects.html</link>
+<atom:link href="https://www.example.com/projects.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.6.42</generator>
+<lastBuildDate>Tue, 15 Apr 2025 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>🎧 Vibe Coding My Portfolio</title>
+  <dc:creator>Lydia Hsu</dc:creator>
+  <link>https://www.example.com/posts/vibe-coding.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="what-is-vibe-coding" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="what-is-vibe-coding">🎧 What <em>Is</em> Vibe Coding?</h2>
+<p>Coined by Andrej Karpathy in 2025, <strong>vibe coding</strong> is a style of AI-assisted development where you co-create software through natural language prompts. You describe what you want — layout, logic, behavior — and let the AI generate most of the code. Your job becomes guiding, reviewing, and refining. It’s fast. It’s iterative. And it’s incredibly fun when you’re in the zone.</p>
+<hr>
+</section>
+<section id="how-i-vibe-coded-this-portfolio" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="how-i-vibe-coded-this-portfolio">🛠️ How I Vibe-Coded This Portfolio</h2>
+<p>When I set out to build this site using <strong>Quarto</strong>, I leaned into vibe coding to bring my ideas to life. Here’s how I used prompts + AI to accelerate the entire process.</p>
+<section id="prompt-preview-loops" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="prompt-preview-loops">🔁 Prompt → Preview Loops</h3>
+<p>I gave the AI detailed prompts like:</p>
+<p>Prompt: “Create a responsive Quarto page with a two-column layout: Left side for project cards, right side for an About Me section. Add a sticky navbar.”</p>
+<p>The AI returned 100+ lines of YAML and HTML. My role was to:</p>
+<ul>
+<li>Clean up the structure</li>
+<li>Extract inline CSS into a custom.scss file</li>
+<li>Debug Quarto-specific syntax quirks</li>
+</ul>
+</section>
+<section id="instant-components" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="instant-components">⚡ Instant Components</h3>
+<p>I used AI to scaffold:</p>
+<ul>
+<li>A vibrant hero section</li>
+<li>A filterable project grid</li>
+<li>An interactive skills accordion</li>
+</ul>
+<p>I customized the layout and interactivity using Quarto’s chunk options, Bootstrap classes, and SCSS variables.</p>
+</section>
+<section id="rapid-theming" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="rapid-theming">🎨 Rapid Theming</h3>
+<p>To refine the visual identity of my site, I prompt-tuned with design intent:</p>
+<p>Prompt: “Make the call-to-action button playful with a pastel palette and rounded corners”</p>
+<p>This let me explore multiple design variants in minutes without rewriting all the CSS by hand.</p>
+</section>
+</section>
+<section id="what-i-learned" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="what-i-learned">📚 What I Learned</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>💡 Lesson</th>
+<th>Takeaway</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Prompting is a design skill</td>
+<td>Clear context = better code, faster iterations</td>
+</tr>
+<tr class="even">
+<td>AI isn’t always right</td>
+<td>Some hallucinated Quarto options needed manual corrections</td>
+</tr>
+<tr class="odd">
+<td>Human + AI = best results</td>
+<td>Final polish still relies on UX sense and technical intuition</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="challenges-i-faced-and-solved" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="challenges-i-faced-and-solved">🧩 Challenges I Faced (and Solved)</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>❌ Problem</th>
+<th>✅ Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Code chunks broke layout</td>
+<td>Used freeze: true and scoped JS imports carefully</td>
+</tr>
+<tr class="even">
+<td>Conflicting CSS</td>
+<td>Merged class names and offloaded critical styles to custom.scss</td>
+</tr>
+<tr class="odd">
+<td>Mixed audience (Product + Data)</td>
+<td>Added filters and tabs to highlight both skill sets separately</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="why-it-mattered" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="why-it-mattered">✨ Why It Mattered</h2>
+<p>Building this site wasn’t just a technical challenge — it was a creative flow state.</p>
+<p>It reminded me how AI can boost not only productivity, but also playfulness in the process. This portfolio reflects who I am: a builder who loves clean data, smart design, and continuous learning.</p>
+</section>
+<section id="lets-connect" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="lets-connect">🤝 Let’s Connect</h2>
+<p>If you’re working on your own AI-assisted portfolio, playing with Quarto, or just exploring what vibe coding looks like in real life — I’d love to hear your story. Let’s swap prompts, inspiration, or lo-fi playlists.</p>
+<p><a href="mailto:lydia.tzuchi@gmail.com" class="btn btn-primary">📬 Let’s chat</a></p>
+
+
+</section>
+
+ ]]></description>
+  <category>Vibe Coding</category>
+  <category>Prompt Engineering</category>
+  <category>Dev Workflow</category>
+  <guid>https://www.example.com/posts/vibe-coding.html</guid>
+  <pubDate>Tue, 15 Apr 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://www.example.com/images/posts/post1.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Building a Job Rec System</title>
+  <dc:creator>Lydia Hsu</dc:creator>
+  <link>https://www.example.com/posts/job-rec-system.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<style>
+/* Hide mermaid code blocks but keep diagrams visible */
+.sourceCode.mermaid {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Allow the diagram to be rendered */
+.job-rec-diagram .mermaid {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  margin: 2rem auto !important;
+}
+
+/* Ensure code blocks for mermaid don't show */
+div.sourceCode:has(.mermaid) {
+  display: none !important; 
+  height: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide code block titles for mermaid */
+div.sourceCode:has(.mermaid)::before,
+div.sourceCode:has(.mermaid)::after {
+  display: none !important;
+}
+</style>
+<!-- Ensure mermaid library is loaded -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.3.1/dist/mermaid.min.js"></script>
+<script>
+// Initialize mermaid with custom configuration
+document.addEventListener('DOMContentLoaded', function() {
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    securityLevel: 'loose',
+    themeVariables: {
+      primaryColor: '#999999',
+      primaryTextColor: '#333333',
+      primaryBorderColor: '#777777',
+      lineColor: '#555555',
+      secondaryColor: '#f4f4f4',
+      tertiaryColor: '#ffffff'
+    },
+    flowchart: {
+      htmlLabels: true,
+      curve: 'basis'
+    }
+  });
+  
+  // Force render any mermaid diagrams
+  setTimeout(function() {
+    mermaid.init(undefined, '.mermaid:not(pre):not(code)');
+  }, 500);
+});
+</script>
+<p><br></p>
+<section id="key-features-for-users" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="key-features-for-users">✨ Key Features for Users</h2>
+<ul>
+<li><h4 id="quick-resume-upload" class="no-anchor">Quick Resume Upload</h4>
+<p>Users can upload their resumes in PDF or DOCX format with just one click—no formatting or manual input required.</p></li>
+<li><h4 id="personalized-job-matches" class="no-anchor">Personalized Job Matches</h4>
+<p>The system automatically recommends job listings that closely align with the user’s skills, experience, and preferences.</p></li>
+<li><h4 id="custom-filters" class="no-anchor">Custom Filters</h4>
+<p>Users can filter job recommendations by location, role, industry, or keywords to tailor results to their career goals.</p></li>
+<li><h4 id="top-5-matching-jobs" class="no-anchor">Top 5 Matching Jobs</h4>
+<p>See your top 5 most relevant job opportunities based on resume-job fit, sorted by similarity score.</p></li>
+<li><h4 id="skill-gap-insights" class="no-anchor">Skill Gap Insights</h4>
+<p>Instantly view which required skills are missing from your resume, so you can focus on improving them or tailoring your résumé more effectively.</p></li>
+<li><h4 id="one-click-cover-letter-draft" class="no-anchor">One-Click Cover Letter Draft</h4>
+<p>Choose a job listing, and the system will generate a personalized cover letter draft—saving time and boosting your application quality.</p></li>
+</ul>
+</section>
+<section id="result-and-flow-chart" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="result-and-flow-chart">📈 Result and Flow Chart</h2>
+<section id="the-user-interface-of-the-system" class="level4">
+<h4 class="anchored" data-anchor-id="the-user-interface-of-the-system">The user interface of the system:</h4>
+<p><img src="https://www.example.com/../images/posts/nlpsystem.jpg" class="img-fluid"></p>
+</section>
+<section id="the-process-flow-of-the-system" class="level4">
+<h4 class="anchored" data-anchor-id="the-process-flow-of-the-system">The process flow of the system:</h4>
+<div style="width:100%; max-width:800px; margin:0 auto;">
+<!-- Primary option: iframe with mermaid diagram -->
+<iframe src="../posts/job-rec-diagram.html" width="100%" height="900px" frameborder="0" scrolling="no" style="border:none; overflow:hidden;">
+</iframe>
+<!-- Fallback option: if iframe doesn't work -->
+<div style="text-align:center; display:none;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.example.com/../images/posts/job-rec-diagram.png" class="img-fluid figure-img"></p>
+<figcaption>Job Recommendation System Flowchart</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="dataset" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="dataset">📦 Dataset</h2>
+<p>The job listing dataset was sourced from Kaggle and contains 1.3 million job listings scraped from LinkedIn in the year 2024, including skill requirements, and metadata such as job level, country, and type. I further enriched and cleaned the dataset to make it suitable for text vectorization and matching.</p>
+</section>
+<section id="how-it-works-behind-the-scenes" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="how-it-works-behind-the-scenes">🧠 How It Works Behind the Scenes</h2>
+<section id="resume-parsing" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="resume-parsing">1. Resume Parsing</h3>
+<p>Users upload a resume (PDF or DOCX), and I use pdfminer and python-docx to extract raw text. This ensures the system can handle a wide range of formatting.</p>
+</section>
+<section id="text-preprocessing" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="text-preprocessing">2. Text Preprocessing</h3>
+<p>A custom clean_text() function prepares the text by:</p>
+<ul>
+<li>Lowercasing all characters</li>
+<li>Removing numbers and punctuation</li>
+<li>Tokenizing the text</li>
+<li>Removing stopwords with NLTK</li>
+<li>Lemmatizing each token</li>
+</ul>
+<p>This helps standardize the content from both resumes and job descriptions.</p>
+</section>
+<section id="data-preparation" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="data-preparation">3. Data Preparation</h3>
+<p>Each job posting is processed by merging its title and required skills into one text field, which then undergoes the same cleaning pipeline for consistency.</p>
+</section>
+<section id="tf-idf-vectorization" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="tf-idf-vectorization">4. TF-IDF Vectorization</h3>
+<p>I apply TF-IDF with bi-grams, sublinear term frequency, and smoothing to convert the cleaned text into numerical vectors. This approach highlights important skills and phrases while minimizing noise.</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> get_vectorizer_and_vectors(job_data):</span>
+<span id="cb1-2">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""Caches the TF-IDF vectorizer and job text embeddings."""</span></span>
+<span id="cb1-3">    vectorizer <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> TfidfVectorizer(stop_words<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'english'</span>, ngram_range<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>), smooth_idf<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>, sublinear_tf<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span>
+<span id="cb1-4">    </span>
+<span id="cb1-5">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">not</span> job_data.empty:</span>
+<span id="cb1-6">        job_vectors <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> vectorizer.fit_transform(job_data[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'clean_text'</span>])</span>
+<span id="cb1-7">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb1-8">        job_vectors <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Prevents errors if no jobs exist</span></span>
+<span id="cb1-9">    </span>
+<span id="cb1-10">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> vectorizer, job_vectors</span></code></pre></div>
+</section>
+<section id="cosine-similarity-matching" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="cosine-similarity-matching">5. Cosine Similarity Matching</h3>
+<p>The resume vector is compared against all job vectors using cosine similarity, generating a match score. To improve interpretability, I normalize the similarity scores to a 0–100 scale.</p>
+</section>
+<section id="filtering-options" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="filtering-options">6. Filtering Options</h3>
+<p>Users can filter jobs by:</p>
+<p>🌎 Country, 💼 Job Level, 🏠 Job Type (Onsite, Remote, or Hybrid)</p>
+<p>Only filtered jobs are vectorized—making the system both efficient and responsive.</p>
+</section>
+<section id="skill-gap-analysis" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="skill-gap-analysis">7. Skill Gap Analysis</h3>
+<p>Each job match also includes:</p>
+<p>✅ Matched Skills you already have</p>
+<p>❌ Missing Skills to work on</p>
+<p>This makes recommendations actionable for job seekers.</p>
+</section>
+<section id="cover-letter-generator" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="cover-letter-generator">8. Cover Letter Generator</h3>
+<p>Select a job, click a button, and the system drafts a personalized cover letter based on the role, skills, and company—great for quickly tailoring applications.</p>
+</section>
+</section>
+<section id="tools-libraries" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="tools-libraries">⚙️ Tools &amp; Libraries</h2>
+<ul>
+<li>Python, Streamlit, Pandas, NumPy</li>
+<li>NLTK for text processing</li>
+<li>Scikit-learn for TF-IDF &amp; similarity computation</li>
+<li>pdfminer.six &amp; python-docx for file parsing</li>
+<li>Kaggle job dataset (custom cleaned)</li>
+</ul>
+</section>
+<section id="what-i-gained" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="what-i-gained">💡 What I Gained</h2>
+<p>This project combined everything I love—data wrangling, NLP, real-world problem solving, and user-centered design. It strengthened my skills in building scalable pipelines, working with unstructured data, and developing applications that turn insight into action.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>Python</category>
+  <category>NLP</category>
+  <category>NLTK</category>
+  <category>Scikit-learn</category>
+  <category>Streamlit</category>
+  <guid>https://www.example.com/posts/job-rec-system.html</guid>
+  <pubDate>Thu, 20 Mar 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://www.example.com/images/posts/jobrec.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Life at 3M: Turning Tape into Tech Impact</title>
+  <dc:creator>Lydia Hsu</dc:creator>
+  <link>https://www.example.com/posts/life-at-3m.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="from-intern-to-product-manager" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="from-intern-to-product-manager">From Intern to Product Manager</h2>
+<blockquote class="blockquote">
+<p><strong>5 ½ years · 3 roles · 1 constant goal:</strong> keep the world’s smallest chips safe on their journey from fab to finished device.</p>
+</blockquote>
+<p>I joined 3M’s <strong>Electronics Material Solutions Division</strong> as an intern, crunched marketing data as an analyst, and ultimately owned the <strong>carrier-tape portfolio</strong> as Product Manager. Along the way I learned how a millimeter-wide strip of plastic can make—or break—an entire semiconductor supply chain.</p>
+</section>
+<section id="why-carrier-tape-matters" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="why-carrier-tape-matters">Why Carrier Tape Matters</h2>
+<p>Carrier tape sits at the intersection of <strong>precision engineering</strong> and <strong>high-volume automation</strong>:</p>
+<ul>
+<li><strong>Protects</strong> fragile dies, LEDs, passives from ESD &amp; micro-cracks<br>
+</li>
+<li><strong>Feeds</strong> pick-and-place machines at <strong>&gt; 30 k components/hr</strong><br>
+</li>
+<li><strong>Enables</strong> wafer-level packaging, mini-LED TVs, and the chips in your phone</li>
+</ul>
+<p>Without it, yield drops and production costs spike. Small tape, big impact.</p>
+</section>
+<section id="my-hats-often-worn-all-at-once" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="my-hats-often-worn-all-at-once">My Hats (Often Worn All at Once)</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 50%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Area</th>
+<th>What I Did</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Product Ownership</strong></td>
+<td>Drove roadmap for 3000 &amp; 3200 Series tapes; scoped new pocket designs with R&amp;D</td>
+<td>Launched 2 SKUs → <strong>+$4.2 M ARR</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Market &amp; Customer Analysis</strong></td>
+<td>Built Power BI dashboard from SAP/CRM data to spot volume shifts</td>
+<td>Identified mini-LED surge → <strong>+18 % capacity</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Cross-functional Coordination</strong></td>
+<td>Ran weekly war-rooms with Sales, Ops, Quality</td>
+<td>RFQ-to-ship lead-time <strong>–20 %</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Technical Support</strong></td>
+<td>Advised customers on peel-force &amp; JEDEC specs</td>
+<td>Secured top-3 smartphone OEM deal</td>
+</tr>
+<tr class="odd">
+<td><strong>Go-to-Market</strong></td>
+<td>Created demo rigs &amp; content for SEMICON, Productronica</td>
+<td>Booth leads <strong>+40 % YoY</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a-day-in-the-tape-filled-life" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="a-day-in-the-tape-filled-life">A Day in the (Tape-Filled) Life</h2>
+<ol type="1">
+<li><strong>08:30</strong> — Slack stand-up with manufacturing to triage a pocket-depth deviation.<br>
+</li>
+<li><strong>10:00</strong> — SQL pull on last quarter’s order mix → see LED segment up <strong>12 %</strong>.<br>
+</li>
+<li><strong>13:00</strong> — Customer call from Taiwan; debug peel-back static &gt; 50 V.<br>
+</li>
+<li><strong>15:00</strong> — Figma mock of new datasheet; loop in MarCom for compliance.<br>
+</li>
+<li><strong>17:00</strong> — Update Jira epics, prep slides for exec read-out.</li>
+</ol>
+<p>No two days looked alike—exactly why I loved it.{.no-anchor}</p>
+</section>
+<section id="key-takeaways" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li><strong>Systems thinking wins.</strong> A tape tweak can ripple through pick-&amp;-place speed, yield, and cost.<br>
+</li>
+<li><strong>Data is a lingua franca.</strong> Dashboards quelled debates and sped decisions.<br>
+</li>
+<li><strong>Partnerships &gt; solo heroics.</strong> Quality, Ops, Sales—all had to align for every shipment.</li>
+</ul>
+<p><br></p>
+<p>Have questions about semiconductor packaging, product analytics, or how to keep thousands of tiny chips from flying everywhere?</p>
+<p><a href="mailto:lydia.tzuchi@gmail.com" class="btn btn-primary">📬 Let’s chat</a></p>
+
+
+</section>
+
+ ]]></description>
+  <category>manufac</category>
+  <category>semicon</category>
+  <category>product-strategy</category>
+  <category>analytics</category>
+  <guid>https://www.example.com/posts/life-at-3m.html</guid>
+  <pubDate>Thu, 27 Feb 2025 08:00:00 GMT</pubDate>
+  <media:content url="https://www.example.com/images/posts/3m.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

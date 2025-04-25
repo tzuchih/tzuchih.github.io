@@ -1,0 +1,12 @@
+flowchart TD
+    A["Upload Resume (PDF or DOCX)"] --> B["Extract Text"]
+    B --> C["Clean Text"]
+    C --> D["User Preferences"]
+    D --> E["Filter Job Listings"]
+    E --> F["TF-IDF Vectorization"]
+    F --> G["Compute Similarity"]
+    G --> H["Find Top 5 Jobs"]
+    H --> I["Analyze Skill Gaps"]
+    I --> J["Display Matching Jobs"]
+    J --> K["Select Job for Cover Letter"]
+    K --> L["Generate Cover Letter"] 

@@ -1,0 +1,18 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/vibe-coding.html",
+      "/posts/job-rec-system.html",
+      "/posts/life-at-3m.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/posts/vibe-coding.html",
+      "/posts/job-rec-system.html",
+      "/posts/life-at-3m.html"
+    ]
+  }
+]

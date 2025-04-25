@@ -1,0 +1,88 @@
+---
+title: "🎧 Vibe Coding My Portfolio"
+author: "Lydia Hsu"
+date: "2025-04-15"
+categories: [Vibe Coding, Prompt Engineering, Dev Workflow]
+image: "../images/posts/post1.jpg"
+description: "A step-by-step guide to installing and using Positron for desktop apps."
+format:
+  html:
+    code-fold: false
+    code-tools: false
+execute:
+  echo: true
+  output: true
+  warning: true
+  error: true
+engine: knitr
+---
+
+## 🎧 What *Is* Vibe Coding?{.no-anchor}
+
+Coined by Andrej Karpathy in 2025, **vibe coding** is a style of AI-assisted development where you co-create software through natural language prompts. You describe what you want — layout, logic, behavior — and let the AI generate most of the code. Your job becomes guiding, reviewing, and refining. It's fast. It's iterative. And it's incredibly fun when you're in the zone.
+
+---
+
+## 🛠️ How I Vibe-Coded This Portfolio{.no-anchor}
+
+When I set out to build this site using **Quarto**, I leaned into vibe coding to bring my ideas to life. Here's how I used prompts + AI to accelerate the entire process.
+
+### 🔁 Prompt → Preview Loops{.no-anchor}
+
+I gave the AI detailed prompts like:
+
+Prompt: "Create a responsive Quarto page with a two-column layout:
+Left side for project cards, right side for an About Me section. Add a sticky navbar."
+
+The AI returned 100+ lines of YAML and HTML. My role was to:
+
+- Clean up the structure
+- Extract inline CSS into a custom.scss file
+- Debug Quarto-specific syntax quirks
+
+### ⚡ Instant Components{.no-anchor}
+
+I used AI to scaffold:
+
+- A vibrant hero section
+- A filterable project grid
+- An interactive skills accordion
+
+I customized the layout and interactivity using Quarto's chunk options, Bootstrap classes, and SCSS variables.
+
+### 🎨 Rapid Theming{.no-anchor}
+
+To refine the visual identity of my site, I prompt-tuned with design intent:
+
+Prompt: "Make the call-to-action button playful with a pastel palette and rounded corners"
+
+This let me explore multiple design variants in minutes without rewriting all the CSS by hand.
+
+## 📚 What I Learned{.no-anchor}
+
+| 💡 Lesson | Takeaway |
+|-----------|----------|
+| Prompting is a design skill | Clear context = better code, faster iterations |
+| AI isn't always right | Some hallucinated Quarto options needed manual corrections |
+| Human + AI = best results | Final polish still relies on UX sense and technical intuition |
+
+## 🧩 Challenges I Faced (and Solved){.no-anchor}
+
+| ❌ Problem | ✅ Solution |
+|-----------|----------|
+| Code chunks broke layout | Used freeze: true and scoped JS imports carefully |
+| Conflicting CSS | Merged class names and offloaded critical styles to custom.scss |
+| Mixed audience (Product + Data) | Added filters and tabs to highlight both skill sets separately |
+
+## ✨ Why It Mattered{.no-anchor}
+
+Building this site wasn't just a technical challenge — it was a creative flow state.
+
+It reminded me how AI can boost not only productivity, but also playfulness in the process. This portfolio reflects who I am: a builder who loves clean data, smart design, and continuous learning.
+
+## 🤝 Let's Connect{.no-anchor}
+
+If you're working on your own AI-assisted portfolio, playing with Quarto, or just exploring what vibe coding looks like in real life — I'd love to hear your story.
+Let's swap prompts, inspiration, or lo-fi playlists.
+
+[📬 Let’s chat](mailto:lydia.tzuchi@gmail.com){.btn .btn-primary}

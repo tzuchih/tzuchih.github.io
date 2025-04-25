@@ -1,0 +1,79 @@
+/* Mermaid diagram fix */
+
+/* Hide any mermaid code blocks */
+pre.mermaid, 
+.sourceCode.mermaid,
+pre.sourceCode.mermaid,
+div.sourceCode:has(.mermaid),
+div.sourceCode:has(.language-mermaid),
+div:has(> pre.mermaid) {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Ensure rendered mermaid diagrams are visible */
+.mermaid:not(pre):not(code):not(.sourceCode),
+.mermaid svg,
+.job-rec-diagram .mermaid,
+.diagram-container .mermaid {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  width: 100% !important;
+  max-width: 800px !important;
+  margin: 2rem auto !important;
+  background-color: transparent !important;
+}
+
+/* Style diagram container */
+.job-rec-diagram, .diagram-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: transparent !important;
+}
+
+/* Style diagram nodes */
+.mermaid .node rect, 
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon {
+  fill: #ffffff !important;
+  stroke: #999999 !important;
+  stroke-width: 1px !important;
+  rx: 4px !important;
+  ry: 4px !important;
+}
+
+/* Style diagram edges */
+.mermaid .edgePath .path {
+  stroke: #555555 !important;
+  stroke-width: 1.5px !important;
+}
+
+/* Style diagram labels */
+.mermaid .edgeLabel {
+  background-color: transparent !important;
+  color: #333333 !important;
+}
+
+/* Style diagram backgrounds */
+.mermaid .background {
+  fill: transparent !important;
+}
+
+/* Style diagram caption */
+figcaption {
+  text-align: center;
+  color: #4169e1;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* Force diagram visibility */
+.mermaid {
+  display: block !important;
+} 

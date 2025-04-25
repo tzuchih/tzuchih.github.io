@@ -1,0 +1,88 @@
+---
+title: "Hi! I'm Lydia Hsu 👩🏻‍💻"
+subtitle: "Here is where I keep all my projects.<br/>I transform raw data into **actionable insights** and **market-ready products** that accelerate growth."
+page-layout: full
+page-title: "Lydia's Portfolio"
+document-title: "Lydia's Portfolio"
+listing:
+  contents: 
+    - "posts/*.qmd"
+    - "!posts/*.ipynb"
+    - "!posts/_*.qmd"
+  sort: "date desc"
+  type: grid
+  grid-columns: 3
+  image-height: 220px
+  page-size: 3
+  sort-ui: false
+  filter-ui: false
+  fields: [image, date, title, description, categories]
+  categories: true
+format:
+  html:
+    css: [styles.css, project-card-custom.css, title-hard-fix.css]
+---
+
+::: {.hero-banner}
+::: {.hero-content}
+
+## From Raw Data to <span class="highlight-word">Real Impact</span> {.animate-text .no-anchor}
+
+::: {.animate-up}
+👩🏻‍💼 : Sales & Marketing Analyst -> Product Manager<br/>🧠 = Marketing + Analytics + Product<br/>Industry = Manufacturing + Semiconductor + Tech
+:::
+
+::: {.hero-stats}
+::: {.stat-item}
+**3+ Years**  
+Sales &  
+Marketing  
+Analytics
+:::
+
+::: {.stat-item}
+**3+ Years**  
+Technical
+Product  
+Management
+:::
+
+::: {.stat-item}
+**3+**  
+End-to-End  
+New Product  
+Launches
+:::
+
+::: {.stat-item}
+**20+**  
+Exec-level Presentations<br/>& Data Visuals
+:::
+:::
+
+```{=html}
+<div style="display: flex; flex-direction: row; gap: 10px; margin-top: 20px; justify-content: flex-start; align-items: center;">
+  <a href="about.qmd" class="btn btn-primary cta-button" style="display: inline-block; white-space: nowrap; height: 45px; line-height: 27px; padding: 8px 20px; font-size: 16px; min-width: 150px; text-align: center;">More About Me</a>
+  <a href="projects.qmd" class="btn btn-primary cta-button" style="display: inline-block; white-space: nowrap; height: 45px; line-height: 27px; padding: 8px 20px; font-size: 16px; min-width: 150px; text-align: center;">Projects</a>
+  <a href="cv.qmd" class="btn btn-primary cta-button" style="display: inline-block; white-space: nowrap; height: 45px; line-height: 27px; padding: 8px 20px; font-size: 16px; min-width: 150px; text-align: center;">View Resume</a>
+</div>
+```
+
+:::
+:::
+
+::: {.docs-list-title-container}
+# Recent Posts {.docs-list-title .no-anchor}
+:::
+
+::: {.posts-section}
+:::{#listing-posts}
+:::
+:::
+
+```{=html}
+<!-- Direct fix for title refresh glitches -->
+<script src="js/title-refresh-fix.js"></script>
+
+<!-- Basic title styling -->
+<script src="js/title-fix.js"></script>
