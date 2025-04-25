@@ -1,58 +1,45 @@
 /**
- * Card Click Enhancement
+ * Card Click Handler - NO ANIMATIONS
  *
- * This script improves card clickability by:
- * 1. Making the entire card a clear click target
- * 2. Adding subtle visual feedback on click
- * 3. Immediately triggering navigation on click
+ * This script ensures cards are clickable without any animations or transforms
+ * that could cause image glitches.
  */
 
 (function() {
-  // Improved card click handler with better UX
+  // Simple click handler with zero animations
   function handleCardClicks() {
-    // Target cards
-    const cards = document.querySelectorAll('.quarto-grid-item, .card.h-100');
+    console.log("Applying card click handling without animations");
+    
+    // Target all cards
+    const cards = document.querySelectorAll('.quarto-grid-item, .card.h-100, .card, [class*="card"]');
     
     cards.forEach(function(card) {
       // Skip if already processed
       if (card._clickHandled) return;
       card._clickHandled = true;
       
-      // Find link
+      // Reset any animation styles
+      card.style.transition = 'none';
+      card.style.transform = 'none';
+      card.style.willChange = 'auto';
+      
+      // Make sure it's clickable
+      card.style.cursor = 'pointer';
+      
+      // Find the card's link
       const cardLink = card.querySelector('a.quarto-grid-link') || 
                       card.querySelector('a.listing-link') ||
                       card.querySelector('.card-title a') ||
+                      card.querySelector('a') ||
                       card.parentElement.querySelector('a.quarto-grid-link');
       
-      if (!cardLink) return;
+      if (!cardLink || !cardLink.getAttribute('href')) return;
       
       const href = cardLink.getAttribute('href');
       
-      // Make card visually clickable by adding cursor style
-      card.style.cursor = 'pointer';
-      
-      // Add visual feedback on hover
-      card.style.transition = 'background-color 0.1s ease';
-      card.addEventListener('mouseenter', function() {
-        card.style.backgroundColor = '#f8f9fa';
-      });
-      card.addEventListener('mouseleave', function() {
-        card.style.backgroundColor = '';
-      });
-      
-      // Add more robust click handling
-      card.addEventListener('mousedown', function(e) {
-        // Provide visual feedback on click
-        card.style.backgroundColor = '#f0f1f2';
-      });
-      
-      card.addEventListener('mouseup', function(e) {
-        card.style.backgroundColor = '#f8f9fa';
-      });
-      
-      // Improved click handler
+      // Add click handler without animations
       card.addEventListener('click', function(e) {
-        // Don't trigger if clicking on an existing link or button
+        // Don't trigger if clicking on an actual link or button
         if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || 
             e.target.closest('a') || e.target.closest('button')) {
           return;
@@ -60,6 +47,16 @@
         
         // Immediately navigate to the target page
         window.location.href = href;
+      });
+      
+      // Fix images inside this card
+      const images = card.querySelectorAll('img, .listing-image, .thumbnail-image, .card-img-top');
+      images.forEach(function(img) {
+        img.style.transition = 'none';
+        img.style.transform = 'none';
+        img.style.willChange = 'auto';
+        img.style.opacity = '1';
+        img.style.visibility = 'visible';
       });
     });
   }
@@ -70,18 +67,12 @@
   // Run when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', handleCardClicks);
-  } else {
-    // Already loaded
-    handleCardClicks();
   }
   
-  // Also run on load
+  // Run after all resources loaded
   window.addEventListener('load', handleCardClicks);
   
-  // Run again after a delay to catch dynamically added cards
+  // Run again with a delay to catch any dynamically added cards
   setTimeout(handleCardClicks, 500);
   setTimeout(handleCardClicks, 1500);
-  
-  // Export function for external use
-  window.handleCardClicks = handleCardClicks;
 })(); 
