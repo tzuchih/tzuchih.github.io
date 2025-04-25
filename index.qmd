@@ -20,7 +20,7 @@ listing:
   categories: true
 format:
   html:
-    css: [critical-image-fix.css, styles.css, project-card-custom.css, title-hard-fix.css, card-hover-animation.css]
+    css: [critical-image-fix.css, styles.css, project-card-custom.css, title-hard-fix.css, card-hover-animation.css, card-click-enhancement.css]
 ---
 
 ```{=html}
@@ -30,8 +30,14 @@ format:
 <!-- Remove any existing Show Images buttons -->
 <script src="js/remove-show-button.js"></script>
 
+<!-- Reliable card navigation - high priority -->
+<script src="js/reliable-card-navigation.js"></script>
+
 <!-- Disable all card hover animations -->
 <script src="js/disable-card-animations.js"></script>
+
+<!-- Ensure cards are reliably clickable -->
+<script src="js/card-click-fix.js"></script>
 
 <!-- Early load critical scripts -->
 <script>

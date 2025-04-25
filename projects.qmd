@@ -4,7 +4,7 @@ page-title: "Lydia's Portfolio"
 document-title: "Lydia's Portfolio"
 format:
   html:
-    css: [critical-image-fix.css, projects-fix.css, project-card-custom.css, title-hard-fix.css, card-hover-animation.css]
+    css: [critical-image-fix.css, projects-fix.css, project-card-custom.css, title-hard-fix.css, card-hover-animation.css, card-click-enhancement.css]
 listing:
   contents: 
     - "posts/*.qmd"
@@ -42,8 +42,14 @@ Welcome to my projects page! Here, you'll find a collection of my work in data s
 <!-- Remove any existing Show Images buttons -->
 <script src="js/remove-show-button.js"></script>
 
+<!-- Reliable card navigation - high priority -->
+<script src="js/reliable-card-navigation.js"></script>
+
 <!-- Disable all card hover animations -->
 <script src="js/disable-card-animations.js"></script>
+
+<!-- Ensure cards are reliably clickable -->
+<script src="js/card-click-fix.js"></script>
 
 <!-- Early load critical scripts -->
 <script>

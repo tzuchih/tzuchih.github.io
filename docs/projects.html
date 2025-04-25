@@ -492,6 +492,7 @@ window.Quarto = {
 <link rel="stylesheet" href="projects-fix.css">
 <link rel="stylesheet" href="project-card-custom.css">
 <link rel="stylesheet" href="card-hover-animation.css">
+<link rel="stylesheet" href="card-click-enhancement.css">
 <link rel="alternate" type="application/rss+xml" title="Lydia's Portfolio" href="projects.xml" data-external="1"></head>
 
 <body class="nav-sidebar docked">
@@ -578,8 +579,12 @@ window.Quarto = {
 <script src="js/force-show-images.js"></script>
 <!-- Remove any existing Show Images buttons -->
 <script src="js/remove-show-button.js"></script>
+<!-- Reliable card navigation - high priority -->
+<script src="js/reliable-card-navigation.js"></script>
 <!-- Disable all card hover animations -->
 <script src="js/disable-card-animations.js"></script>
+<!-- Ensure cards are reliably clickable -->
+<script src="js/card-click-fix.js"></script>
 <!-- Early load critical scripts -->
 <script>
 // Create a style element for immediate critical styles
