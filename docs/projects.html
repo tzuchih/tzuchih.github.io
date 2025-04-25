@@ -82,6 +82,86 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 <style>html{ scroll-behavior: smooth; }</style>
+<!-- Critical CSS for immediate application to prevent glitches -->
+<style id="critical-preload-styles">
+/* Hide cards initially to prevent flash of unstyled content */
+.quarto-grid-item, .card.h-100 {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateZ(0) !important;
+  will-change: opacity, transform !important;
+  transition: none !important;
+}
+
+/* Add overlay to hide content until fully loaded */
+body::before {
+  content: "" !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-color: white !important;
+  z-index: 9999 !important;
+  opacity: 1 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+/* Pre-define card styles to prevent layout shifts */
+.quarto-grid-item, .card.h-100 {
+  height: 480px !important;
+  min-height: 480px !important;
+  max-height: 480px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  position: relative !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  background-color: white !important;
+}
+
+/* Pre-define card body styles */
+.quarto-grid-item .card-body, 
+.card.h-100 .post-contents {
+  height: 70% !important;
+  min-height: 70% !important;
+  max-height: 70% !important;
+  padding: 1rem 1.2rem 1.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+}
+
+/* Pre-define image container styles */
+.quarto-grid-item p.card-img-top, 
+.card.h-100 p.card-img-top {
+  height: 30% !important;
+  min-height: 30% !important;
+  max-height: 30% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  line-height: 0 !important;
+}
+</style>
+
+<!-- Remove the overlay when page is ready -->
+<script>
+(function() {
+  function removeOverlay() {
+    const overlay = document.getElementById('critical-preload-styles');
+    if (overlay) {
+      overlay.remove();
+    }
+  }
+  
+  // Wait for everything to be loaded
+  window.addEventListener('load', function() {
+    setTimeout(removeOverlay, 100);
+  });
+})();
+</script> 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏻‍💻</text></svg>">
 <title>Lydia's Portfolio</title>
 <script>
@@ -492,6 +572,8 @@ window.Quarto = {
 
 </div>
 </div>
+<!-- Prevent page load glitches -->
+<script src="js/page-load-fix.js"></script>
 <!-- Direct fix for title refresh glitches -->
 <script src="js/title-refresh-fix.js"></script>
 <style>
@@ -600,6 +682,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }, 1000);
 });
 </script>
+<!-- Make project links open in the same tab -->
+<script src="js/same-tab-links.js"></script>
+<!-- Fix card hover animation glitches and make entire card clickable -->
+<script src="js/smooth-card-hover.js"></script>
 
 
 

@@ -36,6 +36,9 @@ Welcome to my projects page! Here, you'll find a collection of my work in data s
 :::
 
 ```{=html}
+<!-- Prevent page load glitches -->
+<script src="js/page-load-fix.js"></script>
+
 <!-- Direct fix for title refresh glitches -->
 <script src="js/title-refresh-fix.js"></script>
 
@@ -148,3 +151,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }, 1000);
 });
 </script>
+
+<!-- Make project links open in the same tab -->
+<script src="js/same-tab-links.js"></script>
+
+<!-- Fix card hover animation glitches and make entire card clickable -->
+<script src="js/smooth-card-hover.js"></script>
