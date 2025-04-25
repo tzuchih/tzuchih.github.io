@@ -1,0 +1,68 @@
+/* 
+ * Card Animation Removal CSS
+ * Explicitly disables all card hover animations
+ */
+
+/* Base card styling with all animations disabled */
+.quarto-grid-item,
+.card.h-100 {
+  position: relative;
+  cursor: pointer;
+  transform: none !important;
+  transition: none !important;
+  will-change: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+/* Disable hover animations completely */
+.quarto-grid-item:hover,
+.card.h-100:hover {
+  transform: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Disable image animations */
+.quarto-grid-item img,
+.card.h-100 img,
+.listing-image,
+.thumbnail-image,
+.card-img-top {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+  transform: none !important;
+  transition: none !important;
+  will-change: auto;
+}
+
+/* Disable image hover animations */
+.quarto-grid-item:hover img,
+.card.h-100:hover img,
+.quarto-grid-item:hover .listing-image,
+.quarto-grid-item:hover .thumbnail-image,
+.card.h-100:hover .card-img-top {
+  transform: none !important;
+}
+
+/* Ensure text elements don't animate */
+.quarto-grid-item .listing-title,
+.quarto-grid-item .listing-description,
+.card.h-100 .card-title,
+.card.h-100 .card-text {
+  transition: none !important;
+}
+
+/* Container layout control */
+.quarto-grid-item .card-img-top-container,
+.card.h-100 .card-img-top-container,
+.listing-image-container {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Override any animation variables */
+:root {
+  --hover-timing: none;
+  --hover-duration: 0ms;
+} 

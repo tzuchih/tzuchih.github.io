@@ -488,8 +488,10 @@ window.Quarto = {
 <link rel="stylesheet" href="code-output-fix.css">
 <link rel="stylesheet" href="pandas-fix.css">
 <link rel="stylesheet" href="mermaid-fix.css">
+<link rel="stylesheet" href="critical-image-fix.css">
 <link rel="stylesheet" href="projects-fix.css">
 <link rel="stylesheet" href="project-card-custom.css">
+<link rel="stylesheet" href="card-hover-animation.css">
 <link rel="alternate" type="application/rss+xml" title="Lydia's Portfolio" href="projects.xml" data-external="1"></head>
 
 <body class="nav-sidebar docked">
@@ -572,6 +574,20 @@ window.Quarto = {
 
 </div>
 </div>
+<!-- Force all images to be visible immediately -->
+<script src="js/force-show-images.js"></script>
+<!-- Remove any existing Show Images buttons -->
+<script src="js/remove-show-button.js"></script>
+<!-- Disable all card hover animations -->
+<script src="js/disable-card-animations.js"></script>
+<!-- Early load critical scripts -->
+<script>
+// Create a style element for immediate critical styles
+document.addEventListener('DOMContentLoaded', function() {
+  // Mark page as loading
+  document.body.classList.add('page-loading');
+});
+</script>
 <!-- Prevent page load glitches -->
 <script src="js/page-load-fix.js"></script>
 <!-- Direct fix for title refresh glitches -->
@@ -684,8 +700,12 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <!-- Make project links open in the same tab -->
 <script src="js/same-tab-links.js"></script>
+<!-- Fix image loading glitches -->
+<script src="js/image-preload-fix.js"></script>
 <!-- Fix card hover animation glitches and make entire card clickable -->
 <script src="js/smooth-card-hover.js"></script>
+<!-- Remove critical styles once everything is loaded -->
+<script src="js/critical-styles-cleanup.js"></script>
 
 
 

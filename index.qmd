@@ -20,8 +20,28 @@ listing:
   categories: true
 format:
   html:
-    css: [styles.css, project-card-custom.css, title-hard-fix.css]
+    css: [critical-image-fix.css, styles.css, project-card-custom.css, title-hard-fix.css, card-hover-animation.css]
 ---
+
+```{=html}
+<!-- Force all images to be visible immediately -->
+<script src="js/force-show-images.js"></script>
+
+<!-- Remove any existing Show Images buttons -->
+<script src="js/remove-show-button.js"></script>
+
+<!-- Disable all card hover animations -->
+<script src="js/disable-card-animations.js"></script>
+
+<!-- Early load critical scripts -->
+<script>
+// Create a style element for immediate critical styles
+document.addEventListener('DOMContentLoaded', function() {
+  // Mark page as loading
+  document.body.classList.add('page-loading');
+});
+</script>
+```
 
 ::: {.hero-banner}
 ::: {.hero-content}
@@ -93,5 +113,11 @@ Exec-level Presentations<br/>& Data Visuals
 <!-- Make project links open in the same tab -->
 <script src="js/same-tab-links.js"></script>
 
+<!-- Fix image loading glitches -->
+<script src="js/image-preload-fix.js"></script>
+
 <!-- Fix card hover animation glitches and make entire card clickable -->
 <script src="js/smooth-card-hover.js"></script>
+
+<!-- Remove critical styles once everything is loaded -->
+<script src="js/critical-styles-cleanup.js"></script>

@@ -1,0 +1,60 @@
+/* 
+ * Critical Image Fix CSS
+ * Applied immediately on page load before other resources
+ * to prevent image glitches during initial render
+ */
+
+/* Use a less aggressive approach for images */
+.quarto-grid-item img,
+.card.h-100 img,
+.listing-image,
+.thumbnail-image,
+.card-img-top {
+  opacity: 0.01; /* Almost invisible but not completely */
+  transition: opacity 300ms ease-out;
+}
+
+/* Prevent hover animations during initial load without hiding images */
+.quarto-grid-item,
+.card.h-100 {
+  pointer-events: none;
+  transform: translateY(0) translateZ(0);
+  transition: all 300ms ease-out;
+}
+
+/* Light background placeholders for image areas */
+.card-img-top-container,
+.listing-image-container {
+  background-color: #f8f8f8;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Restore images once loaded */
+.image-loaded {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Card styles are normal once ready */
+.card-ready {
+  pointer-events: auto !important;
+}
+
+/* Default state after a short delay */
+@keyframes show-image {
+  from { opacity: 0.01; }
+  to { opacity: 1; }
+}
+
+/* Fallback to ensure images appear after 2 seconds regardless */
+img {
+  animation: show-image 0.3s ease-in forwards;
+  animation-delay: 2s;
+}
+
+/* Remove initial transition to prevent first-load glitches */
+* {
+  transition-delay: 0ms !important;
+} 
