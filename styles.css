@@ -1486,9 +1486,9 @@ li.sidebar-item.active,
 .sidebar-item:hover .menu-text,
 .sidebar-item.active .menu-text,
 li.sidebar-item:has(a[href*="projects"]),
+li.sidebar-item:has(a[href*="cv"]),
 li.sidebar-item:has(a[href*="projects"]) .sidebar-item-container,
-li.sidebar-item:has(a[href*="projects"]) a.sidebar-item-text,
-li.sidebar-item:has(a[href*="projects"]) .menu-text {
+li.sidebar-item:has(a[href*="cv"]) .sidebar-item-container {
   transition: none !important;
   animation: none !important;
   background: none !important;
@@ -1510,25 +1510,25 @@ li.sidebar-item:has(a[href*="projects"]) .menu-text {
   align-items: center !important;
   border-radius: 6px !important;
   border-left: 3px solid transparent !important;
-  transition: all 0.2s ease-in-out !important;
   background-color: transparent !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  left: 0 !important;
 }
 
-#quarto-sidebar ul.list-unstyled li.sidebar-item .sidebar-item-text {
-  font-size: 1.35rem !important;
-  font-weight: 500 !important;
-  color: #4A5568 !important;
-  letter-spacing: 0.01em !important;
-  transition: all 0.2s ease-in-out !important;
-  text-decoration: none !important;
-}
-
+/* Perfect alignment for all sidebar links - including links text */
+#quarto-sidebar ul.list-unstyled li.sidebar-item .sidebar-item-text,
 #quarto-sidebar ul.list-unstyled li.sidebar-item .menu-text {
   font-size: 1.35rem !important;
   font-weight: 500 !important;
   color: #4A5568 !important;
   letter-spacing: 0.01em !important;
-  transition: all 0.2s ease-in-out !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  position: static !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  text-indent: 0 !important;
 }
 
 /* HOVER STATES - All sidebar links */
@@ -1556,56 +1556,36 @@ li.sidebar-item:has(a[href*="projects"]) .menu-text {
   font-weight: 600 !important;
 }
 
-/* SPECIAL TREATMENT FOR PROJECTS LINK to ensure consistency */
-#quarto-sidebar ul.list-unstyled li.sidebar-item:has(a[href*="projects"]) {
+/* Force exact same spacing and alignment for ALL navigation links */
+#quarto-sidebar ul.list-unstyled li.sidebar-item:nth-child(1),
+#quarto-sidebar ul.list-unstyled li.sidebar-item:nth-child(2),
+#quarto-sidebar ul.list-unstyled li.sidebar-item:nth-child(3),
+#quarto-sidebar ul.list-unstyled li.sidebar-item:nth-child(4) {
   margin: 0.85rem 0 !important;
   padding: 0 !important;
-  border-radius: 6px !important;
-  overflow: hidden !important;
-  background-color: transparent !important;
 }
 
-#quarto-sidebar ul.list-unstyled li.sidebar-item:has(a[href*="projects"]) .sidebar-item-container {
+#quarto-sidebar ul.list-unstyled li.sidebar-item:nth-child(1) .sidebar-item-container,
+#quarto-sidebar ul.list-unstyled li.sidebar-item:nth-child(2) .sidebar-item-container,
+#quarto-sidebar ul.list-unstyled li.sidebar-item:nth-child(3) .sidebar-item-container,
+#quarto-sidebar ul.list-unstyled li.sidebar-item:nth-child(4) .sidebar-item-container {
   padding: 0.8rem 1.2rem !important;
   display: flex !important;
   align-items: center !important;
-  border-radius: 6px !important;
+  justify-content: flex-start !important;
   border-left: 3px solid transparent !important;
-  transition: all 0.2s ease-in-out !important;
-  background-color: transparent !important;
 }
 
-#quarto-sidebar ul.list-unstyled li.sidebar-item:has(a[href*="projects"]) .sidebar-item-text,
-#quarto-sidebar ul.list-unstyled li.sidebar-item:has(a[href*="projects"]) .menu-text {
-  font-size: 1.35rem !important;
-  font-weight: 500 !important;
-  color: #4A5568 !important;
-  letter-spacing: 0.01em !important;
-  transition: all 0.2s ease-in-out !important;
-  text-decoration: none !important;
-}
-
-/* Projects link hover state */
-#quarto-sidebar ul.list-unstyled li.sidebar-item:has(a[href*="projects"]):hover .sidebar-item-container {
-  background-color: rgba(191, 211, 230, 0.15) !important;
-  border-left: 3px solid rgba(178, 93, 76, 0.4) !important;
-  transform: translateX(3px) !important;
-}
-
-#quarto-sidebar ul.list-unstyled li.sidebar-item:has(a[href*="projects"]):hover .sidebar-item-text,
-#quarto-sidebar ul.list-unstyled li.sidebar-item:has(a[href*="projects"]):hover .menu-text {
-  color: #B25D4C !important;
-  transform: translateX(2px) !important;
-}
-
-/* Removing any other sidebar styles that might conflict */
-.sidebar-item::before,
-.sidebar-item::after,
-.sidebar-item.active::before,
-.sidebar-item.active::after,
-.sidebar-item-container::before,
-.sidebar-item-container::after {
-  display: none !important;
+#quarto-sidebar ul.list-unstyled li.sidebar-item:nth-child(1) .menu-text,
+#quarto-sidebar ul.list-unstyled li.sidebar-item:nth-child(2) .menu-text,
+#quarto-sidebar ul.list-unstyled li.sidebar-item:nth-child(3) .menu-text,
+#quarto-sidebar ul.list-unstyled li.sidebar-item:nth-child(4) .menu-text {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  text-indent: 0 !important;
+  text-align: left !important;
+  position: static !important;
+  left: 0 !important;
 }
 
 /* Special spacing for sidebar header and logo */

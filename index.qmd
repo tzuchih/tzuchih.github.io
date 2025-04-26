@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
 ## From Raw Data to <span class="highlight-word">Real Impact</span> {.animate-text .no-anchor}
 
 ::: {.animate-up}
-👩🏻‍💼 : Sales & Marketing Analyst -> Product Manager<br/>🧠 = Marketing + Analytics + Product<br/>Industry = Manufacturing + Semiconductor + Tech
+👩🏻‍💼 : Sales & Marketing Analyst -> Product Manager<br/>🧠 = Marketing + Analytics + Product<br/>🏭 = Manufacturing + Semiconductor + Tech
 :::
 
 ::: {.hero-stats}
@@ -107,7 +107,7 @@ Management
 
 ::: {.stat-item}
 **3+**
-End-to-End
+<br/>End-to-End
 New Product 
 Launches
 :::
@@ -125,7 +125,6 @@ Exec-level Presentations<br/>& Data Visuals
 <div style="display: flex; flex-direction: row; gap: 10px; margin-top: 20px; justify-content: flex-start; align-items: center;">
   <a href="about.qmd" class="btn btn-primary cta-button" style="display: inline-block; white-space: nowrap; height: 45px; line-height: 27px; padding: 8px 20px; font-size: 16px; min-width: 150px; text-align: center;">More About Me</a>
   <a href="projects.qmd" class="btn btn-primary cta-button" style="display: inline-block; white-space: nowrap; height: 45px; line-height: 27px; padding: 8px 20px; font-size: 16px; min-width: 150px; text-align: center;">Projects</a>
-  <a href="cv.qmd" class="btn btn-primary cta-button" style="display: inline-block; white-space: nowrap; height: 45px; line-height: 27px; padding: 8px 20px; font-size: 16px; min-width: 150px; text-align: center;">View Resume</a>
 </div>
 ```
 

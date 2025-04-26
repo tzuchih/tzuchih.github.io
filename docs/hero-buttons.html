@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Hi! I’m Lydia Hsu 👩🏻‍💻 – Lydia's Portfolio</title>
+<title>Hero Buttons – Lydia’s Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,9 +24,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<link href="./about.html" rel="next">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -52,35 +49,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <style>html{ scroll-behavior: smooth; }</style>
 <!-- Critical CSS for immediate application to prevent glitches -->
 <style id="critical-preload-styles">
@@ -701,49 +669,6 @@ table.dataframe * {
   }
 </style>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="spacing-fix.css">
@@ -758,9 +683,6 @@ window.Quarto = {
 <link rel="stylesheet" href="pandas-fix.css">
 <link rel="stylesheet" href="mermaid-fix.css">
 <link rel="stylesheet" href="card-click-enhancement.css">
-<link rel="stylesheet" href="critical-image-fix.css">
-<link rel="stylesheet" href="project-card-custom.css">
-<link rel="stylesheet" href="card-hover-animation.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -772,7 +694,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Hero Buttons</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -796,7 +718,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
@@ -823,28 +745,20 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#from-raw-data-to-real-impact" id="toc-from-raw-data-to-real-impact" class="nav-link active" data-scroll-target="#from-raw-data-to-real-impact">From Raw Data to <span class="highlight-word">Real Impact</span></a></li>
-  <li><a href="#recent-posts" id="toc-recent-posts" class="nav-link" data-scroll-target="#recent-posts">Recent Posts</a></li>
-  </ul>
-</nav>
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RGV2JTIwV29ya2Zsb3c=">Dev Workflow <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TkxQ">NLP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TkxUSw==">NLTK <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJvbXB0JTIwRW5naW5lZXJpbmc=">Prompt Engineering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U2Npa2l0LWxlYXJu">Scikit-learn <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U3RyZWFtbGl0">Streamlit <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VmliZSUyMENvZGluZw==">Vibe Coding <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YW5hbHl0aWNz">analytics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWFudWZhYw==">manufac <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvZHVjdC1zdHJhdGVneQ==">product-strategy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2VtaWNvbg==">semicon <span class="quarto-category-count">(1)</span></div></div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Hi! I’m Lydia Hsu 👩🏻‍💻</h1>
-<p class="subtitle lead">Here is where I keep all my projects.<br>I transform raw data into <strong>actionable insights</strong> and <strong>market-ready products</strong> that accelerate growth.</p>
+<h1 class="title">Hero Buttons</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-body">
+<div class="quarto-title-meta column-page-right">
 
     
   
@@ -856,229 +770,14 @@ window.Quarto = {
 </header>
 
 
-<!-- Force all images to be visible immediately -->
-<script src="js/force-show-images.js"></script>
-
-<!-- Remove any existing Show Images buttons -->
-<script src="js/remove-show-button.js"></script>
-
-<!-- Reliable card navigation - high priority -->
-<script src="js/reliable-card-navigation.js"></script>
-
-<!-- Disable all card hover animations -->
-<script src="js/disable-card-animations.js"></script>
-
-<!-- Ensure cards are reliably clickable -->
-<script src="js/card-click-fix.js"></script>
-
-<!-- Early load critical scripts -->
-<script>
-// Create a style element for immediate critical styles
-document.addEventListener('DOMContentLoaded', function() {
-  // Mark page as loading
-  document.body.classList.add('page-loading');
-});
-</script>
-
-<!-- Critical visibility fix for hero banner only -->
-<style>
-  .hero-banner * {
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-  .hero-stats {
-    display: flex !important;
-  }
-  .hero-banner h2 {
-    color: #2C3E50 !important;
-  }
-  .highlight-word {
-    color: #B25D4C !important;
-  }
-  .stat-item strong {
-    color: #B25D4C !important;
-    display: block !important;
-  }
-  .stat-item span {
-    color: #7F8C8D !important;
-  }
-  .stat-item {
-    background: white !important;
-  }
-  .btn-primary {
-    background-color: #B25D4C !important;
-    color: white !important;
-  }
-</style>
-<div class="hero-banner">
-<section id="from-raw-data-to-real-impact" class="level2 animate-text no-anchor hero-content">
-<h2 class="animate-text no-anchor" data-anchor-id="from-raw-data-to-real-impact">From Raw Data to <span class="highlight-word">Real Impact</span></h2>
-<div class="animate-up">
-<p>👩🏻‍💼 : Sales &amp; Marketing Analyst -&gt; Product Manager<br>🧠 = Marketing + Analytics + Product<br>🏭 = Manufacturing + Semiconductor + Tech</p>
-</div>
-<div class="hero-stats">
-<div class="stat-item">
-<p><strong>3+ Years</strong><br>
-Sales &amp; Marketing Analytics</p>
-</div>
-<div class="stat-item">
-<p><strong>3+ Years</strong><br>
-Technical Product<br>
-Management</p>
-</div>
-<div class="stat-item">
-<p><strong>3+</strong> <br>End-to-End New Product Launches</p>
-</div>
-<div class="stat-item">
-<p><strong>20+</strong> Exec-level Presentations<br>&amp; Data Visuals</p>
-</div>
-</div>
-<!-- Prevent page load glitches -->
-<script src="js/page-load-fix.js"></script>
-
 <div style="display: flex; flex-direction: row; gap: 10px; margin-top: 20px; justify-content: flex-start; align-items: center;">
   <a href="./about.html" class="btn btn-primary cta-button" style="display: inline-block; white-space: nowrap; height: 45px; line-height: 27px; padding: 8px 20px; font-size: 16px; min-width: 150px; text-align: center;">More About Me</a>
   <a href="./projects.html" class="btn btn-primary cta-button" style="display: inline-block; white-space: nowrap; height: 45px; line-height: 27px; padding: 8px 20px; font-size: 16px; min-width: 150px; text-align: center;">Projects</a>
 </div>
-</section>
-</div>
-<section id="recent-posts" class="level1 docs-list-title no-anchor docs-list-title-container">
-<h1 class="docs-list-title no-anchor">Recent Posts</h1>
-</section>
-<div class="posts-section">
-<div id="listing-posts">
-
-</div>
-</div>
-<!-- Direct fix for title refresh glitches -->
-<script src="js/title-refresh-fix.js"></script>
-<!-- Basic title styling -->
-<script src="js/title-fix.js"></script>
-<!-- Make project links open in the same tab -->
-<script src="js/same-tab-links.js"></script>
-<!-- Fix image loading glitches -->
-<script src="js/image-preload-fix.js"></script>
-<!-- Remove critical styles once everything is loaded -->
-<script src="js/critical-styles-cleanup.js"></script>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="VmliZSUyMENvZGluZyUyQ1Byb21wdCUyMEVuZ2luZWVyaW5nJTJDRGV2JTIwV29ya2Zsb3c=" data-listing-date-sort="1744700400000" data-listing-file-modified-sort="1745648112189" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="482">
-<a href="./posts/vibe-coding.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./images/posts/vibecoding.jpg" class="thumbnail-image card-img" style="height: 220px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-🎧 Vibe Coding My Portfolio
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('VmliZSUyMENvZGluZw=='); return false;">
-Vibe Coding
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('UHJvbXB0JTIwRW5naW5lZXJpbmc='); return false;">
-Prompt Engineering
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('RGV2JTIwV29ya2Zsb3c='); return false;">
-Dev Workflow
-</div>
-</div>
-<div class="card-text listing-description">
-How I built my portfolio site using vibe coding: an AI-assisted, prompt-powered approach.
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Apr 15, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="UHl0aG9uJTJDTkxQJTJDTkxUSyUyQ1NjaWtpdC1sZWFybiUyQ1N0cmVhbWxpdA==" data-listing-date-sort="1742454000000" data-listing-file-modified-sort="1745646732255" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1265">
-<a href="./posts/job-rec-system.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./images/posts/jobrec.jpg" class="thumbnail-image card-img" style="height: 220px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Building a Job Rec System
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">
-Python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('TkxQ'); return false;">
-NLP
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('TkxUSw=='); return false;">
-NLTK
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('U2Npa2l0LWxlYXJu'); return false;">
-Scikit-learn
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('U3RyZWFtbGl0'); return false;">
-Streamlit
-</div>
-</div>
-<div class="card-text listing-description">
-<span>Check out this project on my Github</span><br> This project is where natural language processing meets career search! I…
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Mar 20, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="bWFudWZhYyUyQ3NlbWljb24lMkNwcm9kdWN0LXN0cmF0ZWd5JTJDYW5hbHl0aWNz" data-listing-date-sort="1740643200000" data-listing-file-modified-sort="1745649900999" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="533">
-<a href="./posts/life-at-3m.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./images/posts/3m.jpg" class="thumbnail-image card-img" style="height: 220px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Life at 3M: Turning Tape into Tech Impact
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('bWFudWZhYw=='); return false;">
-manufac
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2VtaWNvbg=='); return false;">
-semicon
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvZHVjdC1zdHJhdGVneQ=='); return false;">
-product-strategy
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHl0aWNz'); return false;">
-analytics
-</div>
-</div>
-<div class="card-text listing-description">
-👩🏻‍💼 : Intern -&gt; Marketing Analyst -&gt; Product Manager<br>🧠 = Marketing + Analytics + Product<br>Industry = Manufacturing + Semiconductor + Tech
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Feb 27, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <!-- Post-processing scripts -->
 <script src="../js/mermaid-fix.js"></script>
 <script src="../js/home-card-fix.js"></script>
@@ -1664,15 +1363,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./about.html" class="pagination-link" aria-label="About Me">
-        <span class="nav-page-text">About Me</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Hi! I’m Lydia Hsu 👩🏻‍💻",
     "section": "",
-    "text": "👩🏻‍💼 : Sales & Marketing Analyst -&gt; Product Manager🧠 = Marketing + Analytics + ProductIndustry = Manufacturing + Semiconductor + Tech\n\n\n\n3+ Years\nSales & Marketing Analytics\n\n\n3+ Years\nTechnical Product\nManagement\n\n\n3+ End-to-End New Product Launches\n\n\n20+ Exec-level Presentations& Data Visuals\n\n\n\n\n\n\n  More About Me\n  Projects\n  View Resume",
+    "text": "👩🏻‍💼 : Sales & Marketing Analyst -&gt; Product Manager🧠 = Marketing + Analytics + Product🏭 = Manufacturing + Semiconductor + Tech\n\n\n\n3+ Years\nSales & Marketing Analytics\n\n\n3+ Years\nTechnical Product\nManagement\n\n\n3+ End-to-End New Product Launches\n\n\n20+ Exec-level Presentations& Data Visuals\n\n\n\n\n\n\n  More About Me\n  Projects",
     "crumbs": [
       "Home"
     ]
@@ -21,10 +21,101 @@
     "href": "index.html#from-raw-data-to-real-impact",
     "title": "Hi! I’m Lydia Hsu 👩🏻‍💻",
     "section": "",
-    "text": "👩🏻‍💼 : Sales & Marketing Analyst -&gt; Product Manager🧠 = Marketing + Analytics + ProductIndustry = Manufacturing + Semiconductor + Tech\n\n\n\n3+ Years\nSales & Marketing Analytics\n\n\n3+ Years\nTechnical Product\nManagement\n\n\n3+ End-to-End New Product Launches\n\n\n20+ Exec-level Presentations& Data Visuals\n\n\n\n\n\n\n  More About Me\n  Projects\n  View Resume",
+    "text": "👩🏻‍💼 : Sales & Marketing Analyst -&gt; Product Manager🧠 = Marketing + Analytics + Product🏭 = Manufacturing + Semiconductor + Tech\n\n\n\n3+ Years\nSales & Marketing Analytics\n\n\n3+ Years\nTechnical Product\nManagement\n\n\n3+ End-to-End New Product Launches\n\n\n20+ Exec-level Presentations& Data Visuals\n\n\n\n\n\n\n  More About Me\n  Projects",
     "crumbs": [
       "Home"
     ]
+  },
+  {
+    "objectID": "hero-buttons.html",
+    "href": "hero-buttons.html",
+    "title": "Hero Buttons",
+    "section": "",
+    "text": "More About Me\n  Projects"
+  },
+  {
+    "objectID": "posts/life-at-3m.html",
+    "href": "posts/life-at-3m.html",
+    "title": "Life at 3M: Turning Tape into Tech Impact",
+    "section": "",
+    "text": "5 ½ years · 3 roles · 1 constant goal: keep the world’s smallest chips safe on their journey from fab to finished device.\n\nI joined 3M’s Electronics Material Solutions Division as an intern, crunched marketing data as an analyst, and ultimately owned the carrier-tape portfolio as Product Manager. Along the way I learned how a millimeter-wide strip of plastic can make—or break—an entire semiconductor supply chain."
+  },
+  {
+    "objectID": "posts/life-at-3m.html#from-intern-to-product-manager",
+    "href": "posts/life-at-3m.html#from-intern-to-product-manager",
+    "title": "Life at 3M: Turning Tape into Tech Impact",
+    "section": "",
+    "text": "5 ½ years · 3 roles · 1 constant goal: keep the world’s smallest chips safe on their journey from fab to finished device.\n\nI joined 3M’s Electronics Material Solutions Division as an intern, crunched marketing data as an analyst, and ultimately owned the carrier-tape portfolio as Product Manager. Along the way I learned how a millimeter-wide strip of plastic can make—or break—an entire semiconductor supply chain."
+  },
+  {
+    "objectID": "posts/life-at-3m.html#why-carrier-tape-matters",
+    "href": "posts/life-at-3m.html#why-carrier-tape-matters",
+    "title": "Life at 3M: Turning Tape into Tech Impact",
+    "section": "Why Carrier Tape Matters",
+    "text": "Why Carrier Tape Matters\nCarrier tape sits at the intersection of precision engineering and high-volume automation:\n\nProtects fragile dies, LEDs, passives from ESD & micro-cracks\n\nFeeds pick-and-place machines at &gt; 30 k components/hr\n\nEnables wafer-level packaging, mini-LED TVs, and the chips in your phone\n\nWithout it, yield drops and production costs spike. Small tape, big impact."
+  },
+  {
+    "objectID": "posts/life-at-3m.html#my-hats-often-worn-all-at-once",
+    "href": "posts/life-at-3m.html#my-hats-often-worn-all-at-once",
+    "title": "Life at 3M: Turning Tape into Tech Impact",
+    "section": "My Hats (Often Worn All at Once)",
+    "text": "My Hats (Often Worn All at Once)\n\n\n\n\n\n\n\nArea\nWhat I Did\n\n\n\n\nProduct Ownership\nDrove roadmap for 3000 & 3200 Series tapes; scoped new cover tape designs with R&D\n\n\nProduct Manager\nDiscuss next-steps to launch new products with R&D manager after a positive evaluation\n\n\nMarket & Customer Analysis\nBuilt Power BI dashboard from SAP/Salesforce data to spot volume shifts\n\n\nCross-functional Coordination\nRan monthly S&OP Meeting with Sales, Ops, Quality\n\n\nTechnical Support\nAdvised customers on peel-force & suggested cover tape\n\n\nGo-to-Market\nCreated demo rigs & content for SEMICON TW Tradeshow\n\n\nP&L Owner\nReview low margin items and discuss action plan with sales team"
+  },
+  {
+    "objectID": "posts/life-at-3m.html#a-day-in-the-tape-filled-life",
+    "href": "posts/life-at-3m.html#a-day-in-the-tape-filled-life",
+    "title": "Life at 3M: Turning Tape into Tech Impact",
+    "section": "A Day in the (Tape-Filled) Life",
+    "text": "A Day in the (Tape-Filled) Life\n08:30 — Slack stand-up with manufacturing to triage a pocket-depth deviation.\n10:00 — SQL pull on last quarter’s order mix → see LED segment down 12 %.\n13:00 — Customer call; discuss new peel force request for even smaller dies.\n15:00 — Figma mock of new datasheet; loop in MarCom for compliance.\n17:00 — Update Jira epics, prep slides for exec read-out.\nNo two days looked alike—exactly why I loved it."
+  },
+  {
+    "objectID": "posts/life-at-3m.html#key-takeaways",
+    "href": "posts/life-at-3m.html#key-takeaways",
+    "title": "Life at 3M: Turning Tape into Tech Impact",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nLearned to think in systems. Understanding how a tiny design change could cascade across manufacturing, logistics, and customer experience made me a more strategic product owner.\nTurned data into influence. Building and communicating insights with dashboards strengthened my ability to align diverse teams and drive decisions with credibility.\nGrew into a cross-functional leader. Success wasn’t about individual wins—it came from forging strong partnerships across Sales, Ops, R&D, and Quality.\n\n\nHave questions about semiconductor packaging, product analytics, or how to keep thousands of tiny chips from flying everywhere?\n📬 Let’s chat"
+  },
+  {
+    "objectID": "posts/job-rec-system.html#key-features-for-users",
+    "href": "posts/job-rec-system.html#key-features-for-users",
+    "title": "Building a Job Rec System",
+    "section": "✨ Key Features for Users",
+    "text": "✨ Key Features for Users\n\nQuick Resume Upload\nUsers can upload their resumes in PDF or DOCX format with just one click—no formatting or manual input required.\nPersonalized Job Matches\nThe system automatically recommends job listings that closely align with the user’s skills, experience, and preferences.\nCustom Filters\nUsers can filter job recommendations by location, role, industry, or keywords to tailor results to their career goals.\nTop 5 Matching Jobs\nSee your top 5 most relevant job opportunities based on resume-job fit, sorted by similarity score.\nSkill Gap Insights\nInstantly view which required skills are missing from your resume, so you can focus on improving them or tailoring your résumé more effectively.\nOne-Click Cover Letter Draft\nChoose a job listing, and the system will generate a personalized cover letter draft—saving time and boosting your application quality."
+  },
+  {
+    "objectID": "posts/job-rec-system.html#result-and-flow-chart",
+    "href": "posts/job-rec-system.html#result-and-flow-chart",
+    "title": "Building a Job Rec System",
+    "section": "📈 Result and Flow Chart",
+    "text": "📈 Result and Flow Chart\n\nThe user interface of the system:\n\n\n\nThe process flow of the system:\n\n \n\n\n&lt;div class=\"mermaid\"&gt;\n  flowchart TD\n    A1[/\"User Upload&lt;br/&gt;Resume\"/] --&gt;|\"Extract Resume Text\"| B1[\"Preprocess Resume Text&lt;br/&gt;(Remove&lt;br/&gt;Lowercase, Stopwords...)\"]\n    \n    A2{\"User Set Preference&lt;br/&gt;(Location, Job&lt;br/&gt;Type, Level)\"} --&gt; B2[\"Filter Job Listings&lt;br/&gt;(Based on User Criteria)\"]\n    \n    B1 & B2 --&gt; C[\"TF-IDF Vectorization&lt;br/&gt;(Job Description, Resume)\"]\n    C --&gt; D[\"Compute Cosine Similarity\"]\n    D --&gt; E[\"Find Top Matches\"]\n    E --&gt; F[\"Analyze Skill Gaps\"]\n    F --&gt; G[/\"Display Results\"/]\n    G --&gt; H[\"Generate Cover Letter\"]\n    \n    classDef parallelogram path,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;\n    classDef diamond rhombus,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;\n    classDef rectangle rect,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;\n    \n    class A1 parallelogram;\n    class A2 diamond;\n    class B1,B2,C,D,E,F,H rectangle;\n    class G parallelogram;\n&lt;/div&gt;\n\n\n\n&lt;img src=\"../../images/posts/job-rec-diagram.png\" alt=\"Job Recommendation System Flowchart\" style=\"max-width:100%; height:auto; display:block; margin:0 auto;\"&gt;"
+  },
+  {
+    "objectID": "posts/job-rec-system.html#dataset",
+    "href": "posts/job-rec-system.html#dataset",
+    "title": "Building a Job Rec System",
+    "section": "📦 Dataset",
+    "text": "📦 Dataset\nThe job listing dataset was sourced from Kaggle and contains 1.3 million job listings scraped from LinkedIn in the year 2024, including skill requirements, and metadata such as job level, country, and type. I further enriched and cleaned the dataset to make it suitable for text vectorization and matching."
+  },
+  {
+    "objectID": "posts/job-rec-system.html#how-it-works-behind-the-scenes",
+    "href": "posts/job-rec-system.html#how-it-works-behind-the-scenes",
+    "title": "Building a Job Rec System",
+    "section": "🧠 How It Works Behind the Scenes",
+    "text": "🧠 How It Works Behind the Scenes\n\n1. Resume Parsing\nUsers upload a resume (PDF or DOCX), and I use pdfminer and python-docx to extract raw text. This ensures the system can handle a wide range of formatting.\n\n\n2. Text Preprocessing\nA custom clean_text() function prepares the text by:\n\nLowercasing all characters\nRemoving numbers and punctuation\nTokenizing the text\nRemoving stopwords with NLTK\nLemmatizing each token\n\nThis helps standardize the content from both resumes and job descriptions.\n\n\n3. Data Preparation\nEach job posting is processed by merging its title and required skills into one text field, which then undergoes the same cleaning pipeline for consistency.\n\n\n4. TF-IDF Vectorization\nI apply TF-IDF with bi-grams, sublinear term frequency, and smoothing to convert the cleaned text into numerical vectors. This approach highlights important skills and phrases while minimizing noise.\ndef get_vectorizer_and_vectors(job_data):\n    \"\"\"Caches the TF-IDF vectorizer and job text embeddings.\"\"\"\n    vectorizer = TfidfVectorizer(stop_words='english', ngram_range=(1,2), smooth_idf=True, sublinear_tf=True)\n    \n    if not job_data.empty:\n        job_vectors = vectorizer.fit_transform(job_data['clean_text'])\n    else:\n        job_vectors = None  # Prevents errors if no jobs exist\n    \n    return vectorizer, job_vectors\n\n\n5. Cosine Similarity Matching\nThe resume vector is compared against all job vectors using cosine similarity, generating a match score. To improve interpretability, I normalize the similarity scores to a 0–100 scale.\n\n\n6. Filtering Options\nUsers can filter jobs by:\n🌎 Country, 💼 Job Level, 🏠 Job Type (Onsite, Remote, or Hybrid)\nOnly filtered jobs are vectorized—making the system both efficient and responsive.\n\n\n7. Skill Gap Analysis\nEach job match also includes:\n✅ Matched Skills you already have\n❌ Missing Skills to work on\nThis makes recommendations actionable for job seekers.\n\n\n8. Cover Letter Generator\nSelect a job, click a button, and the system drafts a personalized cover letter based on the role, skills, and company—great for quickly tailoring applications."
+  },
+  {
+    "objectID": "posts/job-rec-system.html#tools-libraries",
+    "href": "posts/job-rec-system.html#tools-libraries",
+    "title": "Building a Job Rec System",
+    "section": "⚙️ Tools & Libraries",
+    "text": "⚙️ Tools & Libraries\n\nPython, Streamlit, Pandas, NumPy\nNLTK for text processing\nScikit-learn for TF-IDF & similarity computation\npdfminer.six & python-docx for file parsing\nKaggle job dataset (custom cleaned)"
+  },
+  {
+    "objectID": "posts/job-rec-system.html#what-i-gained",
+    "href": "posts/job-rec-system.html#what-i-gained",
+    "title": "Building a Job Rec System",
+    "section": "💡 What I Gained",
+    "text": "💡 What I Gained\nThis project combined everything I love—data wrangling, NLP, real-world problem solving, and user-centered design. It strengthened my skills in building scalable pipelines, working with unstructured data, and developing applications that turn insight into action."
   },
   {
     "objectID": "posts/vibe-coding.html",
@@ -74,90 +165,6 @@
     "title": "🎧 Vibe Coding My Portfolio",
     "section": "🤝🏼 Let’s Connect",
     "text": "🤝🏼 Let’s Connect\nIf you’re experimenting with AI-assisted portfolios, playing with Quarto, or exploring what vibe coding looks like — I’d love to hear your story.\nLet’s swap prompts, share inspiration, or build a lo-fi coding playlist together.\n📬 Let’s chat"
-  },
-  {
-    "objectID": "posts/job-rec-system.html#key-features-for-users",
-    "href": "posts/job-rec-system.html#key-features-for-users",
-    "title": "Building a Job Rec System",
-    "section": "✨ Key Features for Users",
-    "text": "✨ Key Features for Users\n\nQuick Resume Upload\nUsers can upload their resumes in PDF or DOCX format with just one click—no formatting or manual input required.\nPersonalized Job Matches\nThe system automatically recommends job listings that closely align with the user’s skills, experience, and preferences.\nCustom Filters\nUsers can filter job recommendations by location, role, industry, or keywords to tailor results to their career goals.\nTop 5 Matching Jobs\nSee your top 5 most relevant job opportunities based on resume-job fit, sorted by similarity score.\nSkill Gap Insights\nInstantly view which required skills are missing from your resume, so you can focus on improving them or tailoring your résumé more effectively.\nOne-Click Cover Letter Draft\nChoose a job listing, and the system will generate a personalized cover letter draft—saving time and boosting your application quality."
-  },
-  {
-    "objectID": "posts/job-rec-system.html#result-and-flow-chart",
-    "href": "posts/job-rec-system.html#result-and-flow-chart",
-    "title": "Building a Job Rec System",
-    "section": "📈 Result and Flow Chart",
-    "text": "📈 Result and Flow Chart\n\nThe user interface of the system:\n\n\n\nThe process flow of the system:\n\n \n\n\n&lt;div class=\"mermaid\"&gt;\n  flowchart TD\n    A1[/\"User Upload&lt;br/&gt;Resume\"/] --&gt;|\"Extract Resume Text\"| B1[\"Preprocess Resume Text&lt;br/&gt;(Remove&lt;br/&gt;Lowercase, Stopwords...)\"]\n    \n    A2{\"User Set Preference&lt;br/&gt;(Location, Job&lt;br/&gt;Type, Level)\"} --&gt; B2[\"Filter Job Listings&lt;br/&gt;(Based on User Criteria)\"]\n    \n    B1 & B2 --&gt; C[\"TF-IDF Vectorization&lt;br/&gt;(Job Description, Resume)\"]\n    C --&gt; D[\"Compute Cosine Similarity\"]\n    D --&gt; E[\"Find Top Matches\"]\n    E --&gt; F[\"Analyze Skill Gaps\"]\n    F --&gt; G[/\"Display Results\"/]\n    G --&gt; H[\"Generate Cover Letter\"]\n    \n    classDef parallelogram path,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;\n    classDef diamond rhombus,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;\n    classDef rectangle rect,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;\n    \n    class A1 parallelogram;\n    class A2 diamond;\n    class B1,B2,C,D,E,F,H rectangle;\n    class G parallelogram;\n&lt;/div&gt;\n\n\n\n&lt;img src=\"../../images/posts/job-rec-diagram.png\" alt=\"Job Recommendation System Flowchart\" style=\"max-width:100%; height:auto; display:block; margin:0 auto;\"&gt;"
-  },
-  {
-    "objectID": "posts/job-rec-system.html#dataset",
-    "href": "posts/job-rec-system.html#dataset",
-    "title": "Building a Job Rec System",
-    "section": "📦 Dataset",
-    "text": "📦 Dataset\nThe job listing dataset was sourced from Kaggle and contains 1.3 million job listings scraped from LinkedIn in the year 2024, including skill requirements, and metadata such as job level, country, and type. I further enriched and cleaned the dataset to make it suitable for text vectorization and matching."
-  },
-  {
-    "objectID": "posts/job-rec-system.html#how-it-works-behind-the-scenes",
-    "href": "posts/job-rec-system.html#how-it-works-behind-the-scenes",
-    "title": "Building a Job Rec System",
-    "section": "🧠 How It Works Behind the Scenes",
-    "text": "🧠 How It Works Behind the Scenes\n\n1. Resume Parsing\nUsers upload a resume (PDF or DOCX), and I use pdfminer and python-docx to extract raw text. This ensures the system can handle a wide range of formatting.\n\n\n2. Text Preprocessing\nA custom clean_text() function prepares the text by:\n\nLowercasing all characters\nRemoving numbers and punctuation\nTokenizing the text\nRemoving stopwords with NLTK\nLemmatizing each token\n\nThis helps standardize the content from both resumes and job descriptions.\n\n\n3. Data Preparation\nEach job posting is processed by merging its title and required skills into one text field, which then undergoes the same cleaning pipeline for consistency.\n\n\n4. TF-IDF Vectorization\nI apply TF-IDF with bi-grams, sublinear term frequency, and smoothing to convert the cleaned text into numerical vectors. This approach highlights important skills and phrases while minimizing noise.\ndef get_vectorizer_and_vectors(job_data):\n    \"\"\"Caches the TF-IDF vectorizer and job text embeddings.\"\"\"\n    vectorizer = TfidfVectorizer(stop_words='english', ngram_range=(1,2), smooth_idf=True, sublinear_tf=True)\n    \n    if not job_data.empty:\n        job_vectors = vectorizer.fit_transform(job_data['clean_text'])\n    else:\n        job_vectors = None  # Prevents errors if no jobs exist\n    \n    return vectorizer, job_vectors\n\n\n5. Cosine Similarity Matching\nThe resume vector is compared against all job vectors using cosine similarity, generating a match score. To improve interpretability, I normalize the similarity scores to a 0–100 scale.\n\n\n6. Filtering Options\nUsers can filter jobs by:\n🌎 Country, 💼 Job Level, 🏠 Job Type (Onsite, Remote, or Hybrid)\nOnly filtered jobs are vectorized—making the system both efficient and responsive.\n\n\n7. Skill Gap Analysis\nEach job match also includes:\n✅ Matched Skills you already have\n❌ Missing Skills to work on\nThis makes recommendations actionable for job seekers.\n\n\n8. Cover Letter Generator\nSelect a job, click a button, and the system drafts a personalized cover letter based on the role, skills, and company—great for quickly tailoring applications."
-  },
-  {
-    "objectID": "posts/job-rec-system.html#tools-libraries",
-    "href": "posts/job-rec-system.html#tools-libraries",
-    "title": "Building a Job Rec System",
-    "section": "⚙️ Tools & Libraries",
-    "text": "⚙️ Tools & Libraries\n\nPython, Streamlit, Pandas, NumPy\nNLTK for text processing\nScikit-learn for TF-IDF & similarity computation\npdfminer.six & python-docx for file parsing\nKaggle job dataset (custom cleaned)"
-  },
-  {
-    "objectID": "posts/job-rec-system.html#what-i-gained",
-    "href": "posts/job-rec-system.html#what-i-gained",
-    "title": "Building a Job Rec System",
-    "section": "💡 What I Gained",
-    "text": "💡 What I Gained\nThis project combined everything I love—data wrangling, NLP, real-world problem solving, and user-centered design. It strengthened my skills in building scalable pipelines, working with unstructured data, and developing applications that turn insight into action."
-  },
-  {
-    "objectID": "posts/life-at-3m.html",
-    "href": "posts/life-at-3m.html",
-    "title": "Life at 3M: Turning Tape into Tech Impact",
-    "section": "",
-    "text": "5 ½ years · 3 roles · 1 constant goal: keep the world’s smallest chips safe on their journey from fab to finished device.\n\nI joined 3M’s Electronics Material Solutions Division as an intern, crunched marketing data as an analyst, and ultimately owned the carrier-tape portfolio as Product Manager. Along the way I learned how a millimeter-wide strip of plastic can make—or break—an entire semiconductor supply chain."
-  },
-  {
-    "objectID": "posts/life-at-3m.html#from-intern-to-product-manager",
-    "href": "posts/life-at-3m.html#from-intern-to-product-manager",
-    "title": "Life at 3M: Turning Tape into Tech Impact",
-    "section": "",
-    "text": "5 ½ years · 3 roles · 1 constant goal: keep the world’s smallest chips safe on their journey from fab to finished device.\n\nI joined 3M’s Electronics Material Solutions Division as an intern, crunched marketing data as an analyst, and ultimately owned the carrier-tape portfolio as Product Manager. Along the way I learned how a millimeter-wide strip of plastic can make—or break—an entire semiconductor supply chain."
-  },
-  {
-    "objectID": "posts/life-at-3m.html#why-carrier-tape-matters",
-    "href": "posts/life-at-3m.html#why-carrier-tape-matters",
-    "title": "Life at 3M: Turning Tape into Tech Impact",
-    "section": "Why Carrier Tape Matters",
-    "text": "Why Carrier Tape Matters\nCarrier tape sits at the intersection of precision engineering and high-volume automation:\n\nProtects fragile dies, LEDs, passives from ESD & micro-cracks\n\nFeeds pick-and-place machines at &gt; 30 k components/hr\n\nEnables wafer-level packaging, mini-LED TVs, and the chips in your phone\n\nWithout it, yield drops and production costs spike. Small tape, big impact."
-  },
-  {
-    "objectID": "posts/life-at-3m.html#my-hats-often-worn-all-at-once",
-    "href": "posts/life-at-3m.html#my-hats-often-worn-all-at-once",
-    "title": "Life at 3M: Turning Tape into Tech Impact",
-    "section": "My Hats (Often Worn All at Once)",
-    "text": "My Hats (Often Worn All at Once)\n\n\n\n\n\n\n\nArea\nWhat I Did\n\n\n\n\nProduct Ownership\nDrove roadmap for 3000 & 3200 Series tapes; scoped new cover tape designs with R&D\n\n\nProduct Manager\nDiscuss next-steps to launch new products with R&D manager after a positive evaluation\n\n\nMarket & Customer Analysis\nBuilt Power BI dashboard from SAP/Salesforce data to spot volume shifts\n\n\nCross-functional Coordination\nRan monthly S&OP Meeting with Sales, Ops, Quality\n\n\nTechnical Support\nAdvised customers on peel-force & suggested cover tape\n\n\nGo-to-Market\nCreated demo rigs & content for SEMICON TW Tradeshow\n\n\nP&L Owner\nReview low margin items and discuss action plan with sales team"
-  },
-  {
-    "objectID": "posts/life-at-3m.html#a-day-in-the-tape-filled-life",
-    "href": "posts/life-at-3m.html#a-day-in-the-tape-filled-life",
-    "title": "Life at 3M: Turning Tape into Tech Impact",
-    "section": "A Day in the (Tape-Filled) Life",
-    "text": "A Day in the (Tape-Filled) Life\n08:30 — Slack stand-up with manufacturing to triage a pocket-depth deviation.\n10:00 — SQL pull on last quarter’s order mix → see LED segment down 12 %.\n13:00 — Customer call; discuss new peel force request for even smaller dies.\n15:00 — Figma mock of new datasheet; loop in MarCom for compliance.\n17:00 — Update Jira epics, prep slides for exec read-out.\nNo two days looked alike—exactly why I loved it."
-  },
-  {
-    "objectID": "posts/life-at-3m.html#key-takeaways",
-    "href": "posts/life-at-3m.html#key-takeaways",
-    "title": "Life at 3M: Turning Tape into Tech Impact",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nLearned to think in systems. Understanding how a tiny design change could cascade across manufacturing, logistics, and customer experience made me a more strategic product owner.\nTurned data into influence. Building and communicating insights with dashboards strengthened my ability to align diverse teams and drive decisions with credibility.\nGrew into a cross-functional leader. Success wasn’t about individual wins—it came from forging strong partnerships across Sales, Ops, R&D, and Quality.\n\n\nHave questions about semiconductor packaging, product analytics, or how to keep thousands of tiny chips from flying everywhere?\n📬 Let’s chat"
   },
   {
     "objectID": "projects.html",

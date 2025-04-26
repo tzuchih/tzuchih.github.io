@@ -1,0 +1,37 @@
+/* Direct fix for CV link text left alignment */
+.sidebar-navigation .sidebar-item-container a[href*="cv.html"],
+.sidebar-navigation .sidebar-item-container a[href*="cv.qmd"] {
+  text-align: left !important;
+  text-indent: 0 !important;
+  padding-left: 16px !important; /* Match exact left padding */
+}
+
+/* Ensure ALL sidebar links have consistent padding and alignment */
+.sidebar-navigation .sidebar-item-container a,
+.sidebar-navigation .sidebar-item a {
+  text-align: left !important;
+  text-indent: 0 !important;
+  padding-left: 16px !important;
+  margin-left: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Target the menu text specifically for all navigation items */
+.sidebar-navigation .sidebar-item-container a .menu-text,
+.sidebar-navigation .sidebar-item a .menu-text {
+  display: inline-block !important;
+  text-align: left !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  position: static !important;
+}
+
+/* Extra specificity for Projects and other links that might be misaligned */
+.sidebar-navigation .sidebar-item-container a[href*="projects"],
+.sidebar-navigation .sidebar-item-container a[href*="about"],
+.sidebar-navigation .sidebar-item-container a[href*="index"] {
+  text-align: left !important;
+  text-indent: 0 !important;
+  padding-left: 16px !important;
+} 

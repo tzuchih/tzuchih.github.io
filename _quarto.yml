@@ -21,6 +21,8 @@ project:
     - js/image-preload-fix.js
     - js/critical-styles-cleanup.js
     - js/cv-link-fix.js
+    - js/cv-alignment-fix.js
+    - js/cv-text-position-fix.js
     - images/
     - js/
 website:
@@ -77,6 +79,8 @@ format:
       - spacing-fix.css
       - hide-cv.css
       - show-cv-override.css
+      - cv-link-fix.css
+      - cv-menu-text-fix.css
       - title-hard-fix.css
       - post-tag-fix.css
       - code-fold-fix.css
@@ -285,6 +289,32 @@ format:
               display: block !important;
               visibility: visible !important;
               opacity: 1 !important;
+            }
+          </style>
+          
+          <style>
+            /* Direct fix for CV link vertical alignment in sidebar */
+            .sidebar .sidebar-item-container a[href*="cv.qmd"] {
+              display: flex !important;
+              align-items: center !important;
+              height: 40px !important;
+              padding: 0.5rem 0.5rem 0.5rem 1rem !important;
+              margin: 0 !important;
+              text-indent: 0 !important;
+              justify-content: flex-start !important;
+              text-align: left !important;
+              padding-left: 1rem !important;
+              box-sizing: border-box !important;
+            }
+
+            /* Direct fix for menu text in CV link */
+            .sidebar .sidebar-item-container a[href*="cv"] .menu-text {
+              display: inline-block !important;
+              margin: 0 !important;
+              padding: 0 !important;
+              text-align: left !important;
+              text-indent: 0 !important;
+              white-space: nowrap !important;
             }
           </style>
       - "_includes/custom-head.html"

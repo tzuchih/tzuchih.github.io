@@ -646,11 +646,39 @@ table.dataframe * {
   }
 </style>
 
+<style>
+  /* Direct fix for CV link vertical alignment in sidebar */
+  .sidebar .sidebar-item-container a[href*="cv.qmd"] {
+    display: flex !important;
+    align-items: center !important;
+    height: 40px !important;
+    padding: 0.5rem 0.5rem 0.5rem 1rem !important;
+    margin: 0 !important;
+    text-indent: 0 !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    padding-left: 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Direct fix for menu text in CV link */
+  .sidebar .sidebar-item-container a[href*="cv"] .menu-text {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    text-indent: 0 !important;
+    white-space: nowrap !important;
+  }
+</style>
+
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../spacing-fix.css">
 <link rel="stylesheet" href="../hide-cv.css">
 <link rel="stylesheet" href="../show-cv-override.css">
+<link rel="stylesheet" href="../cv-link-fix.css">
+<link rel="stylesheet" href="../cv-menu-text-fix.css">
 <link rel="stylesheet" href="../title-hard-fix.css">
 <link rel="stylesheet" href="../post-tag-fix.css">
 <link rel="stylesheet" href="../code-fold-fix.css">

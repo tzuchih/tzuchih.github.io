@@ -1,0 +1,36 @@
+/* Fix for CV link vertical alignment */
+.sidebar .sidebar-item-container a[href*="cv.html"],
+.sidebar .sidebar-item-container a[href$="cv.html"],
+.sidebar .sidebar-item-container a[href*="cv.qmd"],
+.sidebar .sidebar-item-container a[href$="cv.qmd"] {
+  display: flex !important;
+  align-items: center !important;
+  height: 40px !important;
+  padding: 0.5rem 0.5rem 0.5rem 1rem !important;
+  margin: 0 !important;
+  text-indent: 0 !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure the menu text is vertically centered */
+.sidebar .sidebar-item-container a[href*="cv"] .menu-text {
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  text-indent: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Match parent elements to ensure consistent display */
+.sidebar .sidebar-item:has(a[href*="cv"]),
+.sidebar .sidebar-item-container:has(a[href*="cv"]) {
+  display: block !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-indent: 0 !important;
+  text-align: left !important;
+} 
