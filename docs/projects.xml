@@ -22,42 +22,53 @@
 
 <section id="what-is-vibe-coding" class="level2 no-anchor">
 <h2 class="no-anchor" data-anchor-id="what-is-vibe-coding">🎧 What <em>Is</em> Vibe Coding?</h2>
-<p>Coined by Andrej Karpathy in 2025, <strong>vibe coding</strong> is a style of AI-assisted development where you co-create software through natural language prompts. You describe what you want — layout, logic, behavior — and let the AI generate most of the code. Your job becomes guiding, reviewing, and refining. It’s fast. It’s iterative. And it’s incredibly fun when you’re in the zone.</p>
-<hr>
+<p>Coined by Andrej Karpathy in 2025, <strong>vibe coding</strong> is a new style of AI-assisted development where you co-create software through natural language prompts.<br>
+You describe what you want — layout, logic, behavior — and let the AI generate most of the code. Your role becomes guiding, reviewing, and refining.</p>
+<p>It’s fast. It’s iterative. And when you’re in the zone, it’s incredibly fun.</p>
 </section>
 <section id="how-i-vibe-coded-this-portfolio" class="level2 no-anchor">
 <h2 class="no-anchor" data-anchor-id="how-i-vibe-coded-this-portfolio">🛠️ How I Vibe-Coded This Portfolio</h2>
-<p>When I set out to build this site using <strong>Quarto</strong>, I leaned into vibe coding to bring my ideas to life. Here’s how I used prompts + AI to accelerate the entire process.</p>
-<section id="prompt-preview-loops" class="level3 no-anchor">
-<h3 class="no-anchor" data-anchor-id="prompt-preview-loops">🔁 Prompt → Preview Loops</h3>
-<p>I gave the AI detailed prompts like:</p>
-<p>Prompt: “Create a responsive Quarto page with a two-column layout: Left side for project cards, right side for an About Me section. Add a sticky navbar.”</p>
-<p>The AI returned 100+ lines of YAML and HTML. My role was to:</p>
+<p>When I set out to build this site with <strong>Quarto</strong>, I fully embraced vibe coding — powered by <strong>Cursor</strong>, an AI-first code editor that made the experience even smoother. Here’s how I turned ideas into reality.</p>
+<section id="starting-with-style" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="starting-with-style">🎨 Starting with Style</h3>
+<p>Before writing a single line of prompt, I first picked a color palette and visual style that felt right: clean, playful, and pastel-toned.<br>
+This upfront design choice gave me a clear target to guide the vibe of every prompt I wrote.</p>
+</section>
+<section id="from-prompt-to-preview" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="from-prompt-to-preview">🔁 From Prompt to Preview</h3>
+<p>With the style in mind, I fed Cursor detailed prompts like:</p>
+<blockquote class="blockquote">
+<p>“Create a responsive Quarto page with a two-column layout: left for project cards, right for an About Me section. Add a sticky navbar.”</p>
+</blockquote>
+<p>In response, the AI generated 100+ lines of YAML and HTML.<br>
+My role became:</p>
 <ul>
-<li>Clean up the structure</li>
-<li>Extract inline CSS into a custom.scss file</li>
-<li>Debug Quarto-specific syntax quirks</li>
+<li>Cleaning up the structure</li>
+<li>Extracting inline CSS into a clean “custom.scss”</li>
+<li>Debugging Quarto-specific quirks</li>
 </ul>
 </section>
 <section id="instant-components" class="level3 no-anchor">
 <h3 class="no-anchor" data-anchor-id="instant-components">⚡ Instant Components</h3>
-<p>I used AI to scaffold:</p>
+<p>Using Cursor, I quickly scaffolded:</p>
 <ul>
 <li>A vibrant hero section</li>
 <li>A filterable project grid</li>
 <li>An interactive skills accordion</li>
 </ul>
-<p>I customized the layout and interactivity using Quarto’s chunk options, Bootstrap classes, and SCSS variables.</p>
+<p>Then I fine-tuned layouts and interactivity using Quarto’s chunk options, Bootstrap classes, and SCSS variables.</p>
 </section>
-<section id="rapid-theming" class="level3 no-anchor">
-<h3 class="no-anchor" data-anchor-id="rapid-theming">🎨 Rapid Theming</h3>
-<p>To refine the visual identity of my site, I prompt-tuned with design intent:</p>
-<p>Prompt: “Make the call-to-action button playful with a pastel palette and rounded corners”</p>
-<p>This let me explore multiple design variants in minutes without rewriting all the CSS by hand.</p>
+<section id="rapid-theming-with-prompts" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="rapid-theming-with-prompts">✏️ Rapid Theming with Prompts</h3>
+<p>To shape the visual identity further, I prompt-tuned with design intent:</p>
+<blockquote class="blockquote">
+<p>“Make the call-to-action button playful with a pastel palette and rounded corners.”</p>
+</blockquote>
+<p>This let me explore different design variants in minutes — no tedious manual CSS editing.</p>
 </section>
 </section>
-<section id="what-i-learned" class="level2 no-anchor">
-<h2 class="no-anchor" data-anchor-id="what-i-learned">📚 What I Learned</h2>
+<section id="key-lessons-learned" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="key-lessons-learned">📚 Key Lessons Learned</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 52%">
@@ -72,56 +83,58 @@
 <tbody>
 <tr class="odd">
 <td>Prompting is a design skill</td>
-<td>Clear context = better code, faster iterations</td>
+<td>Clear, specific context = better AI output</td>
 </tr>
 <tr class="even">
 <td>AI isn’t always right</td>
-<td>Some hallucinated Quarto options needed manual corrections</td>
+<td>Some hallucinated Quarto options needed manual fixes</td>
 </tr>
 <tr class="odd">
-<td>Human + AI = best results</td>
-<td>Final polish still relies on UX sense and technical intuition</td>
+<td>Human + AI = magic</td>
+<td>UX sense and technical intuition still matter</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="challenges-i-faced-and-solved" class="level2 no-anchor">
-<h2 class="no-anchor" data-anchor-id="challenges-i-faced-and-solved">🧩 Challenges I Faced (and Solved)</h2>
+<section id="challenges-i-hit-and-how-i-solved-them" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="challenges-i-hit-and-how-i-solved-them">🧩 Challenges I Hit (and How I Solved Them)</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 52%">
-<col style="width: 47%">
+<col style="width: 53%">
+<col style="width: 46%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>❌ Problem</th>
+<th>❌ Challenge</th>
 <th>✅ Solution</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Code chunks broke layout</td>
-<td>Used freeze: true and scoped JS imports carefully</td>
+<td>Used <code>freeze: true</code> and scoped JS imports</td>
 </tr>
 <tr class="even">
-<td>Conflicting CSS</td>
-<td>Merged class names and offloaded critical styles to custom.scss</td>
+<td>CSS conflicts</td>
+<td>Consolidated class names, offloaded critical styles to <code>custom.scss</code></td>
 </tr>
 <tr class="odd">
 <td>Mixed audience (Product + Data)</td>
-<td>Added filters and tabs to highlight both skill sets separately</td>
+<td>Added skill filters and tabs for easy navigation</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="why-it-mattered" class="level2 no-anchor">
-<h2 class="no-anchor" data-anchor-id="why-it-mattered">✨ Why It Mattered</h2>
-<p>Building this site wasn’t just a technical challenge — it was a creative flow state.</p>
-<p>It reminded me how AI can boost not only productivity, but also playfulness in the process. This portfolio reflects who I am: a builder who loves clean data, smart design, and continuous learning.</p>
+<section id="why-this-project-mattered" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="why-this-project-mattered">✨ Why This Project Mattered</h2>
+<p>Building this site wasn’t just technical — it was creative, almost meditative.<br>
+It showed me that AI can enhance not just productivity, but also playfulness.</p>
+<p>This portfolio reflects who I am: a builder who loves clean data, smart design, and continuous learning.</p>
 </section>
 <section id="lets-connect" class="level2 no-anchor">
-<h2 class="no-anchor" data-anchor-id="lets-connect">🤝 Let’s Connect</h2>
-<p>If you’re working on your own AI-assisted portfolio, playing with Quarto, or just exploring what vibe coding looks like in real life — I’d love to hear your story. Let’s swap prompts, inspiration, or lo-fi playlists.</p>
+<h2 class="no-anchor" data-anchor-id="lets-connect">🤝🏼 Let’s Connect</h2>
+<p>If you’re experimenting with AI-assisted portfolios, playing with Quarto, or exploring what vibe coding looks like — I’d love to hear your story.</p>
+<p>Let’s swap prompts, share inspiration, or build a lo-fi coding playlist together.</p>
 <p><a href="mailto:lydia.tzuchi@gmail.com" class="btn btn-primary">📬 Let’s chat</a></p>
 
 
@@ -133,7 +146,7 @@
   <category>Dev Workflow</category>
   <guid>https://www.example.com/posts/vibe-coding.html</guid>
   <pubDate>Tue, 15 Apr 2025 07:00:00 GMT</pubDate>
-  <media:content url="https://www.example.com/images/posts/post1.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://www.example.com/images/posts/vibecoding.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Building a Job Rec System</title>
@@ -156,13 +169,42 @@
   overflow: hidden !important;
 }
 
-/* Allow the diagram to be rendered */
-.job-rec-diagram .mermaid {
+/* Allow the diagram to be rendered with enhanced visibility */
+.job-rec-diagram .mermaid,
+.mermaid:not(pre):not(code),
+.diagram-container .mermaid {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
   height: auto !important;
   margin: 2rem auto !important;
+  background-color: transparent !important;
+  max-width: 100% !important;
+}
+
+/* Ensure chart containers are visible */
+.diagram-container,
+.job-rec-diagram,
+.mermaid-wrapper {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 2rem auto !important;
+  max-width: 800px !important;
+  background-color: transparent !important;
+}
+
+/* Make sure SVG elements in charts are visible */
+.mermaid svg,
+.diagram-container svg,
+.job-rec-diagram svg {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 400px !important;
 }
 
 /* Ensure code blocks for mermaid don't show */
@@ -207,6 +249,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Force render any mermaid diagrams
   setTimeout(function() {
     mermaid.init(undefined, '.mermaid:not(pre):not(code)');
+    
+    // Add additional rendering attempt for reliability
+    setTimeout(function() {
+      mermaid.init(undefined, '.mermaid:not(pre):not(code)');
+    }, 1000);
   }, 500);
 });
 </script>
@@ -236,19 +283,40 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 <section id="the-process-flow-of-the-system" class="level4">
 <h4 class="anchored" data-anchor-id="the-process-flow-of-the-system">The process flow of the system:</h4>
-<div style="width:100%; max-width:800px; margin:0 auto;">
-<!-- Primary option: iframe with mermaid diagram -->
-<iframe src="../posts/job-rec-diagram.html" width="100%" height="900px" frameborder="0" scrolling="no" style="border:none; overflow:hidden;">
-</iframe>
-<!-- Fallback option: if iframe doesn't work -->
-<div style="text-align:center; display:none;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://www.example.com/../images/posts/job-rec-diagram.png" class="img-fluid figure-img"></p>
-<figcaption>Job Recommendation System Flowchart</figcaption>
-</figure>
+<div class="mermaid-wrapper" style="width:100%; max-width:800px; margin:0 auto 0 auto; position:relative; z-index:10;">
+<p><!-- Primary option: iframe with mermaid diagram with balanced height --> <iframe src="../posts/job-rec-diagram.html" width="100%" height="950px" frameborder="0" scrolling="no" style="border:none; overflow:hidden; display:block; visibility:visible; opacity:1; background-color:transparent;"></iframe></p>
+<!-- Fallback option: direct embedded mermaid diagram -->
+<div class="job-rec-diagram" style="margin-top:0; display:block; visibility:visible; opacity:1;">
+<pre><code>&lt;div class="mermaid"&gt;
+  flowchart TD
+    A1[/"User Upload&lt;br/&gt;Resume"/] --&gt;|"Extract Resume Text"| B1["Preprocess Resume Text&lt;br/&gt;(Remove&lt;br/&gt;Lowercase, Stopwords...)"]
+    
+    A2{"User Set Preference&lt;br/&gt;(Location, Job&lt;br/&gt;Type, Level)"} --&gt; B2["Filter Job Listings&lt;br/&gt;(Based on User Criteria)"]
+    
+    B1 &amp; B2 --&gt; C["TF-IDF Vectorization&lt;br/&gt;(Job Description, Resume)"]
+    C --&gt; D["Compute Cosine Similarity"]
+    D --&gt; E["Find Top Matches"]
+    E --&gt; F["Analyze Skill Gaps"]
+    F --&gt; G[/"Display Results"/]
+    G --&gt; H["Generate Cover Letter"]
+    
+    classDef parallelogram path,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;
+    classDef diamond rhombus,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;
+    classDef rectangle rect,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;
+    
+    class A1 parallelogram;
+    class A2 diamond;
+    class B1,B2,C,D,E,F,H rectangle;
+    class G parallelogram;
+&lt;/div&gt;</code></pre>
+</div>
+<!-- Second fallback: image version -->
+<div style="text-align:center; margin-top:0; display:none;">
+<pre><code>&lt;img src="../../images/posts/job-rec-diagram.png" alt="Job Recommendation System Flowchart" style="max-width:100%; height:auto; display:block; margin:0 auto;"&gt;</code></pre>
 </div>
 </div>
+<div style="margin-top:-0.5rem;">
+
 </div>
 </section>
 </section>
@@ -281,14 +349,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <section id="tf-idf-vectorization" class="level3 no-anchor">
 <h3 class="no-anchor" data-anchor-id="tf-idf-vectorization">4. TF-IDF Vectorization</h3>
 <p>I apply TF-IDF with bi-grams, sublinear term frequency, and smoothing to convert the cleaned text into numerical vectors. This approach highlights important skills and phrases while minimizing noise.</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><span class="kw" style="color: #003B4F;
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">def</span> get_vectorizer_and_vectors(job_data):</span>
-<span id="cb1-2">    <span class="co" style="color: #5E5E5E;
+<span id="cb3-2">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">"""Caches the TF-IDF vectorizer and job text embeddings."""</span></span>
-<span id="cb1-3">    vectorizer <span class="op" style="color: #5E5E5E;
+<span id="cb3-3">    vectorizer <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> TfidfVectorizer(stop_words<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -309,32 +377,32 @@ background-color: null;
 font-style: inherit;">=</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">True</span>)</span>
-<span id="cb1-4">    </span>
-<span id="cb1-5">    <span class="cf" style="color: #003B4F;
+<span id="cb3-4">    </span>
+<span id="cb3-5">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> <span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">not</span> job_data.empty:</span>
-<span id="cb1-6">        job_vectors <span class="op" style="color: #5E5E5E;
+<span id="cb3-6">        job_vectors <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> vectorizer.fit_transform(job_data[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'clean_text'</span>])</span>
-<span id="cb1-7">    <span class="cf" style="color: #003B4F;
+<span id="cb3-7">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">else</span>:</span>
-<span id="cb1-8">        job_vectors <span class="op" style="color: #5E5E5E;
+<span id="cb3-8">        job_vectors <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">None</span>  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Prevents errors if no jobs exist</span></span>
-<span id="cb1-9">    </span>
-<span id="cb1-10">    <span class="cf" style="color: #003B4F;
+<span id="cb3-9">    </span>
+<span id="cb3-10">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">return</span> vectorizer, job_vectors</span></code></pre></div>
@@ -420,69 +488,62 @@ font-style: inherit;">return</span> vectorizer, job_vectors</span></code></pre><
 <h2 class="no-anchor" data-anchor-id="my-hats-often-worn-all-at-once">My Hats (Often Worn All at Once)</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 50%">
-<col style="width: 26%">
+<col style="width: 31%">
+<col style="width: 68%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Area</th>
 <th>What I Did</th>
-<th>Outcome</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>Product Ownership</strong></td>
-<td>Drove roadmap for 3000 &amp; 3200 Series tapes; scoped new pocket designs with R&amp;D</td>
-<td>Launched 2 SKUs → <strong>+$4.2 M ARR</strong></td>
+<td>Drove roadmap for 3000 &amp; 3200 Series tapes; scoped new cover tape designs with R&amp;D</td>
 </tr>
 <tr class="even">
+<td><strong>Product Manager</strong></td>
+<td>Discuss next-steps to launch new products with R&amp;D manager after a positive evaluation</td>
+</tr>
+<tr class="odd">
 <td><strong>Market &amp; Customer Analysis</strong></td>
-<td>Built Power BI dashboard from SAP/CRM data to spot volume shifts</td>
-<td>Identified mini-LED surge → <strong>+18 % capacity</strong></td>
-</tr>
-<tr class="odd">
-<td><strong>Cross-functional Coordination</strong></td>
-<td>Ran weekly war-rooms with Sales, Ops, Quality</td>
-<td>RFQ-to-ship lead-time <strong>–20 %</strong></td>
+<td>Built Power BI dashboard from SAP/Salesforce data to spot volume shifts</td>
 </tr>
 <tr class="even">
-<td><strong>Technical Support</strong></td>
-<td>Advised customers on peel-force &amp; JEDEC specs</td>
-<td>Secured top-3 smartphone OEM deal</td>
+<td><strong>Cross-functional Coordination</strong></td>
+<td>Ran monthly S&amp;OP Meeting with Sales, Ops, Quality</td>
 </tr>
 <tr class="odd">
+<td><strong>Technical Support</strong></td>
+<td>Advised customers on peel-force &amp; suggested cover tape</td>
+</tr>
+<tr class="even">
 <td><strong>Go-to-Market</strong></td>
-<td>Created demo rigs &amp; content for SEMICON, Productronica</td>
-<td>Booth leads <strong>+40 % YoY</strong></td>
+<td>Created demo rigs &amp; content for SEMICON TW Tradeshow</td>
+</tr>
+<tr class="odd">
+<td><strong>P&amp;L Owner</strong></td>
+<td>Review low margin items and discuss action plan with sales team</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="a-day-in-the-tape-filled-life" class="level2 no-anchor">
 <h2 class="no-anchor" data-anchor-id="a-day-in-the-tape-filled-life">A Day in the (Tape-Filled) Life</h2>
-<ol type="1">
-<li><strong>08:30</strong> — Slack stand-up with manufacturing to triage a pocket-depth deviation.<br>
-</li>
-<li><strong>10:00</strong> — SQL pull on last quarter’s order mix → see LED segment up <strong>12 %</strong>.<br>
-</li>
-<li><strong>13:00</strong> — Customer call from Taiwan; debug peel-back static &gt; 50 V.<br>
-</li>
-<li><strong>15:00</strong> — Figma mock of new datasheet; loop in MarCom for compliance.<br>
-</li>
-<li><strong>17:00</strong> — Update Jira epics, prep slides for exec read-out.</li>
-</ol>
-<p>No two days looked alike—exactly why I loved it.{.no-anchor}</p>
+<p><strong>08:30</strong> — Slack stand-up with manufacturing to triage a pocket-depth deviation.<br>
+<strong>10:00</strong> — SQL pull on last quarter’s order mix → see LED segment down <strong>12 %</strong>.<br>
+<strong>13:00</strong> — Customer call; discuss new peel force request for even smaller dies.<br>
+<strong>15:00</strong> — Figma mock of new datasheet; loop in MarCom for compliance.<br>
+<strong>17:00</strong> — Update Jira epics, prep slides for exec read-out.</p>
+<p>No two days looked alike—exactly why I loved it.</p>
 </section>
 <section id="key-takeaways" class="level2 no-anchor">
 <h2 class="no-anchor" data-anchor-id="key-takeaways">Key Takeaways</h2>
 <ul>
-<li><strong>Systems thinking wins.</strong> A tape tweak can ripple through pick-&amp;-place speed, yield, and cost.<br>
-</li>
-<li><strong>Data is a lingua franca.</strong> Dashboards quelled debates and sped decisions.<br>
-</li>
-<li><strong>Partnerships &gt; solo heroics.</strong> Quality, Ops, Sales—all had to align for every shipment.</li>
+<li><strong>Learned to think in systems.</strong> Understanding how a tiny design change could cascade across manufacturing, logistics, and customer experience made me a more strategic product owner.</li>
+<li><strong>Turned data into influence.</strong> Building and communicating insights with dashboards strengthened my ability to align diverse teams and drive decisions with credibility.</li>
+<li><strong>Grew into a cross-functional leader.</strong> Success wasn’t about individual wins—it came from forging strong partnerships across Sales, Ops, R&amp;D, and Quality.</li>
 </ul>
 <p><br></p>
 <p>Have questions about semiconductor packaging, product analytics, or how to keep thousands of tiny chips from flying everywhere?</p>

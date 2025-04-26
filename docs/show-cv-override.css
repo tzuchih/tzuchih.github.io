@@ -1,0 +1,52 @@
+/* Override specifically for CV links with very high specificity */
+html body .sidebar #quarto-sidebar .sidebar-menu-container .sidebar-tool-container .sidebar-items-container .sidebar-item-container a[href$="cv.html"],
+html body .sidebar #quarto-sidebar .sidebar-menu-container .sidebar-tool-container .sidebar-items-container .sidebar-item-container a[href$="cv.qmd"],
+html body .sidebar #quarto-sidebar li.sidebar-item div.sidebar-item-container a.sidebar-item-text.sidebar-link[href$="cv.html"],
+html body .sidebar #quarto-sidebar li.sidebar-item div.sidebar-item-container a.sidebar-item-text.sidebar-link[href="./cv.html"],
+html body .sidebar #quarto-sidebar li.sidebar-item div.sidebar-item-container a[href*="cv.html"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  text-decoration: none !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  padding: 0.5rem 0.5rem 0.5rem 1rem !important;
+  position: relative !important;
+  z-index: 1000 !important;
+  height: auto !important;
+  line-height: 1.5 !important;
+  width: 100% !important;
+}
+
+/* Force sidebar CV item to be visible */
+html body .sidebar #quarto-sidebar li.sidebar-item:has(a[href$="cv.html"]),
+html body .sidebar #quarto-sidebar li.sidebar-item:has(a[href$="cv.qmd"]),
+html body .sidebar #quarto-sidebar div.sidebar-items-container div.sidebar-item-container:has(a[href$="cv.html"]),
+html body .sidebar #quarto-sidebar div.sidebar-items-container div.sidebar-item-container:has(a[href$="cv.qmd"]) {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 999 !important;
+  pointer-events: auto !important;
+}
+
+/* Fix for menu text inside CV link */
+html body .sidebar #quarto-sidebar li.sidebar-item div.sidebar-item-container a[href$="cv.html"] span.menu-text,
+html body .sidebar #quarto-sidebar li.sidebar-item div.sidebar-item-container a[href$="cv.qmd"] span.menu-text {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  pointer-events: auto !important;
+}
+
+/* Handle hover state */
+html body .sidebar #quarto-sidebar li.sidebar-item div.sidebar-item-container a[href$="cv.html"]:hover,
+html body .sidebar #quarto-sidebar li.sidebar-item div.sidebar-item-container a[href$="cv.qmd"]:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+} 

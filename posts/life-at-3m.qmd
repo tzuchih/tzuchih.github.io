@@ -28,32 +28,34 @@ Without it, yield drops and production costs spike. Small tape, big impact.
 ## My Hats (Often Worn All at Once){.no-anchor}
 
 
-| Area                       | What I Did                                                    | Outcome                         |
-|----------------------------|--------------------------------------------------------------|---------------------------------|
-| **Product Ownership**      | Drove roadmap for 3000 & 3200 Series tapes; scoped new pocket designs with R&D | Launched 2 SKUs → **+$4.2 M ARR** |
-| **Market & Customer Analysis** | Built Power BI dashboard from SAP/CRM data to spot volume shifts | Identified mini-LED surge → **+18 % capacity** |
-| **Cross-functional Coordination** | Ran weekly war-rooms with Sales, Ops, Quality | RFQ-to-ship lead-time **–20 %** |
-| **Technical Support**      | Advised customers on peel-force & JEDEC specs | Secured top-3 smartphone OEM deal |
-| **Go-to-Market**           | Created demo rigs & content for SEMICON, Productronica | Booth leads **+40 % YoY** |
+| Area                       | What I Did                                                    |
+|----------------------------|--------------------------------------------------------------|
+| **Product Ownership**      | Drove roadmap for 3000 & 3200 Series tapes; scoped new cover tape designs with R&D |
+| **Product Manager**        | Discuss next-steps to launch new products with R&D manager after a positive evaluation | 
+| **Market & Customer Analysis** | Built Power BI dashboard from SAP/Salesforce data to spot volume shifts | 
+| **Cross-functional Coordination** | Ran monthly S&OP Meeting with Sales, Ops, Quality | 
+| **Technical Support**      | Advised customers on peel-force & suggested cover tape | 
+| **Go-to-Market**           | Created demo rigs & content for SEMICON TW Tradeshow | 
+| **P&L Owner**              | Review low margin items and discuss action plan with sales team | 
 
 
 ## A Day in the (Tape-Filled) Life{.no-anchor}
 
-1. **08:30** — Slack stand-up with manufacturing to triage a pocket-depth deviation.  
-2. **10:00** — SQL pull on last quarter’s order mix → see LED segment up **12 %**.  
-3. **13:00** — Customer call from Taiwan; debug peel-back static > 50 V.  
-4. **15:00** — Figma mock of new datasheet; loop in MarCom for compliance.  
-5. **17:00** — Update Jira epics, prep slides for exec read-out.
+**08:30** — Slack stand-up with manufacturing to triage a pocket-depth deviation.  
+**10:00** — SQL pull on last quarter’s order mix → see LED segment down **12 %**.  
+**13:00** — Customer call; discuss new peel force request for even smaller dies.  
+**15:00** — Figma mock of new datasheet; loop in MarCom for compliance.  
+**17:00** — Update Jira epics, prep slides for exec read-out.
 
-No two days looked alike—exactly why I loved it.{.no-anchor}
+No two days looked alike—exactly why I loved it.
 
 
 
 ## Key Takeaways{.no-anchor}
 
-- **Systems thinking wins.** A tape tweak can ripple through pick-&-place speed, yield, and cost.  
-- **Data is a lingua franca.** Dashboards quelled debates and sped decisions.  
-- **Partnerships > solo heroics.** Quality, Ops, Sales—all had to align for every shipment.
+- **Learned to think in systems.** Understanding how a tiny design change could cascade across manufacturing, logistics, and customer experience made me a more strategic product owner. 
+- **Turned data into influence.** Building and communicating insights with dashboards strengthened my ability to align diverse teams and drive decisions with credibility.
+- **Grew into a cross-functional leader.** Success wasn’t about individual wins—it came from forging strong partnerships across Sales, Ops, R&D, and Quality.
 
 
 

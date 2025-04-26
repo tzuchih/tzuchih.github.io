@@ -1,0 +1,118 @@
+<!-- Direct fix for CV link in sidebar -->
+<style>
+/* Direct CSS fix for CV link */
+a[href$="cv.html"],
+a[href$="cv.qmd"],
+a[href*="cv.html"],
+a[href*="cv.qmd"],
+.sidebar a[href*="cv"],
+.sidebar-item a[href*="cv"],
+.sidebar-item-text[href*="cv"],
+li a[href*="cv"],
+.sidebar-navigation .sidebar-item-container a[href*="cv"],
+.sidebar-items-container .sidebar-item-container a[href*="cv"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* Ensure CV sidebar item and its container are visible and interactive */
+.sidebar-item:has(a[href*="cv"]),
+.sidebar-item-container:has(a[href*="cv"]) {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  height: auto !important;
+  min-height: 40px !important;
+  overflow: visible !important;
+}
+
+/* Menu text within CV links */
+a[href*="cv"] .menu-text {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure hover styling works */
+.sidebar a[href*="cv"]:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+</style>
+
+<script>
+// Immediate execution to fix CV link
+(function() {
+  // Create a directly clickable CV link that replaces the current one
+  function createDirectCVLink() {
+    try {
+      // Find existing CV link in sidebar
+      const sidebarItems = document.querySelectorAll('.sidebar-item');
+      
+      for (let i = 0; i < sidebarItems.length; i++) {
+        const item = sidebarItems[i];
+        const link = item.querySelector('a[href*="cv"]');
+        
+        if (link) {
+          // Get href from existing link
+          const href = link.getAttribute('href');
+          
+          // Create replacement link
+          const newLink = document.createElement('a');
+          newLink.setAttribute('href', href);
+          newLink.setAttribute('class', link.getAttribute('class') || 'sidebar-item-text sidebar-link');
+          newLink.innerHTML = '<span class="menu-text">CV</span>';
+          newLink.style.display = 'block';
+          newLink.style.visibility = 'visible';
+          newLink.style.opacity = '1';
+          newLink.style.padding = '0.5rem 0.5rem 0.5rem 1rem';
+          newLink.style.color = 'rgba(255, 255, 255, 0.55)';
+          newLink.style.textDecoration = 'none';
+          newLink.style.pointerEvents = 'auto';
+          newLink.style.cursor = 'pointer';
+          
+          // Replace existing link with new one
+          const container = link.parentNode;
+          if (container) {
+            container.innerHTML = '';
+            container.appendChild(newLink);
+            container.style.display = 'block';
+            container.style.visibility = 'visible';
+            container.style.opacity = '1';
+            container.style.pointerEvents = 'auto';
+          }
+          
+          // Ensure parent item is visible
+          item.style.display = 'block';
+          item.style.visibility = 'visible';
+          item.style.opacity = '1';
+          
+          // Add direct click handler
+          newLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = href;
+          });
+        }
+      }
+    } catch (e) {
+      console.error('Error fixing CV link:', e);
+    }
+  }
+
+  // Execute immediately
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createDirectCVLink);
+  } else {
+    createDirectCVLink();
+  }
+  
+  // Also run after a delay
+  setTimeout(createDirectCVLink, 100);
+  setTimeout(createDirectCVLink, 500);
+})();
+</script> 

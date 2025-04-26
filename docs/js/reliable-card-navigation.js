@@ -1,326 +1,187 @@
 /**
- * Universal Card Click System
+ * Cross-Device Reliable Card Navigation
  * 
- * Cross-browser compatible solution that works on all devices and browsers.
- * Uses multiple redundant techniques to guarantee clickability.
+ * This script implements multiple redundant approaches to ensure cards
+ * are navigable across all devices, browsers, and screen sizes.
  */
 
 (function() {
-  // Configuration
-  const cardSelectors = ['.quarto-grid-item', '.card.h-100', '.listing-card', '.card', '[class*="card"]'];
-  const linkSelectors = ['a.quarto-grid-link', 'a.listing-link', '.card-title a', 'h3.listing-title a', 'a', '.card a', '.card-body a'];
-  
-  // Main function to ensure all cards are navigable
-  function makeCardsNavigable() {
-    console.log('Applying universal card click system');
+  // Function to enhance card navigation
+  function enhanceCardNavigation() {
+    console.log("Enhancing card navigation reliability");
     
-    // 1. Apply core CSS directly in head for maximum priority
-    injectCriticalCSS();
+    // Get all cards that should be clickable
+    const cards = document.querySelectorAll('.quarto-grid-item, .card.h-100');
     
-    // 2. Process all existing cards
-    processAllCards();
-    
-    // 3. Set up multiple redundant global handlers
-    setupGlobalHandlers();
-    
-    // 4. Watch for new cards
-    observeDOMChanges();
-    
-    // 5. Make cards accessible for keyboard users
-    enhanceAccessibility();
-  }
-  
-  // Inject critical CSS at the very top of head
-  function injectCriticalCSS() {
-    const css = `
-      /* Universal click styles with maximum priority */
-      ${cardSelectors.join(', ')} {
-        cursor: pointer !important;
-        position: relative !important;
-        z-index: 1 !important;
-        -webkit-tap-highlight-color: rgba(0,0,0,0.1) !important;
-        user-select: none !important;
-        transition: background-color 0.05s ease-out !important;
-      }
-      
-      /* Visual feedback */
-      ${cardSelectors.join(', ')}:hover {
-        background-color: rgba(0,0,0,0.02) !important;
-      }
-      
-      ${cardSelectors.join(', ')}:active {
-        background-color: rgba(0,0,0,0.05) !important;
-      }
-      
-      /* Allow text selection in content */
-      ${cardSelectors.join(', ')} p,
-      ${cardSelectors.join(', ')} h1,
-      ${cardSelectors.join(', ')} h2,
-      ${cardSelectors.join(', ')} h3,
-      ${cardSelectors.join(', ')} h4,
-      ${cardSelectors.join(', ')} h5,
-      ${cardSelectors.join(', ')} span,
-      ${cardSelectors.join(', ')} div {
-        user-select: text;
-      }
-      
-      /* Full-page invisible link overlay */
-      .universal-card-overlay {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        z-index: 999 !important;
-        background: transparent !important;
-        cursor: pointer !important;
-        -webkit-tap-highlight-color: rgba(0,0,0,0.1) !important;
-      }
-      
-      /* Ensure actual links are accessible */
-      ${cardSelectors.join(', ')} a:not(.universal-card-overlay),
-      ${cardSelectors.join(', ')} button {
-        position: relative !important;
-        z-index: 1000 !important;
-      }
-    `;
-    
-    const styleEl = document.createElement('style');
-    styleEl.id = 'universal-card-click-css';
-    styleEl.textContent = css;
-    
-    // Add to very top of head
-    if (document.head.firstChild) {
-      document.head.insertBefore(styleEl, document.head.firstChild);
-    } else {
-      document.head.appendChild(styleEl);
+    if (cards.length === 0) {
+      console.log("No cards found, will retry later");
+      return;
     }
-  }
-  
-  // Process all cards on the page
-  function processAllCards() {
-    // Get all cards with various selectors for maximum coverage
-    const allCards = [];
     
-    // Add cards from each selector
-    cardSelectors.forEach(selector => {
-      const cards = document.querySelectorAll(selector);
-      cards.forEach(card => {
-        if (!allCards.includes(card)) {
-          allCards.push(card);
+    console.log(`Enhancing navigation for ${cards.length} cards`);
+    
+    // Detect mobile devices for special handling
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    cards.forEach(function(card) {
+      // Skip if already enhanced
+      if (card.dataset.navigationEnhanced === 'true') {
+        return;
+      }
+      
+      // Mark as enhanced
+      card.dataset.navigationEnhanced = 'true';
+      
+      // Find the target URL
+      let targetUrl = null;
+      
+      // Try multiple selectors to find the link
+      const possibleLinkContainers = [
+        card.querySelector('.listing-title a'),
+        card.querySelector('.card-title a'),
+        card.querySelector('a.listing-link'),
+        card.querySelector('a.card-link'),
+        card.querySelector('a'),
+        card.parentElement?.querySelector('a[href*="/posts/"]'),
+        card.parentElement?.querySelector('a.stretched-link')
+      ];
+      
+      // Find first valid link
+      for (const container of possibleLinkContainers) {
+        if (container && container.getAttribute('href')) {
+          targetUrl = container.getAttribute('href');
+          break;
+        }
+      }
+      
+      if (!targetUrl) {
+        console.log("Could not find navigation target for card:", card);
+        return;
+      }
+      
+      // APPROACH 1: Apply data attribute for CSS selection
+      card.setAttribute('data-target-url', targetUrl);
+      
+      // APPROACH 2: Add direct click handler
+      const clickHandler = function(e) {
+        // Don't trigger if the click was on a link or button
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a') || e.target.closest('button')) {
+          return;
+        }
+        
+        // Provide visual feedback
+        card.style.backgroundColor = '#f8f9fa';
+        
+        // Navigate to the target URL
+        window.location.href = targetUrl;
+      };
+      
+      card.addEventListener('click', clickHandler);
+      
+      // APPROACH 3: Add touch handler for mobile devices
+      if (isMobile) {
+        card.addEventListener('touchend', function(e) {
+          // Only proceed if not touching a link or button
+          if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a') || e.target.closest('button')) {
+            return;
+          }
+          
+          // Navigate after a short delay to prevent accidental touches
+          setTimeout(function() {
+            window.location.href = targetUrl;
+          }, 50);
+        }, { passive: true });
+      }
+      
+      // APPROACH 4: Create a full-card overlay link
+      const overlay = document.createElement('a');
+      overlay.href = targetUrl;
+      overlay.className = 'card-navigation-overlay';
+      overlay.setAttribute('aria-label', 'View details');
+      overlay.style.cssText = `
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background: transparent;
+        opacity: 0;
+        cursor: pointer;
+      `;
+      
+      // Make sure card has position relative for the overlay
+      if (window.getComputedStyle(card).position === 'static') {
+        card.style.position = 'relative';
+      }
+      
+      // APPROACH 5: Ensure all links and interactive elements are above the overlay
+      const interactiveElements = card.querySelectorAll('a, button, input, select, textarea');
+      interactiveElements.forEach(function(el) {
+        el.style.position = 'relative';
+        el.style.zIndex = '2';
+      });
+      
+      // Add the overlay to the card
+      card.appendChild(overlay);
+      
+      // APPROACH 6: Add keyboard accessibility
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'link');
+      card.setAttribute('aria-label', `View more details about this project`);
+      
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = targetUrl;
         }
       });
+      
+      // Log success
+      console.log("Card navigation enhanced:", targetUrl);
     });
-    
-    // Process each unique card
-    allCards.forEach(card => {
-      makeCardClickable(card);
-    });
-    
-    console.log(`Processed ${allCards.length} cards for clickability`);
   }
   
-  // Make a single card clickable using multiple techniques
-  function makeCardClickable(card) {
-    // Skip if already processed
-    if (card._universalClickApplied) return;
-    card._universalClickApplied = true;
-    
-    // Find target link
-    let targetURL = null;
-    
-    // Try each link selector in order
-    for (let selector of linkSelectors) {
-      const links = card.querySelectorAll(selector);
-      for (let link of links) {
-        if (link && link.href && !link.classList.contains('universal-card-overlay')) {
-          targetURL = link.href;
-          break;
-        }
-      }
-      if (targetURL) break;
-    }
-    
-    // If no link found, check parent
-    if (!targetURL && card.parentElement) {
-      for (let selector of linkSelectors) {
-        const links = card.parentElement.querySelectorAll(selector);
-        for (let link of links) {
-          if (link && link.href) {
-            targetURL = link.href;
-            break;
-          }
-        }
-        if (targetURL) break;
-      }
-    }
-    
-    // Skip if no target URL found
-    if (!targetURL) return;
-    
-    // Store URL as data attribute for event delegation
-    card.setAttribute('data-card-url', targetURL);
-    
-    // TECHNIQUE 1: Add transparent anchor overlay
-    const overlay = document.createElement('a');
-    overlay.href = targetURL;
-    overlay.className = 'universal-card-overlay';
-    overlay.setAttribute('aria-label', 'View details');
-    overlay.setAttribute('title', 'Click to view details');
-    overlay.setAttribute('tabindex', '-1'); // Don't interfere with tab navigation
-    
-    // Set critical inline styles for maximum browser compatibility
-    overlay.setAttribute('style', `
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      bottom: 0 !important;
-      z-index: 999 !important;
-      background: transparent !important;
-      opacity: 0.01 !important; /* Nearly invisible but still clickable */
-      cursor: pointer !important;
-      -webkit-tap-highlight-color: rgba(0,0,0,0.1) !important;
-    `);
-    
-    // Add the overlay to the card
-    card.appendChild(overlay);
-    
-    // TECHNIQUE 2: Add multiple native event handlers directly to card
-    // Click event
-    card.addEventListener('click', function(e) {
-      if (shouldIgnoreEvent(e)) return;
-      window.location.href = targetURL;
-    });
-    
-    // Touch events for mobile
-    card.addEventListener('touchend', function(e) {
-      if (shouldIgnoreEvent(e)) return;
-      window.location.href = targetURL;
-    });
-    
-    // TECHNIQUE 3: Add keyboard accessibility
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('role', 'link');
-    card.setAttribute('aria-label', 'Click to view details');
-    
-    // Keyboard support
-    card.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        window.location.href = targetURL;
-        e.preventDefault();
-      }
-    });
-    
-    // Visual style enhancements
-    card.style.cursor = 'pointer';
+  // Run immediately and at various times to catch dynamically loaded content
+  enhanceCardNavigation();
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', enhanceCardNavigation);
   }
   
-  // Helper to determine if a click/touch should be ignored
-  function shouldIgnoreEvent(e) {
-    // Don't navigate if clicking on an actual interactive element
-    if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || 
-        e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' ||
-        e.target.tagName === 'TEXTAREA' || e.target.tagName === 'LABEL' ||
-        e.target.closest('a:not(.universal-card-overlay)') || 
-        e.target.closest('button') ||
-        e.target.closest('input') ||
-        e.target.closest('select') ||
-        e.target.closest('textarea') ||
-        e.target.closest('label')) {
-      return true;
-    }
-    
-    // Don't navigate on text selection
-    if (window.getSelection && window.getSelection().toString()) {
-      return true;
-    }
-    
-    return false;
-  }
+  window.addEventListener('load', function() {
+    enhanceCardNavigation();
+    setTimeout(enhanceCardNavigation, 500);
+    setTimeout(enhanceCardNavigation, 1500);
+  });
   
-  // Set up global event handlers for maximum coverage
-  function setupGlobalHandlers() {
-    // Global click delegation (capture phase for earliest interception)
-    document.addEventListener('click', function(e) {
-      // Find the closest card
-      let cardEl = null;
-      for (let selector of cardSelectors) {
-        const foundCard = e.target.closest(selector);
-        if (foundCard) {
-          cardEl = foundCard;
-          break;
-        }
-      }
-      
-      if (!cardEl) return;
-      
-      // Skip for interactive elements
-      if (shouldIgnoreEvent(e)) return;
-      
-      // Get target URL
-      const targetURL = cardEl.getAttribute('data-card-url');
-      if (targetURL) {
-        // Visual feedback
-        cardEl.style.backgroundColor = 'rgba(0,0,0,0.05)';
-        
-        // Navigate
-        window.location.href = targetURL;
-        
-        // Prevent default behavior
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    }, true); // Use capture phase
-    
-    // Global touch handling for mobile devices
-    document.addEventListener('touchend', function(e) {
-      // Find the closest card
-      let cardEl = null;
-      for (let selector of cardSelectors) {
-        const foundCard = e.target.closest(selector);
-        if (foundCard) {
-          cardEl = foundCard;
-          break;
-        }
-      }
-      
-      if (!cardEl) return;
-      
-      // Skip for interactive elements
-      if (shouldIgnoreEvent(e)) return;
-      
-      // Get target URL
-      const targetURL = cardEl.getAttribute('data-card-url');
-      if (targetURL) {
-        // Visual feedback
-        cardEl.style.backgroundColor = 'rgba(0,0,0,0.05)';
-        
-        // Navigate
-        window.location.href = targetURL;
-        
-        // Prevent default behavior
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    }, true); // Use capture phase
-  }
-  
-  // Watch for DOM changes to process new cards
-  function observeDOMChanges() {
-    if (!window.MutationObserver) return;
-    
+  // Watch for changes in the DOM that might add new cards
+  if (window.MutationObserver) {
     const observer = new MutationObserver(function(mutations) {
-      let needsProcessing = false;
+      let shouldEnhance = false;
       
       mutations.forEach(function(mutation) {
-        if (mutation.type === 'childList' && mutation.addedNodes.length) {
-          needsProcessing = true;
+        if (mutation.addedNodes && mutation.addedNodes.length > 0) {
+          for (let i = 0; i < mutation.addedNodes.length; i++) {
+            const node = mutation.addedNodes[i];
+            if (node.classList && (node.classList.contains('quarto-grid-item') || node.classList.contains('card'))) {
+              shouldEnhance = true;
+              break;
+            }
+            
+            if (node.querySelectorAll) {
+              const cards = node.querySelectorAll('.quarto-grid-item, .card.h-100');
+              if (cards.length > 0) {
+                shouldEnhance = true;
+                break;
+              }
+            }
+          }
         }
       });
       
-      if (needsProcessing) {
-        setTimeout(processAllCards, 100); // Slight delay to ensure DOM is stable
+      if (shouldEnhance) {
+        enhanceCardNavigation();
       }
     });
     
@@ -329,46 +190,4 @@
       subtree: true
     });
   }
-  
-  // Enhance keyboard accessibility
-  function enhanceAccessibility() {
-    // Add instructions for screen readers
-    const srInstruction = document.createElement('div');
-    srInstruction.setAttribute('role', 'status');
-    srInstruction.setAttribute('aria-live', 'polite');
-    srInstruction.className = 'sr-only';
-    srInstruction.style.position = 'absolute';
-    srInstruction.style.width = '1px';
-    srInstruction.style.height = '1px';
-    srInstruction.style.overflow = 'hidden';
-    srInstruction.textContent = 'Cards are clickable. Press Enter to view details.';
-    document.body.appendChild(srInstruction);
-    
-    // Remove after announcement
-    setTimeout(() => {
-      document.body.removeChild(srInstruction);
-    }, 3000);
-  }
-  
-  // Execute immediately
-  if (document.readyState === 'loading') {
-    // DOM not ready, add event listener
-    document.addEventListener('DOMContentLoaded', function() {
-      makeCardsNavigable();
-    });
-  } else {
-    // DOM is ready, execute now
-    makeCardsNavigable();
-  }
-  
-  // Also run on window load
-  window.addEventListener('load', makeCardsNavigable);
-  
-  // Run multiple times to catch dynamic content
-  setTimeout(makeCardsNavigable, 500);
-  setTimeout(makeCardsNavigable, 1500);
-  setTimeout(makeCardsNavigable, 3000);
-  
-  // Expose function globally so it can be called from elsewhere
-  window.makeCardsNavigable = makeCardsNavigable;
 })(); 

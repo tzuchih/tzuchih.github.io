@@ -8,7 +8,7 @@
 
 <meta name="author" content="Lydia Hsu">
 <meta name="dcterms.date" content="2025-04-15">
-<meta name="description" content="A step-by-step guide to installing and using Positron for desktop apps.">
+<meta name="description" content="How I built my portfolio site using vibe coding: an AI-assisted, prompt-powered approach.">
 
 <title>🎧 Vibe Coding My Portfolio – Lydia’s Portfolio</title>
 <style>
@@ -133,34 +133,173 @@ body::before {
   });
 })();
 </script> 
+<!-- Direct fix for CV link in sidebar -->
+<style>
+/* Direct CSS fix for CV link */
+a[href$="cv.html"],
+a[href$="cv.qmd"],
+a[href*="cv.html"],
+a[href*="cv.qmd"],
+.sidebar a[href*="cv"],
+.sidebar-item a[href*="cv"],
+.sidebar-item-text[href*="cv"],
+li a[href*="cv"],
+.sidebar-navigation .sidebar-item-container a[href*="cv"],
+.sidebar-items-container .sidebar-item-container a[href*="cv"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* Ensure CV sidebar item and its container are visible and interactive */
+.sidebar-item:has(a[href*="cv"]),
+.sidebar-item-container:has(a[href*="cv"]) {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  height: auto !important;
+  min-height: 40px !important;
+  overflow: visible !important;
+}
+
+/* Menu text within CV links */
+a[href*="cv"] .menu-text {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure hover styling works */
+.sidebar a[href*="cv"]:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+</style>
+
+<script>
+// Immediate execution to fix CV link
+(function() {
+  // Create a directly clickable CV link that replaces the current one
+  function createDirectCVLink() {
+    try {
+      // Find existing CV link in sidebar
+      const sidebarItems = document.querySelectorAll('.sidebar-item');
+      
+      for (let i = 0; i < sidebarItems.length; i++) {
+        const item = sidebarItems[i];
+        const link = item.querySelector('a[href*="cv"]');
+        
+        if (link) {
+          // Get href from existing link
+          const href = link.getAttribute('href');
+          
+          // Create replacement link
+          const newLink = document.createElement('a');
+          newLink.setAttribute('href', href);
+          newLink.setAttribute('class', link.getAttribute('class') || 'sidebar-item-text sidebar-link');
+          newLink.innerHTML = '<span class="menu-text">CV</span>';
+          newLink.style.display = 'block';
+          newLink.style.visibility = 'visible';
+          newLink.style.opacity = '1';
+          newLink.style.padding = '0.5rem 0.5rem 0.5rem 1rem';
+          newLink.style.color = 'rgba(255, 255, 255, 0.55)';
+          newLink.style.textDecoration = 'none';
+          newLink.style.pointerEvents = 'auto';
+          newLink.style.cursor = 'pointer';
+          
+          // Replace existing link with new one
+          const container = link.parentNode;
+          if (container) {
+            container.innerHTML = '';
+            container.appendChild(newLink);
+            container.style.display = 'block';
+            container.style.visibility = 'visible';
+            container.style.opacity = '1';
+            container.style.pointerEvents = 'auto';
+          }
+          
+          // Ensure parent item is visible
+          item.style.display = 'block';
+          item.style.visibility = 'visible';
+          item.style.opacity = '1';
+          
+          // Add direct click handler
+          newLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = href;
+          });
+        }
+      }
+    } catch (e) {
+      console.error('Error fixing CV link:', e);
+    }
+  }
+
+  // Execute immediately
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createDirectCVLink);
+  } else {
+    createDirectCVLink();
+  }
+  
+  // Also run after a delay
+  setTimeout(createDirectCVLink, 100);
+  setTimeout(createDirectCVLink, 500);
+})();
+</script> 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏻‍💻</text></svg>">
 <title>Lydia's Portfolio</title>
 <script>
   // Immediate execution to set title before page renders
   document.title = "Lydia's Portfolio";
 </script>
-<script src="../js/custom.js" defer=""></script>
-<script src="../js/title-fix.js"></script>
+
+<!-- Remove CV page links -->
+<!-- 
 <script>
-// Remove CV page links
-(function() {
-  document.addEventListener('DOMContentLoaded', function() {
-    // Remove any links to CV page
-    document.querySelectorAll('a[href*="cv.qmd"], a[href*="cv.html"]').forEach(function(link) {
-      link.style.display = 'none';
-      link.style.visibility = 'hidden';
-      
-      // If it's in the sidebar, remove the entire list item
-      if (link.closest('.sidebar-item')) {
-        const item = link.closest('.sidebar-item');
-        if (item) {
-          item.style.display = 'none';
-          item.style.visibility = 'hidden';
-        }
+document.addEventListener('DOMContentLoaded', function() {
+  // Remove any links to CV page
+  document.querySelectorAll('a[href*="cv.qmd"], a[href*="cv.html"]').forEach(function(link) {
+    link.style.display = 'none';
+    link.style.visibility = 'hidden';
+    
+    // If it's in the sidebar, remove the entire list item
+    if (link.closest('.sidebar-item')) {
+      const item = link.closest('.sidebar-item');
+      if (item) {
+        item.style.display = 'none';
+        item.style.visibility = 'hidden';
       }
-    });
+    }
   });
-})();
+});
+</script>
+-->
+
+<!-- Script to ensure CV link is visible -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Make sure CV links are visible
+  document.querySelectorAll('a[href*="cv.qmd"], a[href*="cv.html"]').forEach(function(link) {
+    link.style.display = 'block';
+    link.style.visibility = 'visible';
+    link.style.opacity = '1';
+    
+    // If it's in the sidebar, make the entire item visible
+    if (link.closest('.sidebar-item')) {
+      const item = link.closest('.sidebar-item');
+      if (item) {
+        item.style.display = 'block';
+        item.style.visibility = 'visible';
+        item.style.opacity = '1';
+      }
+    }
+  });
+});
 </script>
 
 <!-- Load mermaid directly in head for better diagram rendering -->
@@ -249,62 +388,17 @@ body::before {
   margin: 0 !important;
 }
 
-/* Extremely aggressive color neutralization with !important flag */
-.cell-output,
-.cell-output-stdout,
-.cell-output-stderr,
-.cell-output-display,
-.cell-output *,
-.cell-output-stdout *,
-.cell-output-stderr *,
-.cell-output-display * {
-  color: #444444 !important;
-}
-
-/* Pandas-specific styles with high specificity */
+/* Pandas-specific styles */
 .dataframe,
 .dataframe *,
 table.dataframe,
-table.dataframe *,
-.jupyter-dataframe,
-.jupyter-dataframe * {
+table.dataframe * {
   color: #444444 !important;
-}
-
-/* Target magenta color specifically */
-.dataframe thead th,
-.dataframe tbody tr th,
-.level_0, .col_heading, .row_heading, .index_name {
-  color: #444444 !important;
-}
-
-/* Hide mermaid code blocks site-wide */
-pre.mermaid, 
-code.mermaid,
-.sourceCode.mermaid,
-pre.sourceCode.mermaid,
-div.sourceCode:has(code.mermaid),
-div.sourceCode:has(.language-mermaid),
-div:has(> pre.mermaid),
-div:has(> code.mermaid),
-div.sourceCode:has(.mermaid) {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  max-height: 0 !important;
-  opacity: 0 !important;
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
 }
 
 /* Keep rendered diagrams visible */
 .mermaid:not(.sourceCode),
 .mermaid svg,
-div:has(> .mermaid:not(.sourceCode)),
 .job-rec-diagram .mermaid,
 .diagram-container .mermaid {
   display: block !important;
@@ -314,88 +408,99 @@ div:has(> .mermaid:not(.sourceCode)),
   background-color: transparent !important;
   margin: 2rem auto !important;
 }
-
-/* Hide all mermaid code block headers */
-div.sourceCode:has(.mermaid)::before,
-div.sourceCode:has(.mermaid)::after,
-div.sourceCode:has(.language-mermaid)::before,
-div.sourceCode:has(.language-mermaid)::after {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  opacity: 0 !important;
-}
 </style>
 
 <!-- Preload key JavaScript -->
 <link rel="preload" href="js/title-refresh-fix.js" as="script">
 <link rel="preload" href="js/listing-refresh.js" as="script">
 
-<!-- Execute critical JavaScript as early as possible -->
+<!-- Mobile sidebar toggle button -->
 <script>
-// Store and preserve title contents
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.listing-title, .card-title').forEach(function(title) {
-    if (title.textContent.trim()) {
-      title.setAttribute('data-original-title', title.textContent.trim());
-    }
-  });
-});
-</script>
-
-<!-- Emergency color reset script -->
-<script>
-  // Apply the style changes when the DOM is ready
   document.addEventListener('DOMContentLoaded', function() {
-    // Check for outputs periodically and fix colors
-    function fixOutputColors() {
-      // Target all elements inside output cells
-      document.querySelectorAll('.cell-output *, .cell-output-stdout *, .cell-output-stderr *, .cell-output-display *').forEach(function(el) {
-        // Force color property with highest priority
-        el.style.setProperty('color', '#444444', 'important');
+    // Check if we're on a mobile device
+    if (window.innerWidth <= 768) {
+      // Create the toggle button
+      const toggleButton = document.createElement('button');
+      toggleButton.className = 'sidebar-toggle';
+      toggleButton.innerHTML = '☰';
+      toggleButton.setAttribute('aria-label', 'Toggle sidebar');
+      document.body.appendChild(toggleButton);
+      
+      // Create overlay
+      const overlay = document.createElement('div');
+      overlay.className = 'sidebar-overlay';
+      document.body.appendChild(overlay);
+      
+      // Get the sidebar
+      const sidebar = document.getElementById('quarto-sidebar');
+      
+      // Toggle sidebar function
+      function toggleSidebar() {
+        sidebar.classList.toggle('sidebar-visible');
+        document.body.classList.toggle('sidebar-visible');
+        overlay.classList.toggle('visible');
+      }
+      
+      // Add click event to button
+      toggleButton.addEventListener('click', toggleSidebar);
+      
+      // Close when clicking overlay
+      overlay.addEventListener('click', toggleSidebar);
+      
+      // Close sidebar when clicking a link
+      const sidebarLinks = sidebar.querySelectorAll('a');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          toggleSidebar();
+        });
+      });
+      
+      // Close sidebar when pressing Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('sidebar-visible')) {
+          toggleSidebar();
+        }
       });
     }
-    
-    // Run immediately
-    fixOutputColors();
-    
-    // Also run after the page has had time to render
-    setTimeout(fixOutputColors, 100);
-    setTimeout(fixOutputColors, 500);
-    setTimeout(fixOutputColors, 1000);
   });
+</script> 
+<script>
+  // Immediate CV link fix - runs before anything else
+  (function() {
+    function makeVisible() {
+      var cvLinks = document.querySelectorAll('a[href*="cv.html"], a[href*="cv.qmd"]');
+      for (var i = 0; i < cvLinks.length; i++) {
+        var link = cvLinks[i];
+        link.style.display = "block";
+        link.style.visibility = "visible";
+        link.style.opacity = "1";
+        
+        // Also make parent containers visible
+        var parent = link.parentNode;
+        while (parent) {
+          if (parent.classList && 
+              (parent.classList.contains('sidebar-item') || 
+               parent.classList.contains('sidebar-item-container'))) {
+            parent.style.display = "block";
+            parent.style.visibility = "visible";
+            parent.style.opacity = "1";
+          }
+          parent = parent.parentNode;
+        }
+      }
+    }
+    
+    // Call immediately
+    makeVisible();
+    
+    // Also when DOM is ready
+    document.addEventListener('DOMContentLoaded', makeVisible);
+    
+    // And after everything else
+    window.addEventListener('load', makeVisible);
+  })();
 </script>
 
-<!-- JavaScript for hiding mermaid code blocks -->
-<script>
-// Immediately hide all mermaid code blocks
-(function() {
-  function hideMermaidCodeBlocks() {
-    document.querySelectorAll('pre.mermaid, code.mermaid, .sourceCode.mermaid, div.sourceCode:has(.mermaid), .code-with-filename:has(.mermaid)').forEach(function(el) {
-      el.style.display = 'none';
-      el.style.visibility = 'hidden';
-      el.style.height = '0';
-      el.style.opacity = '0';
-      el.style.overflow = 'hidden';
-      el.style.margin = '0';
-      el.style.padding = '0';
-      el.style.position = 'absolute';
-      el.style.top = '-9999px';
-      el.style.left = '-9999px';
-    });
-  }
-  
-  // Run immediately
-  hideMermaidCodeBlocks();
-  
-  // Run after DOM is ready and after page render
-  document.addEventListener('DOMContentLoaded', function() {
-    hideMermaidCodeBlocks();
-    setTimeout(hideMermaidCodeBlocks, 100);
-    setTimeout(hideMermaidCodeBlocks, 500);
-  });
-})();
-</script> 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10.3.1/dist/mermaid.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -406,16 +511,153 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 </script>
 
+<!-- Cross-Device Compatibility Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add device detection classes to the body
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      document.body.classList.add('mobile-device');
+      
+      if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        document.body.classList.add('ios-device');
+      } else if (/Android/i.test(navigator.userAgent)) {
+        document.body.classList.add('android-device');
+      }
+    } else {
+      document.body.classList.add('desktop-device');
+    }
+  });
+</script>
+
+<!-- Critical No-Animation CSS - WITH VISIBILITY PRESERVED -->
+<style>
+  /* Disable animation timings but keep elements visible */
+  * {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  /* Target animation properties only but ensure visibility */
+  .quarto-grid-item, .card.h-100, 
+  .quarto-grid-item *, .card.h-100 *,
+  .listing-image, .thumbnail-image, .card-img-top {
+    transition: none !important;
+    animation: none !important;
+    will-change: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Disable hover/active animations but preserve the elements */
+  .quarto-grid-item:hover, .card.h-100:hover,
+  .quarto-grid-item:active, .card.h-100:active,
+  .quarto-grid-item:focus, .card.h-100:focus {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Fix scrollbar issues */
+  html {
+    overflow-x: hidden;
+  }
+  
+  /* Stabilize images without hiding them */
+  img {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Explicitly ensure card visibility */
+  .quarto-grid-item, .card.h-100 {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* Ensure grid is visible */
+  .grid, .quarto-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+</style>
+
+<script>
+  // Run once DOM content is loaded - fix CV link clickability
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find all CV links
+    var cvLinks = document.querySelectorAll('a[href*="cv.html"], a[href*="cv.qmd"]');
+    
+    // Make each link clickable
+    cvLinks.forEach(function(link) {
+      // Make sure the link is clickable
+      link.style.pointerEvents = 'auto';
+      link.style.cursor = 'pointer';
+      
+      // Force all parent elements to have pointer-events: auto
+      var parent = link.parentNode;
+      while (parent && parent !== document.body) {
+        if (parent.style) {
+          parent.style.pointerEvents = 'auto';
+        }
+        parent = parent.parentNode;
+      }
+      
+      // Add direct click handler that ignores parent element click restrictions
+      link.addEventListener('click', function(e) {
+        e.stopPropagation();
+        window.location.href = link.getAttribute('href');
+      }, true);
+    });
+  });
+</script>
+
+<style>
+  /* Direct CSS override for CV links with !important */
+  a[href$="cv.html"],
+  a[href$="cv.qmd"],
+  a[href*="cv.html"],
+  a[href*="cv.qmd"],
+  .sidebar-item a[href*="cv"],
+  li a[href*="cv"],
+  a.cta-button[href*="cv"],
+  a.sidebar-item-text[href*="cv"],
+  a.btn[href*="cv"],
+  .sidebar-navigation .sidebar-item-container a[href*="cv"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Force sidebar CV item to be visible */
+  .sidebar li.sidebar-item:has(a[href*="cv"]),
+  .sidebar .sidebar-item-container:has(a[href*="cv"]) {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+</style>
+
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../spacing-fix.css">
 <link rel="stylesheet" href="../hide-cv.css">
+<link rel="stylesheet" href="../show-cv-override.css">
 <link rel="stylesheet" href="../title-hard-fix.css">
 <link rel="stylesheet" href="../post-tag-fix.css">
 <link rel="stylesheet" href="../code-fold-fix.css">
 <link rel="stylesheet" href="../code-output-fix.css">
 <link rel="stylesheet" href="../pandas-fix.css">
 <link rel="stylesheet" href="../mermaid-fix.css">
+<link rel="stylesheet" href="../card-click-enhancement.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -467,6 +709,12 @@ document.addEventListener('DOMContentLoaded', function() {
  <span class="menu-text">Projects</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CV</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -480,14 +728,15 @@ document.addEventListener('DOMContentLoaded', function() {
   <li><a href="#what-is-vibe-coding" id="toc-what-is-vibe-coding" class="nav-link active" data-scroll-target="#what-is-vibe-coding">🎧 What <em>Is</em> Vibe Coding?</a></li>
   <li><a href="#how-i-vibe-coded-this-portfolio" id="toc-how-i-vibe-coded-this-portfolio" class="nav-link" data-scroll-target="#how-i-vibe-coded-this-portfolio">🛠️ How I Vibe-Coded This Portfolio</a>
   <ul class="collapse">
-  <li><a href="#prompt-preview-loops" id="toc-prompt-preview-loops" class="nav-link" data-scroll-target="#prompt-preview-loops">🔁 Prompt → Preview Loops</a></li>
+  <li><a href="#starting-with-style" id="toc-starting-with-style" class="nav-link" data-scroll-target="#starting-with-style">🎨 Starting with Style</a></li>
+  <li><a href="#from-prompt-to-preview" id="toc-from-prompt-to-preview" class="nav-link" data-scroll-target="#from-prompt-to-preview">🔁 From Prompt to Preview</a></li>
   <li><a href="#instant-components" id="toc-instant-components" class="nav-link" data-scroll-target="#instant-components">⚡ Instant Components</a></li>
-  <li><a href="#rapid-theming" id="toc-rapid-theming" class="nav-link" data-scroll-target="#rapid-theming">🎨 Rapid Theming</a></li>
+  <li><a href="#rapid-theming-with-prompts" id="toc-rapid-theming-with-prompts" class="nav-link" data-scroll-target="#rapid-theming-with-prompts">✏️ Rapid Theming with Prompts</a></li>
   </ul></li>
-  <li><a href="#what-i-learned" id="toc-what-i-learned" class="nav-link" data-scroll-target="#what-i-learned">📚 What I Learned</a></li>
-  <li><a href="#challenges-i-faced-and-solved" id="toc-challenges-i-faced-and-solved" class="nav-link" data-scroll-target="#challenges-i-faced-and-solved">🧩 Challenges I Faced (and Solved)</a></li>
-  <li><a href="#why-it-mattered" id="toc-why-it-mattered" class="nav-link" data-scroll-target="#why-it-mattered">✨ Why It Mattered</a></li>
-  <li><a href="#lets-connect" id="toc-lets-connect" class="nav-link" data-scroll-target="#lets-connect">🤝 Let’s Connect</a></li>
+  <li><a href="#key-lessons-learned" id="toc-key-lessons-learned" class="nav-link" data-scroll-target="#key-lessons-learned">📚 Key Lessons Learned</a></li>
+  <li><a href="#challenges-i-hit-and-how-i-solved-them" id="toc-challenges-i-hit-and-how-i-solved-them" class="nav-link" data-scroll-target="#challenges-i-hit-and-how-i-solved-them">🧩 Challenges I Hit (and How I Solved Them)</a></li>
+  <li><a href="#why-this-project-mattered" id="toc-why-this-project-mattered" class="nav-link" data-scroll-target="#why-this-project-mattered">✨ Why This Project Mattered</a></li>
+  <li><a href="#lets-connect" id="toc-lets-connect" class="nav-link" data-scroll-target="#lets-connect">🤝🏼 Let’s Connect</a></li>
   </ul>
 </nav>
     </div>
@@ -506,7 +755,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div>
   <div class="description">
-    A step-by-step guide to installing and using Positron for desktop apps.
+    How I built my portfolio site using vibe coding: an AI-assisted, prompt-powered approach.
   </div>
 </div>
 
@@ -537,42 +786,53 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <section id="what-is-vibe-coding" class="level2 no-anchor">
 <h2 class="no-anchor" data-anchor-id="what-is-vibe-coding">🎧 What <em>Is</em> Vibe Coding?</h2>
-<p>Coined by Andrej Karpathy in 2025, <strong>vibe coding</strong> is a style of AI-assisted development where you co-create software through natural language prompts. You describe what you want — layout, logic, behavior — and let the AI generate most of the code. Your job becomes guiding, reviewing, and refining. It’s fast. It’s iterative. And it’s incredibly fun when you’re in the zone.</p>
-<hr>
+<p>Coined by Andrej Karpathy in 2025, <strong>vibe coding</strong> is a new style of AI-assisted development where you co-create software through natural language prompts.<br>
+You describe what you want — layout, logic, behavior — and let the AI generate most of the code. Your role becomes guiding, reviewing, and refining.</p>
+<p>It’s fast. It’s iterative. And when you’re in the zone, it’s incredibly fun.</p>
 </section>
 <section id="how-i-vibe-coded-this-portfolio" class="level2 no-anchor">
 <h2 class="no-anchor" data-anchor-id="how-i-vibe-coded-this-portfolio">🛠️ How I Vibe-Coded This Portfolio</h2>
-<p>When I set out to build this site using <strong>Quarto</strong>, I leaned into vibe coding to bring my ideas to life. Here’s how I used prompts + AI to accelerate the entire process.</p>
-<section id="prompt-preview-loops" class="level3 no-anchor">
-<h3 class="no-anchor" data-anchor-id="prompt-preview-loops">🔁 Prompt → Preview Loops</h3>
-<p>I gave the AI detailed prompts like:</p>
-<p>Prompt: “Create a responsive Quarto page with a two-column layout: Left side for project cards, right side for an About Me section. Add a sticky navbar.”</p>
-<p>The AI returned 100+ lines of YAML and HTML. My role was to:</p>
+<p>When I set out to build this site with <strong>Quarto</strong>, I fully embraced vibe coding — powered by <strong>Cursor</strong>, an AI-first code editor that made the experience even smoother. Here’s how I turned ideas into reality.</p>
+<section id="starting-with-style" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="starting-with-style">🎨 Starting with Style</h3>
+<p>Before writing a single line of prompt, I first picked a color palette and visual style that felt right: clean, playful, and pastel-toned.<br>
+This upfront design choice gave me a clear target to guide the vibe of every prompt I wrote.</p>
+</section>
+<section id="from-prompt-to-preview" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="from-prompt-to-preview">🔁 From Prompt to Preview</h3>
+<p>With the style in mind, I fed Cursor detailed prompts like:</p>
+<blockquote class="blockquote">
+<p>“Create a responsive Quarto page with a two-column layout: left for project cards, right for an About Me section. Add a sticky navbar.”</p>
+</blockquote>
+<p>In response, the AI generated 100+ lines of YAML and HTML.<br>
+My role became:</p>
 <ul>
-<li>Clean up the structure</li>
-<li>Extract inline CSS into a custom.scss file</li>
-<li>Debug Quarto-specific syntax quirks</li>
+<li>Cleaning up the structure</li>
+<li>Extracting inline CSS into a clean “custom.scss”</li>
+<li>Debugging Quarto-specific quirks</li>
 </ul>
 </section>
 <section id="instant-components" class="level3 no-anchor">
 <h3 class="no-anchor" data-anchor-id="instant-components">⚡ Instant Components</h3>
-<p>I used AI to scaffold:</p>
+<p>Using Cursor, I quickly scaffolded:</p>
 <ul>
 <li>A vibrant hero section</li>
 <li>A filterable project grid</li>
 <li>An interactive skills accordion</li>
 </ul>
-<p>I customized the layout and interactivity using Quarto’s chunk options, Bootstrap classes, and SCSS variables.</p>
+<p>Then I fine-tuned layouts and interactivity using Quarto’s chunk options, Bootstrap classes, and SCSS variables.</p>
 </section>
-<section id="rapid-theming" class="level3 no-anchor">
-<h3 class="no-anchor" data-anchor-id="rapid-theming">🎨 Rapid Theming</h3>
-<p>To refine the visual identity of my site, I prompt-tuned with design intent:</p>
-<p>Prompt: “Make the call-to-action button playful with a pastel palette and rounded corners”</p>
-<p>This let me explore multiple design variants in minutes without rewriting all the CSS by hand.</p>
+<section id="rapid-theming-with-prompts" class="level3 no-anchor">
+<h3 class="no-anchor" data-anchor-id="rapid-theming-with-prompts">✏️ Rapid Theming with Prompts</h3>
+<p>To shape the visual identity further, I prompt-tuned with design intent:</p>
+<blockquote class="blockquote">
+<p>“Make the call-to-action button playful with a pastel palette and rounded corners.”</p>
+</blockquote>
+<p>This let me explore different design variants in minutes — no tedious manual CSS editing.</p>
 </section>
 </section>
-<section id="what-i-learned" class="level2 no-anchor">
-<h2 class="no-anchor" data-anchor-id="what-i-learned">📚 What I Learned</h2>
+<section id="key-lessons-learned" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="key-lessons-learned">📚 Key Lessons Learned</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 52%">
@@ -587,56 +847,58 @@ document.addEventListener('DOMContentLoaded', function() {
 <tbody>
 <tr class="odd">
 <td>Prompting is a design skill</td>
-<td>Clear context = better code, faster iterations</td>
+<td>Clear, specific context = better AI output</td>
 </tr>
 <tr class="even">
 <td>AI isn’t always right</td>
-<td>Some hallucinated Quarto options needed manual corrections</td>
+<td>Some hallucinated Quarto options needed manual fixes</td>
 </tr>
 <tr class="odd">
-<td>Human + AI = best results</td>
-<td>Final polish still relies on UX sense and technical intuition</td>
+<td>Human + AI = magic</td>
+<td>UX sense and technical intuition still matter</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="challenges-i-faced-and-solved" class="level2 no-anchor">
-<h2 class="no-anchor" data-anchor-id="challenges-i-faced-and-solved">🧩 Challenges I Faced (and Solved)</h2>
+<section id="challenges-i-hit-and-how-i-solved-them" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="challenges-i-hit-and-how-i-solved-them">🧩 Challenges I Hit (and How I Solved Them)</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 52%">
-<col style="width: 47%">
+<col style="width: 53%">
+<col style="width: 46%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>❌ Problem</th>
+<th>❌ Challenge</th>
 <th>✅ Solution</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Code chunks broke layout</td>
-<td>Used freeze: true and scoped JS imports carefully</td>
+<td>Used <code>freeze: true</code> and scoped JS imports</td>
 </tr>
 <tr class="even">
-<td>Conflicting CSS</td>
-<td>Merged class names and offloaded critical styles to custom.scss</td>
+<td>CSS conflicts</td>
+<td>Consolidated class names, offloaded critical styles to <code>custom.scss</code></td>
 </tr>
 <tr class="odd">
 <td>Mixed audience (Product + Data)</td>
-<td>Added filters and tabs to highlight both skill sets separately</td>
+<td>Added skill filters and tabs for easy navigation</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="why-it-mattered" class="level2 no-anchor">
-<h2 class="no-anchor" data-anchor-id="why-it-mattered">✨ Why It Mattered</h2>
-<p>Building this site wasn’t just a technical challenge — it was a creative flow state.</p>
-<p>It reminded me how AI can boost not only productivity, but also playfulness in the process. This portfolio reflects who I am: a builder who loves clean data, smart design, and continuous learning.</p>
+<section id="why-this-project-mattered" class="level2 no-anchor">
+<h2 class="no-anchor" data-anchor-id="why-this-project-mattered">✨ Why This Project Mattered</h2>
+<p>Building this site wasn’t just technical — it was creative, almost meditative.<br>
+It showed me that AI can enhance not just productivity, but also playfulness.</p>
+<p>This portfolio reflects who I am: a builder who loves clean data, smart design, and continuous learning.</p>
 </section>
 <section id="lets-connect" class="level2 no-anchor">
-<h2 class="no-anchor" data-anchor-id="lets-connect">🤝 Let’s Connect</h2>
-<p>If you’re working on your own AI-assisted portfolio, playing with Quarto, or just exploring what vibe coding looks like in real life — I’d love to hear your story. Let’s swap prompts, inspiration, or lo-fi playlists.</p>
+<h2 class="no-anchor" data-anchor-id="lets-connect">🤝🏼 Let’s Connect</h2>
+<p>If you’re experimenting with AI-assisted portfolios, playing with Quarto, or exploring what vibe coding looks like — I’d love to hear your story.</p>
+<p>Let’s swap prompts, share inspiration, or build a lo-fi coding playlist together.</p>
 <p><a href="mailto:lydia.tzuchi@gmail.com" class="btn btn-primary">📬 Let’s chat</a></p>
 
 
@@ -772,6 +1034,39 @@ document.addEventListener('DOMContentLoaded', function() {
   setTimeout(removeBackgrounds, 1500);
   setTimeout(removeBackgrounds, 3000); // Extra delay for slower page loads
 });
+</script>
+
+<!-- Fail-safe CV link fix -->
+<script>
+  // Add a direct CV link to the sidebar as a fallback
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if we can find the CV link in the sidebar
+    var existingLink = document.querySelector('.sidebar a[href*="cv.html"], .sidebar a[href*="cv.qmd"]');
+    var sidebarItems = document.querySelector('.sidebar-items-container');
+    
+    if (existingLink && sidebarItems) {
+      // Try to make the existing link work by adding an absolute positioned overlay link
+      var linkRect = existingLink.getBoundingClientRect();
+      var overlayLink = document.createElement('a');
+      overlayLink.href = existingLink.getAttribute('href');
+      overlayLink.textContent = 'CV';
+      overlayLink.style.cssText = `
+        position: absolute;
+        top: ${linkRect.top}px;
+        left: ${linkRect.left}px;
+        width: ${linkRect.width}px;
+        height: ${linkRect.height}px;
+        display: block;
+        z-index: 9999;
+        opacity: 0.01;
+        background: transparent;
+        pointer-events: auto;
+        cursor: pointer;
+      `;
+      
+      document.body.appendChild(overlayLink);
+    }
+  });
 </script> 
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

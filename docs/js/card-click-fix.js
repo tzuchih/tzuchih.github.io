@@ -1,151 +1,151 @@
 /**
- * Card Click Fix - ENHANCED VERSION
+ * Robust Card Click Enhancement Script
  * 
- * This script ensures cards are immediately clickable with no delay.
- * Uses direct event capture at the document level for maximum reliability.
+ * This script ensures grid cards are reliably clickable across all devices
+ * and browsers by implementing multiple redundant mechanisms.
  */
 
-(function() {
-  // Function to make cards instantly clickable
-  function fixCardClicks() {
-    console.log("Applying high-priority card click fix");
-    
-    // Get all cards
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("Card click fix script loaded");
+  
+  // Find all cards that should be clickable
+  const makeCardsClickable = function() {
     const cards = document.querySelectorAll('.quarto-grid-item, .card.h-100');
     
-    // Create a mapping of elements to their target URLs
-    const clickTargets = new Map();
+    if (cards.length === 0) {
+      console.log("No cards found yet, retrying in 500ms");
+      setTimeout(makeCardsClickable, 500);
+      return;
+    }
+    
+    console.log(`Found ${cards.length} cards to make clickable`);
     
     cards.forEach(function(card) {
-      // Skip if already processed with this specific fix
-      if (card._clickFixApplied) return;
-      card._clickFixApplied = true;
-      
-      // Apply direct styles for immediate effect
-      card.setAttribute('style', 'cursor: pointer !important; position: relative !important; z-index: 1 !important;');
-      
-      // Find the link for this card
-      const cardLink = card.querySelector('a.quarto-grid-link') || 
-                      card.querySelector('a.listing-link') ||
-                      card.querySelector('.card-title a') ||
-                      card.parentElement.querySelector('a.quarto-grid-link');
-      
-      if (!cardLink) return;
-      
-      const href = cardLink.getAttribute('href');
-      if (!href) return;
-      
-      // Store reference in the mapping
-      clickTargets.set(card, href);
-      
-      // Create a completely transparent clickable overlay that sits on top of everything
-      const overlay = document.createElement('a');
-      overlay.href = href; // Make it a real link
-      overlay.className = 'card-click-overlay';
-      overlay.setAttribute('style', `
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        z-index: 1000 !important;
-        cursor: pointer !important;
-        background-color: transparent !important;
-        opacity: 0 !important;
-        text-decoration: none !important;
-      `);
-      
-      // Add to card
-      card.appendChild(overlay);
-    });
-    
-    // Add a document-level event listener for maximum capture reliability
-    document.addEventListener('click', function(e) {
-      // Find the closest card parent
-      const cardEl = e.target.closest('.quarto-grid-item, .card.h-100');
-      
-      if (!cardEl) return;
-      
-      // Don't proceed if clicking on an actual link or button
-      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || 
-          e.target.closest('a:not(.card-click-overlay)') || e.target.closest('button')) {
+      // Skip if already processed
+      if (card.dataset.clickableProcessed === 'true') {
         return;
       }
       
-      // Get the target URL from our mapping
-      const targetUrl = clickTargets.get(cardEl);
-      if (targetUrl) {
-        // Add visual feedback
-        cardEl.style.backgroundColor = '#f0f1f2';
+      // Mark as processed to avoid duplicate event listeners
+      card.dataset.clickableProcessed = 'true';
+      
+      // Find the link inside the card
+      const cardTitle = card.querySelector('.listing-title, .card-title');
+      const existingLinks = card.querySelectorAll('a');
+      let targetLink = null;
+      
+      // Priority 1: Try to find the most appropriate link
+      if (cardTitle && cardTitle.querySelector('a')) {
+        targetLink = cardTitle.querySelector('a').getAttribute('href');
+      } else if (existingLinks.length > 0) {
+        // Use the first link if title link not available
+        targetLink = existingLinks[0].getAttribute('href');
+      }
+      
+      if (!targetLink) {
+        console.log("Could not find link for card", card);
+        return;
+      }
+      
+      // Method 1: Set cursor style to indicate clickability
+      card.style.cursor = 'pointer';
+      
+      // Method 2: Set position relative for proper event handling
+      card.style.position = 'relative';
+      
+      // Method 3: Add click event with passive and capture options
+      card.addEventListener('click', function(event) {
+        // Don't trigger if the click was on a link or button
+        if (event.target.tagName === 'A' || event.target.tagName === 'BUTTON') {
+          return;
+        }
         
-        // Navigate immediately
-        window.location.href = targetUrl;
+        // Don't trigger if user was selecting text
+        const selection = window.getSelection();
+        if (selection.toString().length > 0) {
+          return;
+        }
         
-        // Prevent any other handlers
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    }, true); // Use capture phase for earliest possible handling
-  }
-  
-  // Function to fix card styles for better clickability
-  function fixCardStyles() {
-    // Create a style element for high-priority fixes
-    const styleEl = document.createElement('style');
-    styleEl.innerHTML = `
-      /* Core clickability fixes with maximum priority */
-      .quarto-grid-item, .card.h-100 {
-        cursor: pointer !important;
-        position: relative !important;
-        z-index: 1 !important;
-      }
+        // Navigate to the link
+        window.location.href = targetLink;
+      }, { passive: false, capture: false });
       
-      /* Make cards visually clickable */
-      .quarto-grid-item:hover, .card.h-100:hover {
-        background-color: #f8f9fa !important;
-      }
+      // Method 4: Create an overlay element for touch devices
+      const overlay = document.createElement('div');
+      overlay.className = 'card-click-overlay';
+      overlay.style.position = 'absolute';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.right = '0';
+      overlay.style.bottom = '0';
+      overlay.style.zIndex = '1';
       
-      /* Ensure links are clickable */
-      .quarto-grid-item a, .card.h-100 a {
-        position: relative !important;
-        z-index: 2 !important;
-      }
+      // Method 5: Add touch events
+      overlay.addEventListener('touchend', function(event) {
+        // Prevent default to avoid double-triggering
+        event.preventDefault();
+        window.location.href = targetLink;
+      }, { passive: false });
       
-      /* Card click overlay */
-      .card-click-overlay {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        z-index: 1000 !important;
-      }
-    `;
-    
-    // Add to document head with high priority
-    document.head.insertBefore(styleEl, document.head.firstChild);
-  }
-  
-  // Run immediately
-  fixCardStyles();
-  fixCardClicks();
-  
-  // Also run when DOM content is loaded
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      fixCardStyles();
-      fixCardClicks();
+      // Method 6: Add pointer events to overlay
+      overlay.style.pointerEvents = 'auto';
+      
+      // Don't block clicks on actual links
+      existingLinks.forEach(function(link) {
+        link.style.position = 'relative';
+        link.style.zIndex = '2';
+      });
+      
+      // Add the overlay to the card
+      card.appendChild(overlay);
+      
+      // Method 7: Add keyboard accessibility
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-label', cardTitle ? cardTitle.textContent.trim() : 'View project');
+      
+      card.addEventListener('keydown', function(event) {
+        // Navigate on Enter or Space key
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          window.location.href = targetLink;
+        }
+      });
+      
+      // Log successful processing
+      console.log("Card made clickable:", targetLink);
     });
-  }
+  };
   
-  // Run after all resources are loaded
-  window.addEventListener('load', function() {
-    fixCardStyles();
-    fixCardClicks();
-    
-    // Run again with delays to catch any dynamically added cards
-    setTimeout(fixCardClicks, 200);
-    setTimeout(fixCardClicks, 600);
-    setTimeout(fixCardClicks, 1200);
+  // Execute on DOM ready and after a short delay to catch dynamically loaded cards
+  makeCardsClickable();
+  setTimeout(makeCardsClickable, 1000);
+  setTimeout(makeCardsClickable, 2500);
+  
+  // Also handle cards that might be loaded dynamically later
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.addedNodes && mutation.addedNodes.length > 0) {
+        makeCardsClickable();
+      }
+    });
   });
-})(); 
+  
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+  
+  // Ensure cards are clickable even after any potential page changes or AJAX updates
+  window.addEventListener('load', makeCardsClickable);
+  
+  // Check periodically to ensure all cards are properly clickable
+  setInterval(function() {
+    // Find any cards that haven't been processed
+    const unprocessedCards = document.querySelectorAll('.quarto-grid-item:not([data-clickable-processed]), .card.h-100:not([data-clickable-processed])');
+    if (unprocessedCards.length > 0) {
+      console.log(`Found ${unprocessedCards.length} unprocessed cards, making them clickable`);
+      makeCardsClickable();
+    }
+  }, 5000);
+}); 

@@ -1,39 +1,66 @@
 /* 
- * Card Animation Removal CSS
- * Explicitly disables all card hover animations
+ * ANIMATION REMOVAL CSS
+ * Completely disables all card animations while keeping cards visible
  */
 
-/* Base card styling with all animations disabled */
-.quarto-grid-item,
-.card.h-100 {
-  position: relative;
-  cursor: pointer;
-  transform: none !important;
+/* Selective animation blocker - only animation properties */
+* {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
   transition: none !important;
-  will-change: auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
+  animation: none !important;
+  /* Keeping transform only for non-hover states */
+  will-change: auto !important;
 }
 
-/* Disable hover animations completely */
+/* Base card styling with animations disabled but VISIBLE */
+.quarto-grid-item,
+.card.h-100 {
+  position: relative !important;
+  cursor: pointer !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  will-change: auto !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  overflow: hidden !important;
+  /* Ensure cards are visible */
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background-color: #fff !important;
+  border-radius: 5px !important;
+}
+
+/* Disable hover animations but keep hover feedback */
 .quarto-grid-item:hover,
 .card.h-100:hover {
   transform: none !important;
+  transition: none !important;
+  animation: none !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  background-color: #f8f9fa !important;
 }
 
-/* Disable image animations */
+/* Disable image animations but ensure images are VISIBLE */
 .quarto-grid-item img,
 .card.h-100 img,
 .listing-image,
 .thumbnail-image,
 .card-img-top {
-  opacity: 1;
-  visibility: visible;
-  display: block;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
   transform: none !important;
   transition: none !important;
-  will-change: auto;
+  animation: none !important;
+  will-change: auto !important;
+  height: 220px !important;
+  width: 100% !important;
+  object-fit: cover !important;
 }
 
 /* Disable image hover animations */
@@ -43,26 +70,98 @@
 .quarto-grid-item:hover .thumbnail-image,
 .card.h-100:hover .card-img-top {
   transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  opacity: 1 !important;
 }
 
-/* Ensure text elements don't animate */
+/* Ensure text elements don't animate but are VISIBLE */
 .quarto-grid-item .listing-title,
 .quarto-grid-item .listing-description,
 .card.h-100 .card-title,
 .card.h-100 .card-text {
   transition: none !important;
+  transform: none !important;
+  animation: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-/* Container layout control */
+/* Disable container transformations */
 .quarto-grid-item .card-img-top-container,
 .card.h-100 .card-img-top-container,
 .listing-image-container {
-  overflow: hidden;
-  position: relative;
+  overflow: hidden !important;
+  position: relative !important;
+  transition: none !important;
+  transform: none !important;
+  animation: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-/* Override any animation variables */
+/* Override animation variables */
 :root {
-  --hover-timing: none;
-  --hover-duration: 0ms;
+  --hover-timing: none !important;
+  --hover-duration: 0ms !important;
+  --animation-speed: 0ms !important;
+  --transition-speed: 0ms !important;
+  --card-transform: none !important;
+  --image-transform: none !important;
+}
+
+/* Target animations inside cards but keep visibility */
+.quarto-grid-item *,
+.card.h-100 * {
+  transition: none !important;
+  animation: none !important;
+  will-change: auto !important;
+}
+
+/* Fix for iOS Safari - keep visibility */
+@supports (-webkit-touch-callout: none) {
+  .quarto-grid-item,
+  .card.h-100,
+  .quarto-grid-item *,
+  .card.h-100 * {
+    -webkit-transition: none !important;
+    -webkit-animation: none !important;
+    -webkit-transform-style: flat !important;
+    -webkit-backface-visibility: visible !important;
+    -webkit-perspective: none !important;
+  }
+}
+
+/* Override keyframes but don't mess with visibility */
+@keyframes none {
+  0% { transform: none !important; }
+  100% { transform: none !important; }
+}
+
+/* Card content styling to ensure visibility */
+.card-body {
+  padding: 1rem !important;
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Card content styling for visibility */
+.quarto-grid-item .card-body,
+.card.h-100 .card-body {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+/* Fix grid layout */
+.grid, 
+.quarto-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  grid-gap: 20px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 } 

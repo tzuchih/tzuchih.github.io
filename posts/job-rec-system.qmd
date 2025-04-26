@@ -35,13 +35,42 @@ format:
   overflow: hidden !important;
 }
 
-/* Allow the diagram to be rendered */
-.job-rec-diagram .mermaid {
+/* Allow the diagram to be rendered with enhanced visibility */
+.job-rec-diagram .mermaid,
+.mermaid:not(pre):not(code),
+.diagram-container .mermaid {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
   height: auto !important;
   margin: 2rem auto !important;
+  background-color: transparent !important;
+  max-width: 100% !important;
+}
+
+/* Ensure chart containers are visible */
+.diagram-container,
+.job-rec-diagram,
+.mermaid-wrapper {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 2rem auto !important;
+  max-width: 800px !important;
+  background-color: transparent !important;
+}
+
+/* Make sure SVG elements in charts are visible */
+.mermaid svg,
+.diagram-container svg,
+.job-rec-diagram svg {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 400px !important;
 }
 
 /* Ensure code blocks for mermaid don't show */
@@ -87,6 +116,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Force render any mermaid diagrams
   setTimeout(function() {
     mermaid.init(undefined, '.mermaid:not(pre):not(code)');
+    
+    // Add additional rendering attempt for reliability
+    setTimeout(function() {
+      mermaid.init(undefined, '.mermaid:not(pre):not(code)');
+    }, 1000);
   }, 500);
 });
 </script>
@@ -121,15 +155,42 @@ Choose a job listing, and the system will generate a personalized cover letter d
 
 #### The process flow of the system:
 
-<div style="width:100%; max-width:800px; margin:0 auto;">
-<!-- Primary option: iframe with mermaid diagram -->
-<iframe src="../posts/job-rec-diagram.html" width="100%" height="900px" frameborder="0" scrolling="no" style="border:none; overflow:hidden;"></iframe>
-
-<!-- Fallback option: if iframe doesn't work -->
-<div style="text-align:center; display:none;">
-![Job Recommendation System Flowchart](../../images/posts/job-rec-diagram.png)
+<div class="mermaid-wrapper" style="width:100%; max-width:800px; margin:0 auto 0 auto; position:relative; z-index:10;">
+  <!-- Primary option: iframe with mermaid diagram with balanced height -->
+  <iframe src="../posts/job-rec-diagram.html" width="100%" height="950px" frameborder="0" scrolling="no" style="border:none; overflow:hidden; display:block; visibility:visible; opacity:1; background-color:transparent;"></iframe>
+  
+  <!-- Fallback option: direct embedded mermaid diagram -->
+  <div class="job-rec-diagram" style="margin-top:0; display:block; visibility:visible; opacity:1;">
+    <div class="mermaid">
+      flowchart TD
+        A1[/"User Upload<br/>Resume"/] -->|"Extract Resume Text"| B1["Preprocess Resume Text<br/>(Remove<br/>Lowercase, Stopwords...)"]
+        
+        A2{"User Set Preference<br/>(Location, Job<br/>Type, Level)"} --> B2["Filter Job Listings<br/>(Based on User Criteria)"]
+        
+        B1 & B2 --> C["TF-IDF Vectorization<br/>(Job Description, Resume)"]
+        C --> D["Compute Cosine Similarity"]
+        D --> E["Find Top Matches"]
+        E --> F["Analyze Skill Gaps"]
+        F --> G[/"Display Results"/]
+        G --> H["Generate Cover Letter"]
+        
+        classDef parallelogram path,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;
+        classDef diamond rhombus,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;
+        classDef rectangle rect,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;
+        
+        class A1 parallelogram;
+        class A2 diamond;
+        class B1,B2,C,D,E,F,H rectangle;
+        class G parallelogram;
+    </div>
+  </div>
+  
+  <!-- Second fallback: image version -->
+  <div style="text-align:center; margin-top:0; display:none;">
+    <img src="../../images/posts/job-rec-diagram.png" alt="Job Recommendation System Flowchart" style="max-width:100%; height:auto; display:block; margin:0 auto;">
+  </div>
 </div>
-</div>
+<div style="margin-top:-0.5rem;"></div>
 
 ## 📦 Dataset{.no-anchor}
 

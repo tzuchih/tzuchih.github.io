@@ -23,11 +23,11 @@ listing:
 ---
 
 ::: {.docs-list-title-container}
-# My Data Science & Analytics Projects {.docs-list-title .no-anchor}
+# My Projects {.docs-list-title .no-anchor}
 :::
 
 ::: {.projects-intro}
-Welcome to my projects page! Here, you'll find a collection of my work in data science, analytics, and visualization. Each project showcases different skills and techniques I've applied to solve real-world problems.
+Welcome to my projects page! Here, you'll find a collection of my work in product, analytics, and visualization. Each project showcases different skills and techniques I've applied to solve real-world problems.
 :::
 
 ::: {.projects-content}
@@ -42,8 +42,14 @@ Welcome to my projects page! Here, you'll find a collection of my work in data s
 <!-- Remove any existing Show Images buttons -->
 <script src="js/remove-show-button.js"></script>
 
+<!-- Reliable card navigation - high priority -->
+<script src="js/reliable-card-navigation.js"></script>
+
 <!-- Disable all card hover animations -->
 <script src="js/disable-card-animations.js"></script>
+
+<!-- Ensure cards are reliably clickable -->
+<script src="js/card-click-fix.js"></script>
 
 <!-- Early load critical scripts -->
 <script>
@@ -146,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const existingPosts = document.querySelectorAll('.listing-title');
     const existingTitles = Array.from(existingPosts).map(post => post.innerText.trim());
     
-    // Apply thœe title-hard-fix styling to any new posts
+    // Apply the title-hard-fix styling to any new posts
     document.querySelectorAll('.quarto-grid-item, .card.h-100').forEach(function(card) {
       card.style.height = '480px';
       card.style.minHeight = '480px';
@@ -165,6 +171,14 @@ document.addEventListener('DOMContentLoaded', function() {
         title.style.overflow = 'hidden';
         title.style.textOverflow = 'ellipsis';
       }
+      
+      // Explicitly disable all transitions on cards and their children
+      card.style.transition = 'none !important';
+      card.style.animation = 'none !important';
+      Array.from(card.querySelectorAll('*')).forEach(el => {
+        el.style.transition = 'none !important';
+        el.style.animation = 'none !important';
+      });
     });
   }, 1000);
 });
@@ -175,6 +189,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Fix image loading glitches -->
 <script src="js/image-preload-fix.js"></script>
-
 <!-- Remove critical styles once everything is loaded -->
 <script src="js/critical-styles-cleanup.js"></script>

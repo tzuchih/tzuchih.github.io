@@ -3,8 +3,8 @@ title: "🎧 Vibe Coding My Portfolio"
 author: "Lydia Hsu"
 date: "2025-04-15"
 categories: [Vibe Coding, Prompt Engineering, Dev Workflow]
-image: "../images/posts/post1.jpg"
-description: "A step-by-step guide to installing and using Positron for desktop apps."
+image: "../images/posts/vibecoding.jpg"
+description: "How I built my portfolio site using vibe coding: an AI-assisted, prompt-powered approach."
 format:
   html:
     code-fold: false
@@ -19,70 +19,88 @@ engine: knitr
 
 ## 🎧 What *Is* Vibe Coding?{.no-anchor}
 
-Coined by Andrej Karpathy in 2025, **vibe coding** is a style of AI-assisted development where you co-create software through natural language prompts. You describe what you want — layout, logic, behavior — and let the AI generate most of the code. Your job becomes guiding, reviewing, and refining. It's fast. It's iterative. And it's incredibly fun when you're in the zone.
+Coined by Andrej Karpathy in 2025, **vibe coding** is a new style of AI-assisted development where you co-create software through natural language prompts.  
+You describe what you want — layout, logic, behavior — and let the AI generate most of the code. Your role becomes guiding, reviewing, and refining.  
 
----
+It's fast. It's iterative. And when you're in the zone, it's incredibly fun.
+
+
 
 ## 🛠️ How I Vibe-Coded This Portfolio{.no-anchor}
 
-When I set out to build this site using **Quarto**, I leaned into vibe coding to bring my ideas to life. Here's how I used prompts + AI to accelerate the entire process.
+When I set out to build this site with **Quarto**, I fully embraced vibe coding — powered by **Cursor**, an AI-first code editor that made the experience even smoother. Here’s how I turned ideas into reality.
 
-### 🔁 Prompt → Preview Loops{.no-anchor}
+### 🎨 Starting with Style{.no-anchor}
 
-I gave the AI detailed prompts like:
+Before writing a single line of prompt, I first picked a color palette and visual style that felt right: clean, playful, and pastel-toned.  
+This upfront design choice gave me a clear target to guide the vibe of every prompt I wrote.
 
-Prompt: "Create a responsive Quarto page with a two-column layout:
-Left side for project cards, right side for an About Me section. Add a sticky navbar."
+### 🔁 From Prompt to Preview{.no-anchor}
 
-The AI returned 100+ lines of YAML and HTML. My role was to:
+With the style in mind, I fed Cursor detailed prompts like:
 
-- Clean up the structure
-- Extract inline CSS into a custom.scss file
-- Debug Quarto-specific syntax quirks
+> "Create a responsive Quarto page with a two-column layout: left for project cards, right for an About Me section. Add a sticky navbar."
+
+In response, the AI generated 100+ lines of YAML and HTML.  
+My role became:
+
+- Cleaning up the structure
+- Extracting inline CSS into a clean "custom.scss"
+- Debugging Quarto-specific quirks
 
 ### ⚡ Instant Components{.no-anchor}
 
-I used AI to scaffold:
+Using Cursor, I quickly scaffolded:
 
 - A vibrant hero section
 - A filterable project grid
 - An interactive skills accordion
 
-I customized the layout and interactivity using Quarto's chunk options, Bootstrap classes, and SCSS variables.
+Then I fine-tuned layouts and interactivity using Quarto's chunk options, Bootstrap classes, and SCSS variables.
 
-### 🎨 Rapid Theming{.no-anchor}
+### ✏️ Rapid Theming with Prompts{.no-anchor}
 
-To refine the visual identity of my site, I prompt-tuned with design intent:
+To shape the visual identity further, I prompt-tuned with design intent:
 
-Prompt: "Make the call-to-action button playful with a pastel palette and rounded corners"
+> "Make the call-to-action button playful with a pastel palette and rounded corners."
 
-This let me explore multiple design variants in minutes without rewriting all the CSS by hand.
+This let me explore different design variants in minutes — no tedious manual CSS editing.
 
-## 📚 What I Learned{.no-anchor}
+
+
+## 📚 Key Lessons Learned{.no-anchor}
 
 | 💡 Lesson | Takeaway |
 |-----------|----------|
-| Prompting is a design skill | Clear context = better code, faster iterations |
-| AI isn't always right | Some hallucinated Quarto options needed manual corrections |
-| Human + AI = best results | Final polish still relies on UX sense and technical intuition |
+| Prompting is a design skill | Clear, specific context = better AI output |
+| AI isn't always right | Some hallucinated Quarto options needed manual fixes |
+| Human + AI = magic | UX sense and technical intuition still matter |
 
-## 🧩 Challenges I Faced (and Solved){.no-anchor}
 
-| ❌ Problem | ✅ Solution |
-|-----------|----------|
-| Code chunks broke layout | Used freeze: true and scoped JS imports carefully |
-| Conflicting CSS | Merged class names and offloaded critical styles to custom.scss |
-| Mixed audience (Product + Data) | Added filters and tabs to highlight both skill sets separately |
 
-## ✨ Why It Mattered{.no-anchor}
+## 🧩 Challenges I Hit (and How I Solved Them){.no-anchor}
 
-Building this site wasn't just a technical challenge — it was a creative flow state.
+| ❌ Challenge | ✅ Solution |
+|--------------|------------|
+| Code chunks broke layout | Used `freeze: true` and scoped JS imports |
+| CSS conflicts | Consolidated class names, offloaded critical styles to `custom.scss` |
+| Mixed audience (Product + Data) | Added skill filters and tabs for easy navigation |
 
-It reminded me how AI can boost not only productivity, but also playfulness in the process. This portfolio reflects who I am: a builder who loves clean data, smart design, and continuous learning.
 
-## 🤝 Let's Connect{.no-anchor}
 
-If you're working on your own AI-assisted portfolio, playing with Quarto, or just exploring what vibe coding looks like in real life — I'd love to hear your story.
-Let's swap prompts, inspiration, or lo-fi playlists.
+## ✨ Why This Project Mattered{.no-anchor}
+
+Building this site wasn't just technical — it was creative, almost meditative.  
+It showed me that AI can enhance not just productivity, but also playfulness.  
+
+This portfolio reflects who I am: a builder who loves clean data, smart design, and continuous learning.
+
+
+
+## 🤝🏼 Let's Connect{.no-anchor}
+
+If you're experimenting with AI-assisted portfolios, playing with Quarto, or exploring what vibe coding looks like — I’d love to hear your story.
+
+Let’s swap prompts, share inspiration, or build a lo-fi coding playlist together.
 
 [📬 Let’s chat](mailto:lydia.tzuchi@gmail.com){.btn .btn-primary}

@@ -1,70 +1,182 @@
 /**
  * Card Click Enhancement CSS
- * Improves card clickability and provides visual feedback
+ * 
+ * Critical CSS styles to ensure cards are reliably clickable
+ * across all devices and browsers WITHOUT ANY ANIMATIONS
  */
 
-/* Make cards visually clickable */
-.quarto-grid-item, 
+/* Make all cards visually clickable - NO ANIMATIONS */
+.quarto-grid-item,
 .card.h-100 {
   cursor: pointer !important;
   position: relative !important;
-  transition: background-color 0.1s ease, transform 0.1s ease !important;
-  z-index: 1;
-  overflow: hidden !important;
+  -webkit-tap-highlight-color: rgba(0,0,0,0.05) !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  will-change: auto !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
 }
 
-/* Add hover effect without animation */
-.quarto-grid-item:hover, 
+/* Remove hover effects completely */
+.quarto-grid-item:hover,
 .card.h-100:hover {
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
   background-color: #f8f9fa !important;
 }
 
-/* Add active state */
+/* Remove all active state animations */
 .quarto-grid-item:active,
 .card.h-100:active {
-  background-color: #f0f1f2 !important;
-  transform: translateY(1px) !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  background-color: #f1f3f5 !important;
 }
 
-/* Prevent click issues on child elements */
-.quarto-grid-item *:not(a):not(button), 
-.card.h-100 *:not(a):not(button) {
-  pointer-events: none;
-}
-
-/* Allow links and buttons to receive clicks */
-.quarto-grid-item a,
-.card.h-100 a,
+/* Ensure links within cards appear above the overlay */
+.quarto-grid-item a:not(.card-click-overlay):not(.card-navigation-overlay),
+.card.h-100 a:not(.card-click-overlay):not(.card-navigation-overlay),
 .quarto-grid-item button,
-.card.h-100 button {
-  pointer-events: auto;
-  position: relative;
-  z-index: 2;
+.card.h-100 button,
+.quarto-grid-item input,
+.card.h-100 input {
+  position: relative !important;
+  z-index: 10 !important;
 }
 
-/* Enhance clickability by adding overlay */
-.quarto-grid-item::after,
-.card.h-100::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
+/* Allow text selection in paragraphs and headings */
+.quarto-grid-item p,
+.card.h-100 p,
+.quarto-grid-item h1,
+.quarto-grid-item h2,
+.quarto-grid-item h3,
+.quarto-grid-item h4,
+.quarto-grid-item h5,
+.quarto-grid-item h6,
+.card.h-100 h1,
+.card.h-100 h2,
+.card.h-100 h3,
+.card.h-100 h4,
+.card.h-100 h5,
+.card.h-100 h6 {
+  user-select: text !important;
 }
 
-/* Fix card image size and prevent layout shift */
+/* Accessibility: Focus styles for keyboard navigation - NO ANIMATIONS */
+.quarto-grid-item:focus,
+.card.h-100:focus {
+  outline: 2px solid #007bff !important;
+  outline-offset: 2px !important;
+  background-color: #f8f9fa !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Overlay for entire card clickability */
+.card-click-overlay,
+.card-navigation-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 1 !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  opacity: 0 !important;
+  -webkit-tap-highlight-color: rgba(0,0,0,0.05) !important;
+}
+
+/* Mobile enhancements */
+@media (max-width: 768px) {
+  .quarto-grid-item,
+  .card.h-100 {
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.1) !important;
+  }
+  
+  /* Larger touch target on mobile */
+  .card-click-overlay,
+  .card-navigation-overlay {
+    margin: -10px !important;
+    top: -10px !important;
+    left: -10px !important;
+    right: -10px !important;
+    bottom: -10px !important;
+  }
+  
+  /* No animation on mobile active state */
+  .quarto-grid-item:active,
+  .card.h-100:active {
+    background-color: #edf0f2 !important;
+    opacity: 0.9 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  .quarto-grid-item,
+  .card.h-100 {
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  /* Ensure clicks register on iOS */
+  .card-click-overlay,
+  .card-navigation-overlay {
+    -webkit-tap-highlight-color: rgba(0,0,0,0.05) !important;
+    -webkit-touch-callout: none !important;
+  }
+}
+
+/* Prevent text selection on card when clicking */
+.quarto-grid-item *:not(p):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6),
+.card.h-100 *:not(p):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+  user-select: none !important;
+}
+
+/* Add data-attribute selector for JavaScript enhanced cards */
+[data-clickable-processed="true"],
+[data-navigation-enhanced="true"],
+[data-target-url] {
+  cursor: pointer !important;
+  position: relative !important;
+}
+
+/* Allow paragraphs and descriptions to be selected */
+.listing-description,
+.card-text {
+  user-select: text !important;
+}
+
+/* Fix card image size and prevent layout shift - NO ANIMATIONS */
 .quarto-grid-item img,
 .card.h-100 img,
 .listing-image,
 .thumbnail-image,
 .card-img-top {
-  object-fit: cover;
-  width: 100%;
+  object-fit: cover !important;
+  width: 100% !important;
   height: 220px !important;
   max-height: 220px !important;
   display: block !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  will-change: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* Ensure card body is positioned correctly */
@@ -88,4 +200,30 @@
 .card-title.listing-title {
   min-height: 60px !important; 
   display: block !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Blanket removal of all card animations */
+* {
+  animation-duration: 0s !important;
+  transition-duration: 0s !important;
+}
+
+/* Explicitly override any animation on any parent or child element */
+.quarto-grid-item *,
+.card.h-100 * {
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  will-change: auto !important;
+}
+
+/* Remove any will-change properties that might cause rendering issues */
+.quarto-grid-item,
+.card.h-100,
+.quarto-grid-item *,
+.card.h-100 * {
+  will-change: auto !important;
 } 

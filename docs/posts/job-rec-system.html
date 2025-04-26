@@ -166,34 +166,173 @@ body::before {
   });
 })();
 </script> 
+<!-- Direct fix for CV link in sidebar -->
+<style>
+/* Direct CSS fix for CV link */
+a[href$="cv.html"],
+a[href$="cv.qmd"],
+a[href*="cv.html"],
+a[href*="cv.qmd"],
+.sidebar a[href*="cv"],
+.sidebar-item a[href*="cv"],
+.sidebar-item-text[href*="cv"],
+li a[href*="cv"],
+.sidebar-navigation .sidebar-item-container a[href*="cv"],
+.sidebar-items-container .sidebar-item-container a[href*="cv"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* Ensure CV sidebar item and its container are visible and interactive */
+.sidebar-item:has(a[href*="cv"]),
+.sidebar-item-container:has(a[href*="cv"]) {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  height: auto !important;
+  min-height: 40px !important;
+  overflow: visible !important;
+}
+
+/* Menu text within CV links */
+a[href*="cv"] .menu-text {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure hover styling works */
+.sidebar a[href*="cv"]:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+</style>
+
+<script>
+// Immediate execution to fix CV link
+(function() {
+  // Create a directly clickable CV link that replaces the current one
+  function createDirectCVLink() {
+    try {
+      // Find existing CV link in sidebar
+      const sidebarItems = document.querySelectorAll('.sidebar-item');
+      
+      for (let i = 0; i < sidebarItems.length; i++) {
+        const item = sidebarItems[i];
+        const link = item.querySelector('a[href*="cv"]');
+        
+        if (link) {
+          // Get href from existing link
+          const href = link.getAttribute('href');
+          
+          // Create replacement link
+          const newLink = document.createElement('a');
+          newLink.setAttribute('href', href);
+          newLink.setAttribute('class', link.getAttribute('class') || 'sidebar-item-text sidebar-link');
+          newLink.innerHTML = '<span class="menu-text">CV</span>';
+          newLink.style.display = 'block';
+          newLink.style.visibility = 'visible';
+          newLink.style.opacity = '1';
+          newLink.style.padding = '0.5rem 0.5rem 0.5rem 1rem';
+          newLink.style.color = 'rgba(255, 255, 255, 0.55)';
+          newLink.style.textDecoration = 'none';
+          newLink.style.pointerEvents = 'auto';
+          newLink.style.cursor = 'pointer';
+          
+          // Replace existing link with new one
+          const container = link.parentNode;
+          if (container) {
+            container.innerHTML = '';
+            container.appendChild(newLink);
+            container.style.display = 'block';
+            container.style.visibility = 'visible';
+            container.style.opacity = '1';
+            container.style.pointerEvents = 'auto';
+          }
+          
+          // Ensure parent item is visible
+          item.style.display = 'block';
+          item.style.visibility = 'visible';
+          item.style.opacity = '1';
+          
+          // Add direct click handler
+          newLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = href;
+          });
+        }
+      }
+    } catch (e) {
+      console.error('Error fixing CV link:', e);
+    }
+  }
+
+  // Execute immediately
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createDirectCVLink);
+  } else {
+    createDirectCVLink();
+  }
+  
+  // Also run after a delay
+  setTimeout(createDirectCVLink, 100);
+  setTimeout(createDirectCVLink, 500);
+})();
+</script> 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏻‍💻</text></svg>">
 <title>Lydia's Portfolio</title>
 <script>
   // Immediate execution to set title before page renders
   document.title = "Lydia's Portfolio";
 </script>
-<script src="../js/custom.js" defer=""></script>
-<script src="../js/title-fix.js"></script>
+
+<!-- Remove CV page links -->
+<!-- 
 <script>
-// Remove CV page links
-(function() {
-  document.addEventListener('DOMContentLoaded', function() {
-    // Remove any links to CV page
-    document.querySelectorAll('a[href*="cv.qmd"], a[href*="cv.html"]').forEach(function(link) {
-      link.style.display = 'none';
-      link.style.visibility = 'hidden';
-      
-      // If it's in the sidebar, remove the entire list item
-      if (link.closest('.sidebar-item')) {
-        const item = link.closest('.sidebar-item');
-        if (item) {
-          item.style.display = 'none';
-          item.style.visibility = 'hidden';
-        }
+document.addEventListener('DOMContentLoaded', function() {
+  // Remove any links to CV page
+  document.querySelectorAll('a[href*="cv.qmd"], a[href*="cv.html"]').forEach(function(link) {
+    link.style.display = 'none';
+    link.style.visibility = 'hidden';
+    
+    // If it's in the sidebar, remove the entire list item
+    if (link.closest('.sidebar-item')) {
+      const item = link.closest('.sidebar-item');
+      if (item) {
+        item.style.display = 'none';
+        item.style.visibility = 'hidden';
       }
-    });
+    }
   });
-})();
+});
+</script>
+-->
+
+<!-- Script to ensure CV link is visible -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Make sure CV links are visible
+  document.querySelectorAll('a[href*="cv.qmd"], a[href*="cv.html"]').forEach(function(link) {
+    link.style.display = 'block';
+    link.style.visibility = 'visible';
+    link.style.opacity = '1';
+    
+    // If it's in the sidebar, make the entire item visible
+    if (link.closest('.sidebar-item')) {
+      const item = link.closest('.sidebar-item');
+      if (item) {
+        item.style.display = 'block';
+        item.style.visibility = 'visible';
+        item.style.opacity = '1';
+      }
+    }
+  });
+});
 </script>
 
 <!-- Load mermaid directly in head for better diagram rendering -->
@@ -282,62 +421,17 @@ body::before {
   margin: 0 !important;
 }
 
-/* Extremely aggressive color neutralization with !important flag */
-.cell-output,
-.cell-output-stdout,
-.cell-output-stderr,
-.cell-output-display,
-.cell-output *,
-.cell-output-stdout *,
-.cell-output-stderr *,
-.cell-output-display * {
-  color: #444444 !important;
-}
-
-/* Pandas-specific styles with high specificity */
+/* Pandas-specific styles */
 .dataframe,
 .dataframe *,
 table.dataframe,
-table.dataframe *,
-.jupyter-dataframe,
-.jupyter-dataframe * {
+table.dataframe * {
   color: #444444 !important;
-}
-
-/* Target magenta color specifically */
-.dataframe thead th,
-.dataframe tbody tr th,
-.level_0, .col_heading, .row_heading, .index_name {
-  color: #444444 !important;
-}
-
-/* Hide mermaid code blocks site-wide */
-pre.mermaid, 
-code.mermaid,
-.sourceCode.mermaid,
-pre.sourceCode.mermaid,
-div.sourceCode:has(code.mermaid),
-div.sourceCode:has(.language-mermaid),
-div:has(> pre.mermaid),
-div:has(> code.mermaid),
-div.sourceCode:has(.mermaid) {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  max-height: 0 !important;
-  opacity: 0 !important;
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
 }
 
 /* Keep rendered diagrams visible */
 .mermaid:not(.sourceCode),
 .mermaid svg,
-div:has(> .mermaid:not(.sourceCode)),
 .job-rec-diagram .mermaid,
 .diagram-container .mermaid {
   display: block !important;
@@ -347,88 +441,99 @@ div:has(> .mermaid:not(.sourceCode)),
   background-color: transparent !important;
   margin: 2rem auto !important;
 }
-
-/* Hide all mermaid code block headers */
-div.sourceCode:has(.mermaid)::before,
-div.sourceCode:has(.mermaid)::after,
-div.sourceCode:has(.language-mermaid)::before,
-div.sourceCode:has(.language-mermaid)::after {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  opacity: 0 !important;
-}
 </style>
 
 <!-- Preload key JavaScript -->
 <link rel="preload" href="js/title-refresh-fix.js" as="script">
 <link rel="preload" href="js/listing-refresh.js" as="script">
 
-<!-- Execute critical JavaScript as early as possible -->
+<!-- Mobile sidebar toggle button -->
 <script>
-// Store and preserve title contents
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.listing-title, .card-title').forEach(function(title) {
-    if (title.textContent.trim()) {
-      title.setAttribute('data-original-title', title.textContent.trim());
-    }
-  });
-});
-</script>
-
-<!-- Emergency color reset script -->
-<script>
-  // Apply the style changes when the DOM is ready
   document.addEventListener('DOMContentLoaded', function() {
-    // Check for outputs periodically and fix colors
-    function fixOutputColors() {
-      // Target all elements inside output cells
-      document.querySelectorAll('.cell-output *, .cell-output-stdout *, .cell-output-stderr *, .cell-output-display *').forEach(function(el) {
-        // Force color property with highest priority
-        el.style.setProperty('color', '#444444', 'important');
+    // Check if we're on a mobile device
+    if (window.innerWidth <= 768) {
+      // Create the toggle button
+      const toggleButton = document.createElement('button');
+      toggleButton.className = 'sidebar-toggle';
+      toggleButton.innerHTML = '☰';
+      toggleButton.setAttribute('aria-label', 'Toggle sidebar');
+      document.body.appendChild(toggleButton);
+      
+      // Create overlay
+      const overlay = document.createElement('div');
+      overlay.className = 'sidebar-overlay';
+      document.body.appendChild(overlay);
+      
+      // Get the sidebar
+      const sidebar = document.getElementById('quarto-sidebar');
+      
+      // Toggle sidebar function
+      function toggleSidebar() {
+        sidebar.classList.toggle('sidebar-visible');
+        document.body.classList.toggle('sidebar-visible');
+        overlay.classList.toggle('visible');
+      }
+      
+      // Add click event to button
+      toggleButton.addEventListener('click', toggleSidebar);
+      
+      // Close when clicking overlay
+      overlay.addEventListener('click', toggleSidebar);
+      
+      // Close sidebar when clicking a link
+      const sidebarLinks = sidebar.querySelectorAll('a');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          toggleSidebar();
+        });
+      });
+      
+      // Close sidebar when pressing Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('sidebar-visible')) {
+          toggleSidebar();
+        }
       });
     }
-    
-    // Run immediately
-    fixOutputColors();
-    
-    // Also run after the page has had time to render
-    setTimeout(fixOutputColors, 100);
-    setTimeout(fixOutputColors, 500);
-    setTimeout(fixOutputColors, 1000);
   });
+</script> 
+<script>
+  // Immediate CV link fix - runs before anything else
+  (function() {
+    function makeVisible() {
+      var cvLinks = document.querySelectorAll('a[href*="cv.html"], a[href*="cv.qmd"]');
+      for (var i = 0; i < cvLinks.length; i++) {
+        var link = cvLinks[i];
+        link.style.display = "block";
+        link.style.visibility = "visible";
+        link.style.opacity = "1";
+        
+        // Also make parent containers visible
+        var parent = link.parentNode;
+        while (parent) {
+          if (parent.classList && 
+              (parent.classList.contains('sidebar-item') || 
+               parent.classList.contains('sidebar-item-container'))) {
+            parent.style.display = "block";
+            parent.style.visibility = "visible";
+            parent.style.opacity = "1";
+          }
+          parent = parent.parentNode;
+        }
+      }
+    }
+    
+    // Call immediately
+    makeVisible();
+    
+    // Also when DOM is ready
+    document.addEventListener('DOMContentLoaded', makeVisible);
+    
+    // And after everything else
+    window.addEventListener('load', makeVisible);
+  })();
 </script>
 
-<!-- JavaScript for hiding mermaid code blocks -->
-<script>
-// Immediately hide all mermaid code blocks
-(function() {
-  function hideMermaidCodeBlocks() {
-    document.querySelectorAll('pre.mermaid, code.mermaid, .sourceCode.mermaid, div.sourceCode:has(.mermaid), .code-with-filename:has(.mermaid)').forEach(function(el) {
-      el.style.display = 'none';
-      el.style.visibility = 'hidden';
-      el.style.height = '0';
-      el.style.opacity = '0';
-      el.style.overflow = 'hidden';
-      el.style.margin = '0';
-      el.style.padding = '0';
-      el.style.position = 'absolute';
-      el.style.top = '-9999px';
-      el.style.left = '-9999px';
-    });
-  }
-  
-  // Run immediately
-  hideMermaidCodeBlocks();
-  
-  // Run after DOM is ready and after page render
-  document.addEventListener('DOMContentLoaded', function() {
-    hideMermaidCodeBlocks();
-    setTimeout(hideMermaidCodeBlocks, 100);
-    setTimeout(hideMermaidCodeBlocks, 500);
-  });
-})();
-</script> 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10.3.1/dist/mermaid.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -439,16 +544,153 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 </script>
 
+<!-- Cross-Device Compatibility Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add device detection classes to the body
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      document.body.classList.add('mobile-device');
+      
+      if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        document.body.classList.add('ios-device');
+      } else if (/Android/i.test(navigator.userAgent)) {
+        document.body.classList.add('android-device');
+      }
+    } else {
+      document.body.classList.add('desktop-device');
+    }
+  });
+</script>
+
+<!-- Critical No-Animation CSS - WITH VISIBILITY PRESERVED -->
+<style>
+  /* Disable animation timings but keep elements visible */
+  * {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  /* Target animation properties only but ensure visibility */
+  .quarto-grid-item, .card.h-100, 
+  .quarto-grid-item *, .card.h-100 *,
+  .listing-image, .thumbnail-image, .card-img-top {
+    transition: none !important;
+    animation: none !important;
+    will-change: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Disable hover/active animations but preserve the elements */
+  .quarto-grid-item:hover, .card.h-100:hover,
+  .quarto-grid-item:active, .card.h-100:active,
+  .quarto-grid-item:focus, .card.h-100:focus {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Fix scrollbar issues */
+  html {
+    overflow-x: hidden;
+  }
+  
+  /* Stabilize images without hiding them */
+  img {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Explicitly ensure card visibility */
+  .quarto-grid-item, .card.h-100 {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* Ensure grid is visible */
+  .grid, .quarto-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+</style>
+
+<script>
+  // Run once DOM content is loaded - fix CV link clickability
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find all CV links
+    var cvLinks = document.querySelectorAll('a[href*="cv.html"], a[href*="cv.qmd"]');
+    
+    // Make each link clickable
+    cvLinks.forEach(function(link) {
+      // Make sure the link is clickable
+      link.style.pointerEvents = 'auto';
+      link.style.cursor = 'pointer';
+      
+      // Force all parent elements to have pointer-events: auto
+      var parent = link.parentNode;
+      while (parent && parent !== document.body) {
+        if (parent.style) {
+          parent.style.pointerEvents = 'auto';
+        }
+        parent = parent.parentNode;
+      }
+      
+      // Add direct click handler that ignores parent element click restrictions
+      link.addEventListener('click', function(e) {
+        e.stopPropagation();
+        window.location.href = link.getAttribute('href');
+      }, true);
+    });
+  });
+</script>
+
+<style>
+  /* Direct CSS override for CV links with !important */
+  a[href$="cv.html"],
+  a[href$="cv.qmd"],
+  a[href*="cv.html"],
+  a[href*="cv.qmd"],
+  .sidebar-item a[href*="cv"],
+  li a[href*="cv"],
+  a.cta-button[href*="cv"],
+  a.sidebar-item-text[href*="cv"],
+  a.btn[href*="cv"],
+  .sidebar-navigation .sidebar-item-container a[href*="cv"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Force sidebar CV item to be visible */
+  .sidebar li.sidebar-item:has(a[href*="cv"]),
+  .sidebar .sidebar-item-container:has(a[href*="cv"]) {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+</style>
+
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../spacing-fix.css">
 <link rel="stylesheet" href="../hide-cv.css">
+<link rel="stylesheet" href="../show-cv-override.css">
 <link rel="stylesheet" href="../title-hard-fix.css">
 <link rel="stylesheet" href="../post-tag-fix.css">
 <link rel="stylesheet" href="../code-fold-fix.css">
 <link rel="stylesheet" href="../code-output-fix.css">
 <link rel="stylesheet" href="../pandas-fix.css">
 <link rel="stylesheet" href="../mermaid-fix.css">
+<link rel="stylesheet" href="../card-click-enhancement.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -498,6 +740,12 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="sidebar-item-container"> 
   <a href="../projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CV</span></a>
   </div>
 </li>
     </ul>
@@ -587,13 +835,42 @@ document.addEventListener('DOMContentLoaded', function() {
   overflow: hidden !important;
 }
 
-/* Allow the diagram to be rendered */
-.job-rec-diagram .mermaid {
+/* Allow the diagram to be rendered with enhanced visibility */
+.job-rec-diagram .mermaid,
+.mermaid:not(pre):not(code),
+.diagram-container .mermaid {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
   height: auto !important;
   margin: 2rem auto !important;
+  background-color: transparent !important;
+  max-width: 100% !important;
+}
+
+/* Ensure chart containers are visible */
+.diagram-container,
+.job-rec-diagram,
+.mermaid-wrapper {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 2rem auto !important;
+  max-width: 800px !important;
+  background-color: transparent !important;
+}
+
+/* Make sure SVG elements in charts are visible */
+.mermaid svg,
+.diagram-container svg,
+.job-rec-diagram svg {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 400px !important;
 }
 
 /* Ensure code blocks for mermaid don't show */
@@ -638,6 +915,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Force render any mermaid diagrams
   setTimeout(function() {
     mermaid.init(undefined, '.mermaid:not(pre):not(code)');
+    
+    // Add additional rendering attempt for reliability
+    setTimeout(function() {
+      mermaid.init(undefined, '.mermaid:not(pre):not(code)');
+    }, 1000);
   }, 500);
 });
 </script>
@@ -667,19 +949,40 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 <section id="the-process-flow-of-the-system" class="level4">
 <h4 class="anchored" data-anchor-id="the-process-flow-of-the-system">The process flow of the system:</h4>
-<div style="width:100%; max-width:800px; margin:0 auto;">
-<!-- Primary option: iframe with mermaid diagram -->
-<iframe src="../posts/job-rec-diagram.html" width="100%" height="900px" frameborder="0" scrolling="no" style="border:none; overflow:hidden;">
-</iframe>
-<!-- Fallback option: if iframe doesn't work -->
-<div style="text-align:center; display:none;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../images/posts/job-rec-diagram.png" class="img-fluid figure-img"></p>
-<figcaption>Job Recommendation System Flowchart</figcaption>
-</figure>
+<div class="mermaid-wrapper" style="width:100%; max-width:800px; margin:0 auto 0 auto; position:relative; z-index:10;">
+<p><!-- Primary option: iframe with mermaid diagram with balanced height --> <iframe src="../posts/job-rec-diagram.html" width="100%" height="950px" frameborder="0" scrolling="no" style="border:none; overflow:hidden; display:block; visibility:visible; opacity:1; background-color:transparent;"></iframe></p>
+<!-- Fallback option: direct embedded mermaid diagram -->
+<div class="job-rec-diagram" style="margin-top:0; display:block; visibility:visible; opacity:1;">
+<pre><code>&lt;div class="mermaid"&gt;
+  flowchart TD
+    A1[/"User Upload&lt;br/&gt;Resume"/] --&gt;|"Extract Resume Text"| B1["Preprocess Resume Text&lt;br/&gt;(Remove&lt;br/&gt;Lowercase, Stopwords...)"]
+    
+    A2{"User Set Preference&lt;br/&gt;(Location, Job&lt;br/&gt;Type, Level)"} --&gt; B2["Filter Job Listings&lt;br/&gt;(Based on User Criteria)"]
+    
+    B1 &amp; B2 --&gt; C["TF-IDF Vectorization&lt;br/&gt;(Job Description, Resume)"]
+    C --&gt; D["Compute Cosine Similarity"]
+    D --&gt; E["Find Top Matches"]
+    E --&gt; F["Analyze Skill Gaps"]
+    F --&gt; G[/"Display Results"/]
+    G --&gt; H["Generate Cover Letter"]
+    
+    classDef parallelogram path,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;
+    classDef diamond rhombus,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;
+    classDef rectangle rect,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;
+    
+    class A1 parallelogram;
+    class A2 diamond;
+    class B1,B2,C,D,E,F,H rectangle;
+    class G parallelogram;
+&lt;/div&gt;</code></pre>
+</div>
+<!-- Second fallback: image version -->
+<div style="text-align:center; margin-top:0; display:none;">
+<pre><code>&lt;img src="../../images/posts/job-rec-diagram.png" alt="Job Recommendation System Flowchart" style="max-width:100%; height:auto; display:block; margin:0 auto;"&gt;</code></pre>
 </div>
 </div>
+<div style="margin-top:-0.5rem;">
+
 </div>
 </section>
 </section>
@@ -712,16 +1015,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <section id="tf-idf-vectorization" class="level3 no-anchor">
 <h3 class="no-anchor" data-anchor-id="tf-idf-vectorization">4. TF-IDF Vectorization</h3>
 <p>I apply TF-IDF with bi-grams, sublinear term frequency, and smoothing to convert the cleaned text into numerical vectors. This approach highlights important skills and phrases while minimizing noise.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_vectorizer_and_vectors(job_data):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Caches the TF-IDF vectorizer and job text embeddings."""</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    vectorizer <span class="op">=</span> TfidfVectorizer(stop_words<span class="op">=</span><span class="st">'english'</span>, ngram_range<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">2</span>), smooth_idf<span class="op">=</span><span class="va">True</span>, sublinear_tf<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> job_data.empty:</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        job_vectors <span class="op">=</span> vectorizer.fit_transform(job_data[<span class="st">'clean_text'</span>])</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        job_vectors <span class="op">=</span> <span class="va">None</span>  <span class="co"># Prevents errors if no jobs exist</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> vectorizer, job_vectors</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_vectorizer_and_vectors(job_data):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Caches the TF-IDF vectorizer and job text embeddings."""</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    vectorizer <span class="op">=</span> TfidfVectorizer(stop_words<span class="op">=</span><span class="st">'english'</span>, ngram_range<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">2</span>), smooth_idf<span class="op">=</span><span class="va">True</span>, sublinear_tf<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> job_data.empty:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        job_vectors <span class="op">=</span> vectorizer.fit_transform(job_data[<span class="st">'clean_text'</span>])</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        job_vectors <span class="op">=</span> <span class="va">None</span>  <span class="co"># Prevents errors if no jobs exist</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> vectorizer, job_vectors</span></code></pre></div>
 </section>
 <section id="cosine-similarity-matching" class="level3 no-anchor">
 <h3 class="no-anchor" data-anchor-id="cosine-similarity-matching">5. Cosine Similarity Matching</h3>
@@ -892,6 +1195,39 @@ document.addEventListener('DOMContentLoaded', function() {
   setTimeout(removeBackgrounds, 1500);
   setTimeout(removeBackgrounds, 3000); // Extra delay for slower page loads
 });
+</script>
+
+<!-- Fail-safe CV link fix -->
+<script>
+  // Add a direct CV link to the sidebar as a fallback
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if we can find the CV link in the sidebar
+    var existingLink = document.querySelector('.sidebar a[href*="cv.html"], .sidebar a[href*="cv.qmd"]');
+    var sidebarItems = document.querySelector('.sidebar-items-container');
+    
+    if (existingLink && sidebarItems) {
+      // Try to make the existing link work by adding an absolute positioned overlay link
+      var linkRect = existingLink.getBoundingClientRect();
+      var overlayLink = document.createElement('a');
+      overlayLink.href = existingLink.getAttribute('href');
+      overlayLink.textContent = 'CV';
+      overlayLink.style.cssText = `
+        position: absolute;
+        top: ${linkRect.top}px;
+        left: ${linkRect.left}px;
+        width: ${linkRect.width}px;
+        height: ${linkRect.height}px;
+        display: block;
+        z-index: 9999;
+        opacity: 0.01;
+        background: transparent;
+        pointer-events: auto;
+        cursor: pointer;
+      `;
+      
+      document.body.appendChild(overlayLink);
+    }
+  });
 </script> 
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

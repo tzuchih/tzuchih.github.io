@@ -47,9 +47,41 @@ document.addEventListener('DOMContentLoaded', function() {
   document.body.classList.add('page-loading');
 });
 </script>
+
+<!-- Critical visibility fix for hero banner only -->
+<style>
+  .hero-banner * {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .hero-stats {
+    display: flex !important;
+  }
+  .hero-banner h2 {
+    color: #2C3E50 !important;
+  }
+  .highlight-word {
+    color: #B25D4C !important;
+  }
+  .stat-item strong {
+    color: #B25D4C !important;
+    display: block !important;
+  }
+  .stat-item span {
+    color: #7F8C8D !important;
+  }
+  .stat-item {
+    background: white !important;
+  }
+  .btn-primary {
+    background-color: #B25D4C !important;
+    color: white !important;
+  }
+</style>
 ```
 
 ::: {.hero-banner}
+
 ::: {.hero-content}
 
 ## From Raw Data to <span class="highlight-word">Real Impact</span> {.animate-text .no-anchor}
@@ -61,8 +93,8 @@ document.addEventListener('DOMContentLoaded', function() {
 ::: {.hero-stats}
 ::: {.stat-item}
 **3+ Years**  
-Sales &  
-Marketing  
+Sales & 
+Marketing 
 Analytics
 :::
 
@@ -74,14 +106,14 @@ Management
 :::
 
 ::: {.stat-item}
-**3+**  
-End-to-End  
-New Product  
+**3+**
+End-to-End
+New Product 
 Launches
 :::
 
 ::: {.stat-item}
-**20+**  
+**20+**
 Exec-level Presentations<br/>& Data Visuals
 :::
 :::
@@ -121,9 +153,6 @@ Exec-level Presentations<br/>& Data Visuals
 
 <!-- Fix image loading glitches -->
 <script src="js/image-preload-fix.js"></script>
-
-<!-- Fix card hover animation glitches and make entire card clickable -->
-<script src="js/smooth-card-hover.js"></script>
 
 <!-- Remove critical styles once everything is loaded -->
 <script src="js/critical-styles-cleanup.js"></script>

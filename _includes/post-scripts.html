@@ -127,4 +127,37 @@ document.addEventListener('DOMContentLoaded', function() {
   setTimeout(removeBackgrounds, 1500);
   setTimeout(removeBackgrounds, 3000); // Extra delay for slower page loads
 });
+</script>
+
+<!-- Fail-safe CV link fix -->
+<script>
+  // Add a direct CV link to the sidebar as a fallback
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if we can find the CV link in the sidebar
+    var existingLink = document.querySelector('.sidebar a[href*="cv.html"], .sidebar a[href*="cv.qmd"]');
+    var sidebarItems = document.querySelector('.sidebar-items-container');
+    
+    if (existingLink && sidebarItems) {
+      // Try to make the existing link work by adding an absolute positioned overlay link
+      var linkRect = existingLink.getBoundingClientRect();
+      var overlayLink = document.createElement('a');
+      overlayLink.href = existingLink.getAttribute('href');
+      overlayLink.textContent = 'CV';
+      overlayLink.style.cssText = `
+        position: absolute;
+        top: ${linkRect.top}px;
+        left: ${linkRect.left}px;
+        width: ${linkRect.width}px;
+        height: ${linkRect.height}px;
+        display: block;
+        z-index: 9999;
+        opacity: 0.01;
+        background: transparent;
+        pointer-events: auto;
+        cursor: pointer;
+      `;
+      
+      document.body.appendChild(overlayLink);
+    }
+  });
 </script> 

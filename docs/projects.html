@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="./cv.html" rel="next">
 <link href="./about.html" rel="prev">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
@@ -162,34 +163,173 @@ body::before {
   });
 })();
 </script> 
+<!-- Direct fix for CV link in sidebar -->
+<style>
+/* Direct CSS fix for CV link */
+a[href$="cv.html"],
+a[href$="cv.qmd"],
+a[href*="cv.html"],
+a[href*="cv.qmd"],
+.sidebar a[href*="cv"],
+.sidebar-item a[href*="cv"],
+.sidebar-item-text[href*="cv"],
+li a[href*="cv"],
+.sidebar-navigation .sidebar-item-container a[href*="cv"],
+.sidebar-items-container .sidebar-item-container a[href*="cv"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* Ensure CV sidebar item and its container are visible and interactive */
+.sidebar-item:has(a[href*="cv"]),
+.sidebar-item-container:has(a[href*="cv"]) {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  height: auto !important;
+  min-height: 40px !important;
+  overflow: visible !important;
+}
+
+/* Menu text within CV links */
+a[href*="cv"] .menu-text {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure hover styling works */
+.sidebar a[href*="cv"]:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+</style>
+
+<script>
+// Immediate execution to fix CV link
+(function() {
+  // Create a directly clickable CV link that replaces the current one
+  function createDirectCVLink() {
+    try {
+      // Find existing CV link in sidebar
+      const sidebarItems = document.querySelectorAll('.sidebar-item');
+      
+      for (let i = 0; i < sidebarItems.length; i++) {
+        const item = sidebarItems[i];
+        const link = item.querySelector('a[href*="cv"]');
+        
+        if (link) {
+          // Get href from existing link
+          const href = link.getAttribute('href');
+          
+          // Create replacement link
+          const newLink = document.createElement('a');
+          newLink.setAttribute('href', href);
+          newLink.setAttribute('class', link.getAttribute('class') || 'sidebar-item-text sidebar-link');
+          newLink.innerHTML = '<span class="menu-text">CV</span>';
+          newLink.style.display = 'block';
+          newLink.style.visibility = 'visible';
+          newLink.style.opacity = '1';
+          newLink.style.padding = '0.5rem 0.5rem 0.5rem 1rem';
+          newLink.style.color = 'rgba(255, 255, 255, 0.55)';
+          newLink.style.textDecoration = 'none';
+          newLink.style.pointerEvents = 'auto';
+          newLink.style.cursor = 'pointer';
+          
+          // Replace existing link with new one
+          const container = link.parentNode;
+          if (container) {
+            container.innerHTML = '';
+            container.appendChild(newLink);
+            container.style.display = 'block';
+            container.style.visibility = 'visible';
+            container.style.opacity = '1';
+            container.style.pointerEvents = 'auto';
+          }
+          
+          // Ensure parent item is visible
+          item.style.display = 'block';
+          item.style.visibility = 'visible';
+          item.style.opacity = '1';
+          
+          // Add direct click handler
+          newLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = href;
+          });
+        }
+      }
+    } catch (e) {
+      console.error('Error fixing CV link:', e);
+    }
+  }
+
+  // Execute immediately
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createDirectCVLink);
+  } else {
+    createDirectCVLink();
+  }
+  
+  // Also run after a delay
+  setTimeout(createDirectCVLink, 100);
+  setTimeout(createDirectCVLink, 500);
+})();
+</script> 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏻‍💻</text></svg>">
 <title>Lydia's Portfolio</title>
 <script>
   // Immediate execution to set title before page renders
   document.title = "Lydia's Portfolio";
 </script>
-<script src="./js/custom.js" defer=""></script>
-<script src="./js/title-fix.js"></script>
+
+<!-- Remove CV page links -->
+<!-- 
 <script>
-// Remove CV page links
-(function() {
-  document.addEventListener('DOMContentLoaded', function() {
-    // Remove any links to CV page
-    document.querySelectorAll('a[href*="cv.qmd"], a[href*="cv.html"]').forEach(function(link) {
-      link.style.display = 'none';
-      link.style.visibility = 'hidden';
-      
-      // If it's in the sidebar, remove the entire list item
-      if (link.closest('.sidebar-item')) {
-        const item = link.closest('.sidebar-item');
-        if (item) {
-          item.style.display = 'none';
-          item.style.visibility = 'hidden';
-        }
+document.addEventListener('DOMContentLoaded', function() {
+  // Remove any links to CV page
+  document.querySelectorAll('a[href*="cv.qmd"], a[href*="cv.html"]').forEach(function(link) {
+    link.style.display = 'none';
+    link.style.visibility = 'hidden';
+    
+    // If it's in the sidebar, remove the entire list item
+    if (link.closest('.sidebar-item')) {
+      const item = link.closest('.sidebar-item');
+      if (item) {
+        item.style.display = 'none';
+        item.style.visibility = 'hidden';
       }
-    });
+    }
   });
-})();
+});
+</script>
+-->
+
+<!-- Script to ensure CV link is visible -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Make sure CV links are visible
+  document.querySelectorAll('a[href*="cv.qmd"], a[href*="cv.html"]').forEach(function(link) {
+    link.style.display = 'block';
+    link.style.visibility = 'visible';
+    link.style.opacity = '1';
+    
+    // If it's in the sidebar, make the entire item visible
+    if (link.closest('.sidebar-item')) {
+      const item = link.closest('.sidebar-item');
+      if (item) {
+        item.style.display = 'block';
+        item.style.visibility = 'visible';
+        item.style.opacity = '1';
+      }
+    }
+  });
+});
 </script>
 
 <!-- Load mermaid directly in head for better diagram rendering -->
@@ -278,62 +418,17 @@ body::before {
   margin: 0 !important;
 }
 
-/* Extremely aggressive color neutralization with !important flag */
-.cell-output,
-.cell-output-stdout,
-.cell-output-stderr,
-.cell-output-display,
-.cell-output *,
-.cell-output-stdout *,
-.cell-output-stderr *,
-.cell-output-display * {
-  color: #444444 !important;
-}
-
-/* Pandas-specific styles with high specificity */
+/* Pandas-specific styles */
 .dataframe,
 .dataframe *,
 table.dataframe,
-table.dataframe *,
-.jupyter-dataframe,
-.jupyter-dataframe * {
+table.dataframe * {
   color: #444444 !important;
-}
-
-/* Target magenta color specifically */
-.dataframe thead th,
-.dataframe tbody tr th,
-.level_0, .col_heading, .row_heading, .index_name {
-  color: #444444 !important;
-}
-
-/* Hide mermaid code blocks site-wide */
-pre.mermaid, 
-code.mermaid,
-.sourceCode.mermaid,
-pre.sourceCode.mermaid,
-div.sourceCode:has(code.mermaid),
-div.sourceCode:has(.language-mermaid),
-div:has(> pre.mermaid),
-div:has(> code.mermaid),
-div.sourceCode:has(.mermaid) {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  max-height: 0 !important;
-  opacity: 0 !important;
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
 }
 
 /* Keep rendered diagrams visible */
 .mermaid:not(.sourceCode),
 .mermaid svg,
-div:has(> .mermaid:not(.sourceCode)),
 .job-rec-diagram .mermaid,
 .diagram-container .mermaid {
   display: block !important;
@@ -343,88 +438,99 @@ div:has(> .mermaid:not(.sourceCode)),
   background-color: transparent !important;
   margin: 2rem auto !important;
 }
-
-/* Hide all mermaid code block headers */
-div.sourceCode:has(.mermaid)::before,
-div.sourceCode:has(.mermaid)::after,
-div.sourceCode:has(.language-mermaid)::before,
-div.sourceCode:has(.language-mermaid)::after {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  opacity: 0 !important;
-}
 </style>
 
 <!-- Preload key JavaScript -->
 <link rel="preload" href="js/title-refresh-fix.js" as="script">
 <link rel="preload" href="js/listing-refresh.js" as="script">
 
-<!-- Execute critical JavaScript as early as possible -->
+<!-- Mobile sidebar toggle button -->
 <script>
-// Store and preserve title contents
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.listing-title, .card-title').forEach(function(title) {
-    if (title.textContent.trim()) {
-      title.setAttribute('data-original-title', title.textContent.trim());
-    }
-  });
-});
-</script>
-
-<!-- Emergency color reset script -->
-<script>
-  // Apply the style changes when the DOM is ready
   document.addEventListener('DOMContentLoaded', function() {
-    // Check for outputs periodically and fix colors
-    function fixOutputColors() {
-      // Target all elements inside output cells
-      document.querySelectorAll('.cell-output *, .cell-output-stdout *, .cell-output-stderr *, .cell-output-display *').forEach(function(el) {
-        // Force color property with highest priority
-        el.style.setProperty('color', '#444444', 'important');
+    // Check if we're on a mobile device
+    if (window.innerWidth <= 768) {
+      // Create the toggle button
+      const toggleButton = document.createElement('button');
+      toggleButton.className = 'sidebar-toggle';
+      toggleButton.innerHTML = '☰';
+      toggleButton.setAttribute('aria-label', 'Toggle sidebar');
+      document.body.appendChild(toggleButton);
+      
+      // Create overlay
+      const overlay = document.createElement('div');
+      overlay.className = 'sidebar-overlay';
+      document.body.appendChild(overlay);
+      
+      // Get the sidebar
+      const sidebar = document.getElementById('quarto-sidebar');
+      
+      // Toggle sidebar function
+      function toggleSidebar() {
+        sidebar.classList.toggle('sidebar-visible');
+        document.body.classList.toggle('sidebar-visible');
+        overlay.classList.toggle('visible');
+      }
+      
+      // Add click event to button
+      toggleButton.addEventListener('click', toggleSidebar);
+      
+      // Close when clicking overlay
+      overlay.addEventListener('click', toggleSidebar);
+      
+      // Close sidebar when clicking a link
+      const sidebarLinks = sidebar.querySelectorAll('a');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          toggleSidebar();
+        });
+      });
+      
+      // Close sidebar when pressing Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('sidebar-visible')) {
+          toggleSidebar();
+        }
       });
     }
-    
-    // Run immediately
-    fixOutputColors();
-    
-    // Also run after the page has had time to render
-    setTimeout(fixOutputColors, 100);
-    setTimeout(fixOutputColors, 500);
-    setTimeout(fixOutputColors, 1000);
   });
+</script> 
+<script>
+  // Immediate CV link fix - runs before anything else
+  (function() {
+    function makeVisible() {
+      var cvLinks = document.querySelectorAll('a[href*="cv.html"], a[href*="cv.qmd"]');
+      for (var i = 0; i < cvLinks.length; i++) {
+        var link = cvLinks[i];
+        link.style.display = "block";
+        link.style.visibility = "visible";
+        link.style.opacity = "1";
+        
+        // Also make parent containers visible
+        var parent = link.parentNode;
+        while (parent) {
+          if (parent.classList && 
+              (parent.classList.contains('sidebar-item') || 
+               parent.classList.contains('sidebar-item-container'))) {
+            parent.style.display = "block";
+            parent.style.visibility = "visible";
+            parent.style.opacity = "1";
+          }
+          parent = parent.parentNode;
+        }
+      }
+    }
+    
+    // Call immediately
+    makeVisible();
+    
+    // Also when DOM is ready
+    document.addEventListener('DOMContentLoaded', makeVisible);
+    
+    // And after everything else
+    window.addEventListener('load', makeVisible);
+  })();
 </script>
 
-<!-- JavaScript for hiding mermaid code blocks -->
-<script>
-// Immediately hide all mermaid code blocks
-(function() {
-  function hideMermaidCodeBlocks() {
-    document.querySelectorAll('pre.mermaid, code.mermaid, .sourceCode.mermaid, div.sourceCode:has(.mermaid), .code-with-filename:has(.mermaid)').forEach(function(el) {
-      el.style.display = 'none';
-      el.style.visibility = 'hidden';
-      el.style.height = '0';
-      el.style.opacity = '0';
-      el.style.overflow = 'hidden';
-      el.style.margin = '0';
-      el.style.padding = '0';
-      el.style.position = 'absolute';
-      el.style.top = '-9999px';
-      el.style.left = '-9999px';
-    });
-  }
-  
-  // Run immediately
-  hideMermaidCodeBlocks();
-  
-  // Run after DOM is ready and after page render
-  document.addEventListener('DOMContentLoaded', function() {
-    hideMermaidCodeBlocks();
-    setTimeout(hideMermaidCodeBlocks, 100);
-    setTimeout(hideMermaidCodeBlocks, 500);
-  });
-})();
-</script> 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10.3.1/dist/mermaid.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -434,6 +540,141 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 </script>
+
+<!-- Cross-Device Compatibility Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add device detection classes to the body
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      document.body.classList.add('mobile-device');
+      
+      if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        document.body.classList.add('ios-device');
+      } else if (/Android/i.test(navigator.userAgent)) {
+        document.body.classList.add('android-device');
+      }
+    } else {
+      document.body.classList.add('desktop-device');
+    }
+  });
+</script>
+
+<!-- Critical No-Animation CSS - WITH VISIBILITY PRESERVED -->
+<style>
+  /* Disable animation timings but keep elements visible */
+  * {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  /* Target animation properties only but ensure visibility */
+  .quarto-grid-item, .card.h-100, 
+  .quarto-grid-item *, .card.h-100 *,
+  .listing-image, .thumbnail-image, .card-img-top {
+    transition: none !important;
+    animation: none !important;
+    will-change: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Disable hover/active animations but preserve the elements */
+  .quarto-grid-item:hover, .card.h-100:hover,
+  .quarto-grid-item:active, .card.h-100:active,
+  .quarto-grid-item:focus, .card.h-100:focus {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Fix scrollbar issues */
+  html {
+    overflow-x: hidden;
+  }
+  
+  /* Stabilize images without hiding them */
+  img {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Explicitly ensure card visibility */
+  .quarto-grid-item, .card.h-100 {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* Ensure grid is visible */
+  .grid, .quarto-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+</style>
+
+<script>
+  // Run once DOM content is loaded - fix CV link clickability
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find all CV links
+    var cvLinks = document.querySelectorAll('a[href*="cv.html"], a[href*="cv.qmd"]');
+    
+    // Make each link clickable
+    cvLinks.forEach(function(link) {
+      // Make sure the link is clickable
+      link.style.pointerEvents = 'auto';
+      link.style.cursor = 'pointer';
+      
+      // Force all parent elements to have pointer-events: auto
+      var parent = link.parentNode;
+      while (parent && parent !== document.body) {
+        if (parent.style) {
+          parent.style.pointerEvents = 'auto';
+        }
+        parent = parent.parentNode;
+      }
+      
+      // Add direct click handler that ignores parent element click restrictions
+      link.addEventListener('click', function(e) {
+        e.stopPropagation();
+        window.location.href = link.getAttribute('href');
+      }, true);
+    });
+  });
+</script>
+
+<style>
+  /* Direct CSS override for CV links with !important */
+  a[href$="cv.html"],
+  a[href$="cv.qmd"],
+  a[href*="cv.html"],
+  a[href*="cv.qmd"],
+  .sidebar-item a[href*="cv"],
+  li a[href*="cv"],
+  a.cta-button[href*="cv"],
+  a.sidebar-item-text[href*="cv"],
+  a.btn[href*="cv"],
+  .sidebar-navigation .sidebar-item-container a[href*="cv"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Force sidebar CV item to be visible */
+  .sidebar li.sidebar-item:has(a[href*="cv"]),
+  .sidebar .sidebar-item-container:has(a[href*="cv"]) {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+</style>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -482,17 +723,18 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="spacing-fix.css">
 <link rel="stylesheet" href="hide-cv.css">
+<link rel="stylesheet" href="show-cv-override.css">
 <link rel="stylesheet" href="title-hard-fix.css">
 <link rel="stylesheet" href="post-tag-fix.css">
 <link rel="stylesheet" href="code-fold-fix.css">
 <link rel="stylesheet" href="code-output-fix.css">
 <link rel="stylesheet" href="pandas-fix.css">
 <link rel="stylesheet" href="mermaid-fix.css">
+<link rel="stylesheet" href="card-click-enhancement.css">
 <link rel="stylesheet" href="critical-image-fix.css">
 <link rel="stylesheet" href="projects-fix.css">
 <link rel="stylesheet" href="project-card-custom.css">
 <link rel="stylesheet" href="card-hover-animation.css">
-<link rel="stylesheet" href="card-click-enhancement.css">
 <link rel="alternate" type="application/rss+xml" title="Lydia's Portfolio" href="projects.xml" data-external="1"></head>
 
 <body class="nav-sidebar docked">
@@ -544,6 +786,12 @@ window.Quarto = {
  <span class="menu-text">Projects</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CV</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -554,7 +802,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#my-data-science-analytics-projects" id="toc-my-data-science-analytics-projects" class="nav-link active" data-scroll-target="#my-data-science-analytics-projects">My Data Science &amp; Analytics Projects</a></li>
+  <li><a href="#my-projects" id="toc-my-projects" class="nav-link active" data-scroll-target="#my-projects">My Projects</a></li>
   </ul>
 </nav>
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RGV2JTIwV29ya2Zsb3c=">Dev Workflow <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TkxQ">NLP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TkxUSw==">NLTK <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJvbXB0JTIwRW5naW5lZXJpbmc=">Prompt Engineering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U2Npa2l0LWxlYXJu">Scikit-learn <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U3RyZWFtbGl0">Streamlit <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VmliZSUyMENvZGluZw==">Vibe Coding <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YW5hbHl0aWNz">analytics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWFudWZhYw==">manufac <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvZHVjdC1zdHJhdGVneQ==">product-strategy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2VtaWNvbg==">semicon <span class="quarto-category-count">(1)</span></div></div></div>
@@ -564,11 +812,11 @@ window.Quarto = {
 
 
 
-<section id="my-data-science-analytics-projects" class="level1 docs-list-title no-anchor docs-list-title-container">
-<h1 class="docs-list-title no-anchor">My Data Science &amp; Analytics Projects</h1>
+<section id="my-projects" class="level1 docs-list-title no-anchor docs-list-title-container">
+<h1 class="docs-list-title no-anchor">My Projects</h1>
 </section>
 <div class="projects-intro">
-<p>Welcome to my projects page! Here, you’ll find a collection of my work in data science, analytics, and visualization. Each project showcases different skills and techniques I’ve applied to solve real-world problems.</p>
+<p>Welcome to my projects page! Here, you’ll find a collection of my work in product, analytics, and visualization. Each project showcases different skills and techniques I’ve applied to solve real-world problems.</p>
 </div>
 <div class="projects-content">
 <div id="listing-projects">
@@ -579,8 +827,12 @@ window.Quarto = {
 <script src="js/force-show-images.js"></script>
 <!-- Remove any existing Show Images buttons -->
 <script src="js/remove-show-button.js"></script>
+<!-- Reliable card navigation - high priority -->
+<script src="js/reliable-card-navigation.js"></script>
 <!-- Disable all card hover animations -->
 <script src="js/disable-card-animations.js"></script>
+<!-- Ensure cards are reliably clickable -->
+<script src="js/card-click-fix.js"></script>
 <!-- Early load critical scripts -->
 <script>
 // Create a style element for immediate critical styles
@@ -676,7 +928,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const existingPosts = document.querySelectorAll('.listing-title');
     const existingTitles = Array.from(existingPosts).map(post => post.innerText.trim());
     
-    // Apply thœe title-hard-fix styling to any new posts
+    // Apply the title-hard-fix styling to any new posts
     document.querySelectorAll('.quarto-grid-item, .card.h-100').forEach(function(card) {
       card.style.height = '480px';
       card.style.minHeight = '480px';
@@ -695,6 +947,14 @@ document.addEventListener('DOMContentLoaded', function() {
         title.style.overflow = 'hidden';
         title.style.textOverflow = 'ellipsis';
       }
+      
+      // Explicitly disable all transitions on cards and their children
+      card.style.transition = 'none !important';
+      card.style.animation = 'none !important';
+      Array.from(card.querySelectorAll('*')).forEach(el => {
+        el.style.transition = 'none !important';
+        el.style.animation = 'none !important';
+      });
     });
   }, 1000);
 });
@@ -733,11 +993,11 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="VmliZSUyMENvZGluZyUyQ1Byb21wdCUyMEVuZ2luZWVyaW5nJTJDRGV2JTIwV29ya2Zsb3c=" data-listing-date-sort="1744700400000" data-listing-file-modified-sort="1745571673763" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="436">
+<div class="g-col-1" data-index="0" data-categories="VmliZSUyMENvZGluZyUyQ1Byb21wdCUyMEVuZ2luZWVyaW5nJTJDRGV2JTIwV29ya2Zsb3c=" data-listing-date-sort="1744700400000" data-listing-file-modified-sort="1745648112189" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="482">
 <a href="./posts/vibe-coding.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./images/posts/post1.jpg" class="thumbnail-image card-img" style="height: 220px;">
+<img loading="lazy" src="./images/posts/vibecoding.jpg" class="thumbnail-image card-img" style="height: 220px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -755,7 +1015,7 @@ Dev Workflow
 </div>
 </div>
 <div class="card-text listing-description">
-A step-by-step guide to installing and using Positron for desktop apps.
+How I built my portfolio site using vibe coding: an AI-assisted, prompt-powered approach.
 </div>
 <div class="card-attribution card-text-small end">
 <div class="listing-date">
@@ -766,7 +1026,7 @@ Apr 15, 2025
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="UHl0aG9uJTJDTkxQJTJDTkxUSyUyQ1NjaWtpdC1sZWFybiUyQ1N0cmVhbWxpdA==" data-listing-date-sort="1742454000000" data-listing-file-modified-sort="1745443963988" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="867">
+<div class="g-col-1" data-index="1" data-categories="UHl0aG9uJTJDTkxQJTJDTkxUSyUyQ1NjaWtpdC1sZWFybiUyQ1N0cmVhbWxpdA==" data-listing-date-sort="1742454000000" data-listing-file-modified-sort="1745646732255" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1265">
 <a href="./posts/job-rec-system.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -805,7 +1065,7 @@ Mar 20, 2025
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="bWFudWZhYyUyQ3NlbWljb24lMkNwcm9kdWN0LXN0cmF0ZWd5JTJDYW5hbHl0aWNz" data-listing-date-sort="1740643200000" data-listing-file-modified-sort="1745571788906" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="506">
+<div class="g-col-1" data-index="2" data-categories="bWFudWZhYyUyQ3NlbWljb24lMkNwcm9kdWN0LXN0cmF0ZWd5JTJDYW5hbHl0aWNz" data-listing-date-sort="1740643200000" data-listing-file-modified-sort="1745649900999" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="533">
 <a href="./posts/life-at-3m.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -975,6 +1235,39 @@ document.addEventListener('DOMContentLoaded', function() {
   setTimeout(removeBackgrounds, 1500);
   setTimeout(removeBackgrounds, 3000); // Extra delay for slower page loads
 });
+</script>
+
+<!-- Fail-safe CV link fix -->
+<script>
+  // Add a direct CV link to the sidebar as a fallback
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if we can find the CV link in the sidebar
+    var existingLink = document.querySelector('.sidebar a[href*="cv.html"], .sidebar a[href*="cv.qmd"]');
+    var sidebarItems = document.querySelector('.sidebar-items-container');
+    
+    if (existingLink && sidebarItems) {
+      // Try to make the existing link work by adding an absolute positioned overlay link
+      var linkRect = existingLink.getBoundingClientRect();
+      var overlayLink = document.createElement('a');
+      overlayLink.href = existingLink.getAttribute('href');
+      overlayLink.textContent = 'CV';
+      overlayLink.style.cssText = `
+        position: absolute;
+        top: ${linkRect.top}px;
+        left: ${linkRect.left}px;
+        width: ${linkRect.width}px;
+        height: ${linkRect.height}px;
+        display: block;
+        z-index: 9999;
+        opacity: 0.01;
+        background: transparent;
+        pointer-events: auto;
+        cursor: pointer;
+      `;
+      
+      document.body.appendChild(overlayLink);
+    }
+  });
 </script> 
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1405,6 +1698,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./cv.html" class="pagination-link" aria-label="CV">
+        <span class="nav-page-text">CV</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

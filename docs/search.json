@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Hi! I’m Lydia Hsu 👩🏻‍💻",
     "section": "",
-    "text": "👩🏻‍💼 : Sales & Marketing Analyst -&gt; Product Manager🧠 = Marketing + Analytics + ProductIndustry = Manufacturing + Semiconductor + Tech\n\n\n\n3+ Years\nSales &\nMarketing\nAnalytics\n\n\n3+ Years\nTechnical Product\nManagement\n\n\n3+\nEnd-to-End\nNew Product\nLaunches\n\n\n20+\nExec-level Presentations& Data Visuals\n\n\n\n\n\n\n  More About Me\n  Projects\n  View Resume",
+    "text": "👩🏻‍💼 : Sales & Marketing Analyst -&gt; Product Manager🧠 = Marketing + Analytics + ProductIndustry = Manufacturing + Semiconductor + Tech\n\n\n\n3+ Years\nSales & Marketing Analytics\n\n\n3+ Years\nTechnical Product\nManagement\n\n\n3+ End-to-End New Product Launches\n\n\n20+ Exec-level Presentations& Data Visuals\n\n\n\n\n\n\n  More About Me\n  Projects\n  View Resume",
     "crumbs": [
       "Home"
     ]
@@ -21,7 +21,7 @@
     "href": "index.html#from-raw-data-to-real-impact",
     "title": "Hi! I’m Lydia Hsu 👩🏻‍💻",
     "section": "",
-    "text": "👩🏻‍💼 : Sales & Marketing Analyst -&gt; Product Manager🧠 = Marketing + Analytics + ProductIndustry = Manufacturing + Semiconductor + Tech\n\n\n\n3+ Years\nSales &\nMarketing\nAnalytics\n\n\n3+ Years\nTechnical Product\nManagement\n\n\n3+\nEnd-to-End\nNew Product\nLaunches\n\n\n20+\nExec-level Presentations& Data Visuals\n\n\n\n\n\n\n  More About Me\n  Projects\n  View Resume",
+    "text": "👩🏻‍💼 : Sales & Marketing Analyst -&gt; Product Manager🧠 = Marketing + Analytics + ProductIndustry = Manufacturing + Semiconductor + Tech\n\n\n\n3+ Years\nSales & Marketing Analytics\n\n\n3+ Years\nTechnical Product\nManagement\n\n\n3+ End-to-End New Product Launches\n\n\n20+ Exec-level Presentations& Data Visuals\n\n\n\n\n\n\n  More About Me\n  Projects\n  View Resume",
     "crumbs": [
       "Home"
     ]
@@ -31,49 +31,49 @@
     "href": "posts/vibe-coding.html",
     "title": "🎧 Vibe Coding My Portfolio",
     "section": "",
-    "text": "Coined by Andrej Karpathy in 2025, vibe coding is a style of AI-assisted development where you co-create software through natural language prompts. You describe what you want — layout, logic, behavior — and let the AI generate most of the code. Your job becomes guiding, reviewing, and refining. It’s fast. It’s iterative. And it’s incredibly fun when you’re in the zone."
+    "text": "Coined by Andrej Karpathy in 2025, vibe coding is a new style of AI-assisted development where you co-create software through natural language prompts.\nYou describe what you want — layout, logic, behavior — and let the AI generate most of the code. Your role becomes guiding, reviewing, and refining.\nIt’s fast. It’s iterative. And when you’re in the zone, it’s incredibly fun."
   },
   {
     "objectID": "posts/vibe-coding.html#what-is-vibe-coding",
     "href": "posts/vibe-coding.html#what-is-vibe-coding",
     "title": "🎧 Vibe Coding My Portfolio",
     "section": "",
-    "text": "Coined by Andrej Karpathy in 2025, vibe coding is a style of AI-assisted development where you co-create software through natural language prompts. You describe what you want — layout, logic, behavior — and let the AI generate most of the code. Your job becomes guiding, reviewing, and refining. It’s fast. It’s iterative. And it’s incredibly fun when you’re in the zone."
+    "text": "Coined by Andrej Karpathy in 2025, vibe coding is a new style of AI-assisted development where you co-create software through natural language prompts.\nYou describe what you want — layout, logic, behavior — and let the AI generate most of the code. Your role becomes guiding, reviewing, and refining.\nIt’s fast. It’s iterative. And when you’re in the zone, it’s incredibly fun."
   },
   {
     "objectID": "posts/vibe-coding.html#how-i-vibe-coded-this-portfolio",
     "href": "posts/vibe-coding.html#how-i-vibe-coded-this-portfolio",
     "title": "🎧 Vibe Coding My Portfolio",
     "section": "🛠️ How I Vibe-Coded This Portfolio",
-    "text": "🛠️ How I Vibe-Coded This Portfolio\nWhen I set out to build this site using Quarto, I leaned into vibe coding to bring my ideas to life. Here’s how I used prompts + AI to accelerate the entire process.\n\n🔁 Prompt → Preview Loops\nI gave the AI detailed prompts like:\nPrompt: “Create a responsive Quarto page with a two-column layout: Left side for project cards, right side for an About Me section. Add a sticky navbar.”\nThe AI returned 100+ lines of YAML and HTML. My role was to:\n\nClean up the structure\nExtract inline CSS into a custom.scss file\nDebug Quarto-specific syntax quirks\n\n\n\n⚡ Instant Components\nI used AI to scaffold:\n\nA vibrant hero section\nA filterable project grid\nAn interactive skills accordion\n\nI customized the layout and interactivity using Quarto’s chunk options, Bootstrap classes, and SCSS variables.\n\n\n🎨 Rapid Theming\nTo refine the visual identity of my site, I prompt-tuned with design intent:\nPrompt: “Make the call-to-action button playful with a pastel palette and rounded corners”\nThis let me explore multiple design variants in minutes without rewriting all the CSS by hand."
+    "text": "🛠️ How I Vibe-Coded This Portfolio\nWhen I set out to build this site with Quarto, I fully embraced vibe coding — powered by Cursor, an AI-first code editor that made the experience even smoother. Here’s how I turned ideas into reality.\n\n🎨 Starting with Style\nBefore writing a single line of prompt, I first picked a color palette and visual style that felt right: clean, playful, and pastel-toned.\nThis upfront design choice gave me a clear target to guide the vibe of every prompt I wrote.\n\n\n🔁 From Prompt to Preview\nWith the style in mind, I fed Cursor detailed prompts like:\n\n“Create a responsive Quarto page with a two-column layout: left for project cards, right for an About Me section. Add a sticky navbar.”\n\nIn response, the AI generated 100+ lines of YAML and HTML.\nMy role became:\n\nCleaning up the structure\nExtracting inline CSS into a clean “custom.scss”\nDebugging Quarto-specific quirks\n\n\n\n⚡ Instant Components\nUsing Cursor, I quickly scaffolded:\n\nA vibrant hero section\nA filterable project grid\nAn interactive skills accordion\n\nThen I fine-tuned layouts and interactivity using Quarto’s chunk options, Bootstrap classes, and SCSS variables.\n\n\n✏️ Rapid Theming with Prompts\nTo shape the visual identity further, I prompt-tuned with design intent:\n\n“Make the call-to-action button playful with a pastel palette and rounded corners.”\n\nThis let me explore different design variants in minutes — no tedious manual CSS editing."
   },
   {
-    "objectID": "posts/vibe-coding.html#what-i-learned",
-    "href": "posts/vibe-coding.html#what-i-learned",
+    "objectID": "posts/vibe-coding.html#key-lessons-learned",
+    "href": "posts/vibe-coding.html#key-lessons-learned",
     "title": "🎧 Vibe Coding My Portfolio",
-    "section": "📚 What I Learned",
-    "text": "📚 What I Learned\n\n\n\n\n\n\n\n💡 Lesson\nTakeaway\n\n\n\n\nPrompting is a design skill\nClear context = better code, faster iterations\n\n\nAI isn’t always right\nSome hallucinated Quarto options needed manual corrections\n\n\nHuman + AI = best results\nFinal polish still relies on UX sense and technical intuition"
+    "section": "📚 Key Lessons Learned",
+    "text": "📚 Key Lessons Learned\n\n\n\n\n\n\n\n💡 Lesson\nTakeaway\n\n\n\n\nPrompting is a design skill\nClear, specific context = better AI output\n\n\nAI isn’t always right\nSome hallucinated Quarto options needed manual fixes\n\n\nHuman + AI = magic\nUX sense and technical intuition still matter"
   },
   {
-    "objectID": "posts/vibe-coding.html#challenges-i-faced-and-solved",
-    "href": "posts/vibe-coding.html#challenges-i-faced-and-solved",
+    "objectID": "posts/vibe-coding.html#challenges-i-hit-and-how-i-solved-them",
+    "href": "posts/vibe-coding.html#challenges-i-hit-and-how-i-solved-them",
     "title": "🎧 Vibe Coding My Portfolio",
-    "section": "🧩 Challenges I Faced (and Solved)",
-    "text": "🧩 Challenges I Faced (and Solved)\n\n\n\n\n\n\n\n❌ Problem\n✅ Solution\n\n\n\n\nCode chunks broke layout\nUsed freeze: true and scoped JS imports carefully\n\n\nConflicting CSS\nMerged class names and offloaded critical styles to custom.scss\n\n\nMixed audience (Product + Data)\nAdded filters and tabs to highlight both skill sets separately"
+    "section": "🧩 Challenges I Hit (and How I Solved Them)",
+    "text": "🧩 Challenges I Hit (and How I Solved Them)\n\n\n\n\n\n\n\n❌ Challenge\n✅ Solution\n\n\n\n\nCode chunks broke layout\nUsed freeze: true and scoped JS imports\n\n\nCSS conflicts\nConsolidated class names, offloaded critical styles to custom.scss\n\n\nMixed audience (Product + Data)\nAdded skill filters and tabs for easy navigation"
   },
   {
-    "objectID": "posts/vibe-coding.html#why-it-mattered",
-    "href": "posts/vibe-coding.html#why-it-mattered",
+    "objectID": "posts/vibe-coding.html#why-this-project-mattered",
+    "href": "posts/vibe-coding.html#why-this-project-mattered",
     "title": "🎧 Vibe Coding My Portfolio",
-    "section": "✨ Why It Mattered",
-    "text": "✨ Why It Mattered\nBuilding this site wasn’t just a technical challenge — it was a creative flow state.\nIt reminded me how AI can boost not only productivity, but also playfulness in the process. This portfolio reflects who I am: a builder who loves clean data, smart design, and continuous learning."
+    "section": "✨ Why This Project Mattered",
+    "text": "✨ Why This Project Mattered\nBuilding this site wasn’t just technical — it was creative, almost meditative.\nIt showed me that AI can enhance not just productivity, but also playfulness.\nThis portfolio reflects who I am: a builder who loves clean data, smart design, and continuous learning."
   },
   {
     "objectID": "posts/vibe-coding.html#lets-connect",
     "href": "posts/vibe-coding.html#lets-connect",
     "title": "🎧 Vibe Coding My Portfolio",
-    "section": "🤝 Let’s Connect",
-    "text": "🤝 Let’s Connect\nIf you’re working on your own AI-assisted portfolio, playing with Quarto, or just exploring what vibe coding looks like in real life — I’d love to hear your story. Let’s swap prompts, inspiration, or lo-fi playlists.\n📬 Let’s chat"
+    "section": "🤝🏼 Let’s Connect",
+    "text": "🤝🏼 Let’s Connect\nIf you’re experimenting with AI-assisted portfolios, playing with Quarto, or exploring what vibe coding looks like — I’d love to hear your story.\nLet’s swap prompts, share inspiration, or build a lo-fi coding playlist together.\n📬 Let’s chat"
   },
   {
     "objectID": "posts/job-rec-system.html#key-features-for-users",
@@ -87,7 +87,7 @@
     "href": "posts/job-rec-system.html#result-and-flow-chart",
     "title": "Building a Job Rec System",
     "section": "📈 Result and Flow Chart",
-    "text": "📈 Result and Flow Chart\n\nThe user interface of the system:\n\n\n\nThe process flow of the system:\n\n\n\n\n\n\n\n\n\nJob Recommendation System Flowchart"
+    "text": "📈 Result and Flow Chart\n\nThe user interface of the system:\n\n\n\nThe process flow of the system:\n\n \n\n\n&lt;div class=\"mermaid\"&gt;\n  flowchart TD\n    A1[/\"User Upload&lt;br/&gt;Resume\"/] --&gt;|\"Extract Resume Text\"| B1[\"Preprocess Resume Text&lt;br/&gt;(Remove&lt;br/&gt;Lowercase, Stopwords...)\"]\n    \n    A2{\"User Set Preference&lt;br/&gt;(Location, Job&lt;br/&gt;Type, Level)\"} --&gt; B2[\"Filter Job Listings&lt;br/&gt;(Based on User Criteria)\"]\n    \n    B1 & B2 --&gt; C[\"TF-IDF Vectorization&lt;br/&gt;(Job Description, Resume)\"]\n    C --&gt; D[\"Compute Cosine Similarity\"]\n    D --&gt; E[\"Find Top Matches\"]\n    E --&gt; F[\"Analyze Skill Gaps\"]\n    F --&gt; G[/\"Display Results\"/]\n    G --&gt; H[\"Generate Cover Letter\"]\n    \n    classDef parallelogram path,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;\n    classDef diamond rhombus,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;\n    classDef rectangle rect,stroke:#9FB2C8,stroke-width:1.5px,fill:transparent;\n    \n    class A1 parallelogram;\n    class A2 diamond;\n    class B1,B2,C,D,E,F,H rectangle;\n    class G parallelogram;\n&lt;/div&gt;\n\n\n\n&lt;img src=\"../../images/posts/job-rec-diagram.png\" alt=\"Job Recommendation System Flowchart\" style=\"max-width:100%; height:auto; display:block; margin:0 auto;\"&gt;"
   },
   {
     "objectID": "posts/job-rec-system.html#dataset",
@@ -143,28 +143,28 @@
     "href": "posts/life-at-3m.html#my-hats-often-worn-all-at-once",
     "title": "Life at 3M: Turning Tape into Tech Impact",
     "section": "My Hats (Often Worn All at Once)",
-    "text": "My Hats (Often Worn All at Once)\n\n\n\n\n\n\n\n\nArea\nWhat I Did\nOutcome\n\n\n\n\nProduct Ownership\nDrove roadmap for 3000 & 3200 Series tapes; scoped new pocket designs with R&D\nLaunched 2 SKUs → +$4.2 M ARR\n\n\nMarket & Customer Analysis\nBuilt Power BI dashboard from SAP/CRM data to spot volume shifts\nIdentified mini-LED surge → +18 % capacity\n\n\nCross-functional Coordination\nRan weekly war-rooms with Sales, Ops, Quality\nRFQ-to-ship lead-time –20 %\n\n\nTechnical Support\nAdvised customers on peel-force & JEDEC specs\nSecured top-3 smartphone OEM deal\n\n\nGo-to-Market\nCreated demo rigs & content for SEMICON, Productronica\nBooth leads +40 % YoY"
+    "text": "My Hats (Often Worn All at Once)\n\n\n\n\n\n\n\nArea\nWhat I Did\n\n\n\n\nProduct Ownership\nDrove roadmap for 3000 & 3200 Series tapes; scoped new cover tape designs with R&D\n\n\nProduct Manager\nDiscuss next-steps to launch new products with R&D manager after a positive evaluation\n\n\nMarket & Customer Analysis\nBuilt Power BI dashboard from SAP/Salesforce data to spot volume shifts\n\n\nCross-functional Coordination\nRan monthly S&OP Meeting with Sales, Ops, Quality\n\n\nTechnical Support\nAdvised customers on peel-force & suggested cover tape\n\n\nGo-to-Market\nCreated demo rigs & content for SEMICON TW Tradeshow\n\n\nP&L Owner\nReview low margin items and discuss action plan with sales team"
   },
   {
     "objectID": "posts/life-at-3m.html#a-day-in-the-tape-filled-life",
     "href": "posts/life-at-3m.html#a-day-in-the-tape-filled-life",
     "title": "Life at 3M: Turning Tape into Tech Impact",
     "section": "A Day in the (Tape-Filled) Life",
-    "text": "A Day in the (Tape-Filled) Life\n\n08:30 — Slack stand-up with manufacturing to triage a pocket-depth deviation.\n\n10:00 — SQL pull on last quarter’s order mix → see LED segment up 12 %.\n\n13:00 — Customer call from Taiwan; debug peel-back static &gt; 50 V.\n\n15:00 — Figma mock of new datasheet; loop in MarCom for compliance.\n\n17:00 — Update Jira epics, prep slides for exec read-out.\n\nNo two days looked alike—exactly why I loved it.{.no-anchor}"
+    "text": "A Day in the (Tape-Filled) Life\n08:30 — Slack stand-up with manufacturing to triage a pocket-depth deviation.\n10:00 — SQL pull on last quarter’s order mix → see LED segment down 12 %.\n13:00 — Customer call; discuss new peel force request for even smaller dies.\n15:00 — Figma mock of new datasheet; loop in MarCom for compliance.\n17:00 — Update Jira epics, prep slides for exec read-out.\nNo two days looked alike—exactly why I loved it."
   },
   {
     "objectID": "posts/life-at-3m.html#key-takeaways",
     "href": "posts/life-at-3m.html#key-takeaways",
     "title": "Life at 3M: Turning Tape into Tech Impact",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nSystems thinking wins. A tape tweak can ripple through pick-&-place speed, yield, and cost.\n\nData is a lingua franca. Dashboards quelled debates and sped decisions.\n\nPartnerships &gt; solo heroics. Quality, Ops, Sales—all had to align for every shipment.\n\n\nHave questions about semiconductor packaging, product analytics, or how to keep thousands of tiny chips from flying everywhere?\n📬 Let’s chat"
+    "text": "Key Takeaways\n\nLearned to think in systems. Understanding how a tiny design change could cascade across manufacturing, logistics, and customer experience made me a more strategic product owner.\nTurned data into influence. Building and communicating insights with dashboards strengthened my ability to align diverse teams and drive decisions with credibility.\nGrew into a cross-functional leader. Success wasn’t about individual wins—it came from forging strong partnerships across Sales, Ops, R&D, and Quality.\n\n\nHave questions about semiconductor packaging, product analytics, or how to keep thousands of tiny chips from flying everywhere?\n📬 Let’s chat"
   },
   {
     "objectID": "projects.html",
     "href": "projects.html",
-    "title": "My Data Science & Analytics Projects",
+    "title": "My Projects",
     "section": "",
-    "text": "My Data Science & Analytics Projects\n\n\nWelcome to my projects page! Here, you’ll find a collection of my work in data science, analytics, and visualization. Each project showcases different skills and techniques I’ve applied to solve real-world problems.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n🎧 Vibe Coding My Portfolio\n\n\n\nVibe Coding\n\n\nPrompt Engineering\n\n\nDev Workflow\n\n\n\nA step-by-step guide to installing and using Positron for desktop apps.\n\n\n\nApr 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBuilding a Job Rec System\n\n\n\nPython\n\n\nNLP\n\n\nNLTK\n\n\nScikit-learn\n\n\nStreamlit\n\n\n\nCheck out this project on my Github This project is where natural language processing meets career search! I…\n\n\n\nMar 20, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLife at 3M: Turning Tape into Tech Impact\n\n\n\nmanufac\n\n\nsemicon\n\n\nproduct-strategy\n\n\nanalytics\n\n\n\n👩🏻‍💼 : Intern -&gt; Marketing Analyst -&gt; Product Manager🧠 = Marketing + Analytics + ProductIndustry = Manufacturing + Semiconductor + Tech\n\n\n\nFeb 27, 2025\n\n\n\n\n\n\n\n\nNo matching items",
+    "text": "My Projects\n\n\nWelcome to my projects page! Here, you’ll find a collection of my work in product, analytics, and visualization. Each project showcases different skills and techniques I’ve applied to solve real-world problems.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n🎧 Vibe Coding My Portfolio\n\n\n\nVibe Coding\n\n\nPrompt Engineering\n\n\nDev Workflow\n\n\n\nHow I built my portfolio site using vibe coding: an AI-assisted, prompt-powered approach.\n\n\n\nApr 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBuilding a Job Rec System\n\n\n\nPython\n\n\nNLP\n\n\nNLTK\n\n\nScikit-learn\n\n\nStreamlit\n\n\n\nCheck out this project on my Github This project is where natural language processing meets career search! I…\n\n\n\nMar 20, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLife at 3M: Turning Tape into Tech Impact\n\n\n\nmanufac\n\n\nsemicon\n\n\nproduct-strategy\n\n\nanalytics\n\n\n\n👩🏻‍💼 : Intern -&gt; Marketing Analyst -&gt; Product Manager🧠 = Marketing + Analytics + ProductIndustry = Manufacturing + Semiconductor + Tech\n\n\n\nFeb 27, 2025\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Projects"
     ]
@@ -212,43 +212,11 @@
   {
     "objectID": "cv.html",
     "href": "cv.html",
-    "title": "Curriculum Vitae",
+    "title": "Lydia Hsu | CV",
     "section": "",
-    "text": "Ph.D. in Artificial Intelligence | 2018 - 2022\nThesis: “Neural Network Approaches to Natural Language Understanding”\n\n\n\n\n\nM.S. in Computer Science | 2016 - 2018\nFocus: Machine Learning and Data Mining\n\n\n\n\n\nB.S. in Mathematics | 2012 - 2016\nMinor: Computer Science"
-  },
-  {
-    "objectID": "cv.html#education",
-    "href": "cv.html#education",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Ph.D. in Artificial Intelligence | 2018 - 2022\nThesis: “Neural Network Approaches to Natural Language Understanding”\n\n\n\n\n\nM.S. in Computer Science | 2016 - 2018\nFocus: Machine Learning and Data Mining\n\n\n\n\n\nB.S. in Mathematics | 2012 - 2016\nMinor: Computer Science"
-  },
-  {
-    "objectID": "cv.html#professional-experience",
-    "href": "cv.html#professional-experience",
-    "title": "Curriculum Vitae",
-    "section": "Professional Experience",
-    "text": "Professional Experience\n\nSenior Data Scientist | Data Company Inc.\n2022 - Present\n\nLead machine learning projects for natural language processing applications\nDevelop and deploy production-ready models for text classification and sentiment analysis\nMentor junior data scientists and provide technical leadership\n\n\n\nData Scientist | Tech Startup\n2018 - 2022\n\nBuilt recommendation systems using collaborative filtering techniques\nImplemented A/B testing framework for feature evaluation\nReduced computational costs by 30% through algorithm optimization\n\n\n\nResearch Assistant | University Research Lab\n2016 - 2018\n\nConducted research on deep learning approaches for computer vision\nPublished 3 papers in top-tier machine learning conferences\nDeveloped open-source libraries for image recognition tasks"
-  },
-  {
-    "objectID": "cv.html#skills",
-    "href": "cv.html#skills",
-    "title": "Curriculum Vitae",
-    "section": "Skills",
-    "text": "Skills\n\nLanguages: Python, R, SQL, JavaScript\nFrameworks: TensorFlow, PyTorch, scikit-learn, pandas\nTools: Git, Docker, Kubernetes, AWS, GCP\nTechniques: Deep Learning, Natural Language Processing, Computer Vision, Time Series Analysis"
-  },
-  {
-    "objectID": "cv.html#publications",
-    "href": "cv.html#publications",
-    "title": "Curriculum Vitae",
-    "section": "Publications",
-    "text": "Publications\n\n“Improving Transformer Models for Text Classification” - NeurIPS 2022\n“Efficient Feature Engineering for Vision Tasks” - CVPR 2021\n“Adaptive Learning Rates for Neural Networks” - ICML 2020\n“Unsupervised Learning for Time Series Data” - KDD 2019"
-  },
-  {
-    "objectID": "cv.html#awards-honors",
-    "href": "cv.html#awards-honors",
-    "title": "Curriculum Vitae",
-    "section": "Awards & Honors",
-    "text": "Awards & Honors\n\nBest Paper Award, NLP Conference 2022\nUniversity Fellowship, 2018-2022\nOutstanding Teaching Assistant Award, 2017"
+    "text": "📚 Education\nUniversity of California, Irvine\nMaster of Science in Business Analytics (Expected Sep 2025)\nNational Chiao Tung University, Taiwan\nBachelor of Business Administration (June 2017)\n\n\n💼 Experience\n\n3M, Taipei, Taiwan\nProduct Manager, Electronics Material Solution\nMay 2020 – June 2024\n- Led portfolio strategy and lifecycle management, driving 61% revenue growth through data-informed product decisions.\n- Orchestrated go-to-market strategies and cross-functional launches, generating $15M in first-year sales.\n- Managed a 10-person task force to establish a local production line, mitigating a projected $10M loss.\nAssistant Marketing Analyst, Electronics Material Solution\nOct 2018 – Apr 2020\n- Led B2B segmentation and market research, increasing campaign performance by 32%.\n- Applied price elasticity analysis to optimize pricing, lifting margins by 7% and boosting retention by 12%.\nSales Analyst Intern, Electronics Material Solution\nSep 2017 – Sep 2018\n- Automated lead qualification using SQL, saving 10+ hours weekly and improving conversion by 15%.\n- Spearheaded Semicon Taiwan tradeshow upgrades, raising engagement by 40%.\n\n\n\n📊 Analytics Projects\nStudent Data Analyst | Kaiser Permanente, UCI MSBA Capstone\nJan 2025 – Present\n- Conducted EDA on 50k+ call center records using SQL and Python, uncovering seasonal trends and bottlenecks.\n- Designing Power BI dashboards with custom DAX, tracking 12+ call center KPIs for executive reporting.\n\n\n🤝🏼 Leadership\nVP of Communication | UCI Women in Business Club\nJan 2025 – Present\n- Streamlined club operations, increasing event attendance by 25%.\n- Boosted member engagement on social media by 40%.\n\n\n🛠️ Skills\n\n  \n    🔍 Data Science\n    Python\n    MySQL\n    scikit-learn\n    Forecasting\n    Clustering\n    NLP\n    Deep Learning\n  \n\n  \n    📊 Story-telling\n    Tableau\n    Quarto\n    Power BI\n    Loooker Studio\n    Snowflake\n    Slide-docs\n  \n\n  \n    🚀 Product / Project\n    Agile\n    Jira\n    Lean\n    Six Sigma\n    A/B testing\n    New Product Launch\n    Go-To-Market\n    Stakeholder Alignment\n  \n\n\n\n🌟 Personal Interests\nNBA Basketball Analytics | International Travel (visited 15+ countries)\n\n\n🔗 Contact\n📍 Irvine, CA\n📧 lydia.tzuchi@gmail.com\n🔗 LinkedIn",
+    "crumbs": [
+      "CV"
+    ]
   }
 ]

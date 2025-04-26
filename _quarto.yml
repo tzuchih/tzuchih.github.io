@@ -10,10 +10,17 @@ project:
     - js/post-tag-fix.js
     - js/code-toggle.js
     - js/force-output-display.js
-    - js/debug-outputs.js
     - js/mute-dataframe-colors.js
     - js/page-load-fix.js
-    - js/smooth-card-hover.js
+    - js/card-click-fix.js
+    - js/reliable-card-navigation.js
+    - js/force-show-images.js
+    - js/remove-show-button.js
+    - js/disable-card-animations.js
+    - js/same-tab-links.js
+    - js/image-preload-fix.js
+    - js/critical-styles-cleanup.js
+    - js/cv-link-fix.js
     - images/
     - js/
 website:
@@ -40,6 +47,8 @@ website:
         text: About Me
       - href: projects.qmd
         text: Projects
+      - href: cv.qmd
+        text: CV
     tools:
       - icon: linkedin
         href: https://www.linkedin.com/in/lydiatzuchihsu/
@@ -67,12 +76,14 @@ format:
       - styles.css
       - spacing-fix.css
       - hide-cv.css
+      - show-cv-override.css
       - title-hard-fix.css
       - post-tag-fix.css
       - code-fold-fix.css
       - code-output-fix.css
       - pandas-fix.css
       - mermaid-fix.css
+      - card-click-enhancement.css
     toc: true
     toc-depth: 3
     smooth-scroll: true
@@ -93,7 +104,45 @@ format:
     document-title: "Lydia's Portfolio"
     include-in-header: 
       - "critical-styles.html"
+      - "cv-link-fix.html"
       - text: |
+          <script>
+            // Immediate CV link fix - runs before anything else
+            (function() {
+              function makeVisible() {
+                var cvLinks = document.querySelectorAll('a[href*="cv.html"], a[href*="cv.qmd"]');
+                for (var i = 0; i < cvLinks.length; i++) {
+                  var link = cvLinks[i];
+                  link.style.display = "block";
+                  link.style.visibility = "visible";
+                  link.style.opacity = "1";
+                  
+                  // Also make parent containers visible
+                  var parent = link.parentNode;
+                  while (parent) {
+                    if (parent.classList && 
+                        (parent.classList.contains('sidebar-item') || 
+                         parent.classList.contains('sidebar-item-container'))) {
+                      parent.style.display = "block";
+                      parent.style.visibility = "visible";
+                      parent.style.opacity = "1";
+                    }
+                    parent = parent.parentNode;
+                  }
+                }
+              }
+              
+              // Call immediately
+              makeVisible();
+              
+              // Also when DOM is ready
+              document.addEventListener('DOMContentLoaded', makeVisible);
+              
+              // And after everything else
+              window.addEventListener('load', makeVisible);
+            })();
+          </script>
+          
           <script src="https://cdn.jsdelivr.net/npm/mermaid@10.3.1/dist/mermaid.min.js"></script>
           <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -103,5 +152,140 @@ format:
               });
             });
           </script>
+          
+          <!-- Cross-Device Compatibility Script -->
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              // Add device detection classes to the body
+              if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                document.body.classList.add('mobile-device');
+                
+                if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                  document.body.classList.add('ios-device');
+                } else if (/Android/i.test(navigator.userAgent)) {
+                  document.body.classList.add('android-device');
+                }
+              } else {
+                document.body.classList.add('desktop-device');
+              }
+            });
+          </script>
+          
+          <!-- Critical No-Animation CSS - WITH VISIBILITY PRESERVED -->
+          <style>
+            /* Disable animation timings but keep elements visible */
+            * {
+              animation-duration: 0s !important;
+              animation-delay: 0s !important;
+              transition-duration: 0s !important;
+              transition-delay: 0s !important;
+              transition: none !important;
+              animation: none !important;
+            }
+            
+            /* Target animation properties only but ensure visibility */
+            .quarto-grid-item, .card.h-100, 
+            .quarto-grid-item *, .card.h-100 *,
+            .listing-image, .thumbnail-image, .card-img-top {
+              transition: none !important;
+              animation: none !important;
+              will-change: auto !important;
+              opacity: 1 !important;
+              visibility: visible !important;
+            }
+            
+            /* Disable hover/active animations but preserve the elements */
+            .quarto-grid-item:hover, .card.h-100:hover,
+            .quarto-grid-item:active, .card.h-100:active,
+            .quarto-grid-item:focus, .card.h-100:focus {
+              animation: none !important;
+              transition: none !important;
+            }
+            
+            /* Fix scrollbar issues */
+            html {
+              overflow-x: hidden;
+            }
+            
+            /* Stabilize images without hiding them */
+            img {
+              transition: none !important;
+              animation: none !important;
+              opacity: 1 !important;
+              visibility: visible !important;
+            }
+            
+            /* Explicitly ensure card visibility */
+            .quarto-grid-item, .card.h-100 {
+              opacity: 1 !important;
+              visibility: visible !important;
+              display: flex !important;
+              flex-direction: column !important;
+            }
+            
+            /* Ensure grid is visible */
+            .grid, .quarto-grid {
+              display: grid !important;
+              grid-template-columns: repeat(3, 1fr) !important;
+              opacity: 1 !important;
+              visibility: visible !important;
+            }
+          </style>
+          
+          <script>
+            // Run once DOM content is loaded - fix CV link clickability
+            document.addEventListener('DOMContentLoaded', function() {
+              // Find all CV links
+              var cvLinks = document.querySelectorAll('a[href*="cv.html"], a[href*="cv.qmd"]');
+              
+              // Make each link clickable
+              cvLinks.forEach(function(link) {
+                // Make sure the link is clickable
+                link.style.pointerEvents = 'auto';
+                link.style.cursor = 'pointer';
+                
+                // Force all parent elements to have pointer-events: auto
+                var parent = link.parentNode;
+                while (parent && parent !== document.body) {
+                  if (parent.style) {
+                    parent.style.pointerEvents = 'auto';
+                  }
+                  parent = parent.parentNode;
+                }
+                
+                // Add direct click handler that ignores parent element click restrictions
+                link.addEventListener('click', function(e) {
+                  e.stopPropagation();
+                  window.location.href = link.getAttribute('href');
+                }, true);
+              });
+            });
+          </script>
+          
+          <style>
+            /* Direct CSS override for CV links with !important */
+            a[href$="cv.html"],
+            a[href$="cv.qmd"],
+            a[href*="cv.html"],
+            a[href*="cv.qmd"],
+            .sidebar-item a[href*="cv"],
+            li a[href*="cv"],
+            a.cta-button[href*="cv"],
+            a.sidebar-item-text[href*="cv"],
+            a.btn[href*="cv"],
+            .sidebar-navigation .sidebar-item-container a[href*="cv"] {
+              display: block !important;
+              visibility: visible !important;
+              opacity: 1 !important;
+            }
+            
+            /* Force sidebar CV item to be visible */
+            .sidebar li.sidebar-item:has(a[href*="cv"]),
+            .sidebar .sidebar-item-container:has(a[href*="cv"]) {
+              display: block !important;
+              visibility: visible !important;
+              opacity: 1 !important;
+            }
+          </style>
       - "_includes/custom-head.html"
     include-after-body: "_includes/post-scripts.html"

@@ -1,65 +1,97 @@
 ---
-title: "Curriculum Vitae"
-page-title: "Lydia's Portfolio"
-document-title: "Lydia's Portfolio"
-format: 
+title: "Lydia Hsu | CV"
+format:
   html:
     toc: true
 ---
 
-## Education
+# 📚 Education
 
-### University of Data Science
-- **Ph.D. in Artificial Intelligence** | 2018 - 2022
-- Thesis: "Neural Network Approaches to Natural Language Understanding"
+**University of California, Irvine**  
+*Master of Science in Business Analytics* (Expected Sep 2025)
 
-### Tech Institute
-- **M.S. in Computer Science** | 2016 - 2018
-- Focus: Machine Learning and Data Mining
+**National Chiao Tung University, Taiwan**  
+*Bachelor of Business Administration* (June 2017)
 
-### Undergraduate University
-- **B.S. in Mathematics** | 2012 - 2016
-- Minor: Computer Science
+# 💼 Experience
 
-## Professional Experience
+### 3M, Taipei, Taiwan
 
-### Senior Data Scientist | Data Company Inc.
-*2022 - Present*
+**Product Manager, Electronics Material Solution**  
+*May 2020 – June 2024*  
+- Led portfolio strategy and lifecycle management, driving 61% revenue growth through data-informed product decisions.  
+- Orchestrated go-to-market strategies and cross-functional launches, generating $15M in first-year sales.  
+- Managed a 10-person task force to establish a local production line, mitigating a projected $10M loss.
 
-- Lead machine learning projects for natural language processing applications
-- Develop and deploy production-ready models for text classification and sentiment analysis
-- Mentor junior data scientists and provide technical leadership
+**Assistant Marketing Analyst, Electronics Material Solution**  
+*Oct 2018 – Apr 2020*  
+- Led B2B segmentation and market research, increasing campaign performance by 32%.  
+- Applied price elasticity analysis to optimize pricing, lifting margins by 7% and boosting retention by 12%.
 
-### Data Scientist | Tech Startup
-*2018 - 2022*
+**Sales Analyst Intern, Electronics Material Solution**  
+*Sep 2017 – Sep 2018*  
+- Automated lead qualification using SQL, saving 10+ hours weekly and improving conversion by 15%.  
+- Spearheaded Semicon Taiwan tradeshow upgrades, raising engagement by 40%.
 
-- Built recommendation systems using collaborative filtering techniques
-- Implemented A/B testing framework for feature evaluation
-- Reduced computational costs by 30% through algorithm optimization
+# 📊 Analytics Projects
 
-### Research Assistant | University Research Lab
-*2016 - 2018*
+**Student Data Analyst | Kaiser Permanente, UCI MSBA Capstone**  
+*Jan 2025 – Present*  
+- Conducted EDA on 50k+ call center records using SQL and Python, uncovering seasonal trends and bottlenecks.  
+- Designing Power BI dashboards with custom DAX, tracking 12+ call center KPIs for executive reporting.
 
-- Conducted research on deep learning approaches for computer vision
-- Published 3 papers in top-tier machine learning conferences
-- Developed open-source libraries for image recognition tasks
+# 🤝🏼 Leadership
 
-## Skills
+**VP of Communication | UCI Women in Business Club**  
+*Jan 2025 – Present*  
+- Streamlined club operations, increasing event attendance by 25%.  
+- Boosted member engagement on social media by 40%.
 
-- **Languages**: Python, R, SQL, JavaScript
-- **Frameworks**: TensorFlow, PyTorch, scikit-learn, pandas
-- **Tools**: Git, Docker, Kubernetes, AWS, GCP
-- **Techniques**: Deep Learning, Natural Language Processing, Computer Vision, Time Series Analysis
+# 🛠️ Skills
 
-## Publications
+```{=html}
+<div style="display: flex; flex-wrap: nowrap; gap: 15px; margin: 1.5rem 0;">
+  <div style="flex: 1 1 0; min-width: 0; background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 1rem; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,.08);">
+    <h3 style="font-size: 1.1rem; margin-bottom: 1rem;"><span aria-hidden="true">🔍</span> Data Science</h3>
+    <span class="skill-chip">Python</span>
+    <span class="skill-chip">MySQL</span>
+    <span class="skill-chip">scikit-learn</span>
+    <span class="skill-chip">Forecasting</span>
+    <span class="skill-chip">Clustering</span>
+    <span class="skill-chip">NLP</span>
+    <span class="skill-chip">Deep Learning</span>
+  </div>
 
-1. "Improving Transformer Models for Text Classification" - NeurIPS 2022
-2. "Efficient Feature Engineering for Vision Tasks" - CVPR 2021
-3. "Adaptive Learning Rates for Neural Networks" - ICML 2020
-4. "Unsupervised Learning for Time Series Data" - KDD 2019
+  <div style="flex: 1 1 0; min-width: 0; background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 1rem; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,.08);">
+    <h3 style="font-size: 1.1rem; margin-bottom: 1rem;"><span aria-hidden="true">📊</span> Story-telling</h3>
+    <span class="skill-chip">Tableau</span>
+    <span class="skill-chip">Quarto</span>
+    <span class="skill-chip">Power BI</span>
+    <span class="skill-chip">Loooker Studio</span>
+    <span class="skill-chip">Snowflake</span>
+    <span class="skill-chip">Slide-docs</span>
+  </div>
 
-## Awards & Honors
+  <div style="flex: 1 1 0; min-width: 0; background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 1rem; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,.08);">
+    <h3 style="font-size: 1.1rem; margin-bottom: 1rem;"><span aria-hidden="true">🚀</span> Product / Project</h3>
+    <span class="skill-chip">Agile</span>
+    <span class="skill-chip">Jira</span>
+    <span class="skill-chip">Lean</span>
+    <span class="skill-chip">Six Sigma</span>
+    <span class="skill-chip">A/B testing</span>
+    <span class="skill-chip">New Product Launch</span>
+    <span class="skill-chip">Go-To-Market</span>
+    <span class="skill-chip">Stakeholder Alignment</span>
+  </div>
+</div>
+```
 
-- Best Paper Award, NLP Conference 2022
-- University Fellowship, 2018-2022
-- Outstanding Teaching Assistant Award, 2017 
+# 🌟 Personal Interests
+
+NBA Basketball Analytics | International Travel (visited 15+ countries)
+
+# 🔗 Contact
+
+📍 Irvine, CA  
+📧 [lydia.tzuchi@gmail.com](mailto:lydia.tzuchi@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/lydiatzuchihsu/)
